@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S&P 500 히트맵 | Herdvibe</title>
+<meta property="og:title" content="S&P 500 히트맵 | Herdvibe">
+<meta property="og:description" content="S&P 500 전 종목 실시간 성적표 · 섹터별 분석">
+<meta property="og:image" content="https://raw.githubusercontent.com/kittycapital/kittycapital.github.io/main/assets/herdvibe-og.png">
+<meta property="og:url" content="https://herdvibe.com/15">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  ::-webkit-scrollbar { display: none; }
+  * { -ms-overflow-style: none; scrollbar-width: none; }
+
+  :root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --text-muted: #555555;
+    --accent-green: #00d4aa;
+    --accent-red: #ff4757;
+    --accent-yellow: #ffd43b;
+    --border-color: #2a2a2a;
+  }
+
+  html, body { overflow-x: hidden; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    text-align: center;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+  }
+  .header .subtitle {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+
+  /* ===== CONTROLS BAR ===== */
+  .controls-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .period-toggle {
+    display: flex;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+  }
+  .period-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .period-btn.active {
+    background: var(--accent-yellow);
+    color: #000;
+    font-weight: 700;
+  }
+  .period-btn:hover:not(.active) {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  /* Share Buttons */
+  .share-group { display: flex; gap: 6px; }
+  .share-btn {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+  .share-btn:hover { background: var(--bg-tertiary); border-color: #3a3a3a; }
+  .share-btn svg { width: 16px; height: 16px; fill: currentColor; }
+  .share-btn.twitter:hover { color: #1da1f2; border-color: #1da1f2; }
+  .share-btn.kakao:hover { color: #fee500; border-color: #fee500; }
+  .share-btn.telegram:hover { color: #0088cc; border-color: #0088cc; }
+  .share-btn.instagram:hover { color: #e4405f; border-color: #e4405f; }
+  .share-btn.link-copy:hover { color: var(--accent-yellow); border-color: var(--accent-yellow); }
+
+  /* ===== CATEGORY FILTER ===== */
+  .category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .cat-btn {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .cat-btn.active {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 10px rgba(255,212,59,0.1);
+  }
+  .cat-btn:hover:not(.active) { border-color: #3a3a3a; }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 12px 20px;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .stat-item span { font-weight: 700; }
+  .stat-green { color: var(--accent-green); }
+  .stat-red { color: var(--accent-red); }
+  .stat-yellow { color: var(--accent-yellow); }
+
+  /* ===== LEGEND ===== */
+  .legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 20px;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .legend-block { width: 24px; height: 12px; border-radius: 2px; }
+  .legend-label { margin: 0 8px 0 2px; }
+
+  /* ===== TREEMAP ===== */
+  .treemap-container { padding: 4px 8px 16px; width: 100%; }
+  .treemap { width: 100%; position: relative; min-height: 500px; }
+
+  .tree-cell {
+    position: absolute;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid rgba(0,0,0,0.4);
+    animation: cellFade 0.3s ease forwards;
+    opacity: 0;
+  }
+  .tree-cell:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    z-index: 100;
+  }
+  @keyframes cellFade { to { opacity: 1; } }
+
+  .cell-inner {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 4px;
+    overflow: hidden;
+  }
+  .cell-symbol {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+  .cell-name {
+    font-size: 9px; opacity: 0.7; font-weight: 400;
+    line-height: 1.1; text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; max-width: 100%;
+  }
+  .cell-change {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700; line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+
+  .size-xl .cell-symbol { font-size: 20px; }
+  .size-xl .cell-change { font-size: 22px; }
+  .size-xl .cell-name { font-size: 12px; }
+  .size-lg .cell-symbol { font-size: 15px; }
+  .size-lg .cell-change { font-size: 16px; }
+  .size-lg .cell-name { font-size: 10px; }
+  .size-md .cell-symbol { font-size: 12px; }
+  .size-md .cell-change { font-size: 13px; }
+  .size-md .cell-name { font-size: 9px; }
+  .size-sm .cell-symbol { font-size: 10px; }
+  .size-sm .cell-change { font-size: 10px; }
+  .size-sm .cell-name { display: none; }
+  .size-xs .cell-symbol { font-size: 8px; }
+  .size-xs .cell-change { font-size: 8px; }
+  .size-xs .cell-name { display: none; }
+
+  /* ===== TOOLTIP ===== */
+  .tooltip {
+    position: fixed;
+    background: rgba(26,26,26,0.97);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.15s;
+    min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+  }
+  .tooltip.show { opacity: 1; }
+  .tooltip-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px; padding-bottom: 8px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .tooltip-name { font-weight: 700; font-size: 14px; }
+  .tooltip-symbol { color: var(--text-secondary); font-size: 11px; font-family: 'JetBrains Mono', monospace; }
+  .tooltip-row {
+    display: flex; justify-content: space-between; margin: 5px 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .tooltip-label { color: var(--text-secondary); font-size: 11px; }
+  .tooltip-value { font-weight: 600; font-size: 11px; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  /* ===== LOADING ===== */
+  .loading-overlay {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 400px; flex-direction: column; gap: 16px;
+  }
+  .spinner {
+    width: 30px; height: 30px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--accent-yellow);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { font-size: 0.8rem; color: var(--text-secondary); }
+
+  /* ===== TOAST ===== */
+  .toast {
+    position: fixed; bottom: 30px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2000;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    .header { padding: 20px 0 15px; margin-bottom: 15px; }
+    .header h1 { font-size: 1.4rem; }
+    .header .subtitle { font-size: 0.75rem; }
+    .controls-bar { gap: 10px; }
+    .period-btn { padding: 6px 12px; font-size: 0.7rem; }
+    .share-btn { width: 30px; height: 30px; }
+    .share-btn svg { width: 14px; height: 14px; }
+    .treemap-container { padding: 2px 4px 12px; }
+    .stats-bar { padding: 10px 12px; gap: 12px; font-size: 0.65rem; }
+    .legend { padding: 6px 12px; font-size: 0.6rem; }
+    .cat-btn { padding: 5px 10px; font-size: 0.6rem; }
+  }
+  @media (max-width: 480px) {
+    .container { padding: 10px; }
+    .header h1 { font-size: 1.2rem; }
+    .period-btn { padding: 5px 10px; font-size: 0.65rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1>S&P 500 히트맵</h1>
+    <p class="subtitle">시가총액 기준 · 섹터별 분류 · <span id="dataTimestamp">—</span></p>
+  </header>
+
+  <div class="controls-bar">
+    <div class="period-toggle">
+      <button class="period-btn active" data-period="1d">1D</button>
+      <button class="period-btn" data-period="5d">1W</button>
+      <button class="period-btn" data-period="1mo">1M</button>
+    </div>
+    <div class="share-group">
+      <button class="share-btn twitter" onclick="doShare('twitter')" title="Twitter / X">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </button>
+      <button class="share-btn kakao" onclick="doShare('kakao',this)" title="카카오톡">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-5.08 0-9.2 3.34-9.2 7.46 0 2.64 1.73 4.96 4.35 6.32l-1.1 4.07c-.1.36.32.65.63.44l4.84-3.18c.16.01.32.02.48.02 5.08 0 9.2-3.34 9.2-7.46S17.08 3 12 3z"/></svg>
+      </button>
+      <button class="share-btn telegram" onclick="doShare('telegram')" title="텔레그램">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </button>
+      <button class="share-btn instagram" onclick="doShare('instagram',this)" title="인스타그램">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </button>
+      <button class="share-btn link-copy" onclick="doShare('link',this)" title="링크 복사">
+        <svg viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 0 0-5.656 0l-4 4a4 4 0 1 0 5.656 5.656l1.102-1.101m-.758-4.899a4 4 0 0 0 5.656 0l4-4a4 4 0 0 0-5.656-5.656l-1.1 1.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">총 <span id="totalStocks" class="stat-yellow">0</span>개</div>
+    <div class="stat-item">상승 <span id="gainCount" class="stat-green">0</span></div>
+    <div class="stat-item">하락 <span id="lossCount" class="stat-red">0</span></div>
+    <div class="stat-item">평균 <span id="avgChange">0%</span></div>
+  </div>
+
+  <div class="category-filter" id="categoryFilter">
+    <button class="cat-btn active" data-cat="all">전체</button>
+  </div>
+
+  <div class="legend">
+    <div class="legend-block" style="background:#b71c1c"></div><span class="legend-label">≤-5%</span>
+    <div class="legend-block" style="background:#c62828"></div><span class="legend-label">-3%</span>
+    <div class="legend-block" style="background:rgba(211,47,47,0.5)"></div><span class="legend-label">-1%</span>
+    <div class="legend-block" style="background:#37474f"></div><span class="legend-label">0%</span>
+    <div class="legend-block" style="background:rgba(27,94,32,0.5)"></div><span class="legend-label">+1%</span>
+    <div class="legend-block" style="background:#2e7d32"></div><span class="legend-label">+3%</span>
+    <div class="legend-block" style="background:#00c853"></div><span class="legend-label">≥+5%</span>
+  </div>
+
+  <div class="treemap-container">
+    <div class="treemap" id="treemap">
+      <div class="loading-overlay" id="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading market data...</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">데이터 출처: Yahoo Finance | 매일 아침 자동 업데이트 | herdvibe.com</footer>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const DATA_URL = 'data/sp500_heatmap.json';
+
+const SECTORS = {
+  'Information Technology': ['AAPL','ACN','ADBE','ADI','ADSK','AKAM','AMAT','AMD','ANET','APH','APP','AVGO','CDNS','CDW','CIEN','CRM','CRWD','CSCO','CTSH','DDOG','DELL','EPAM','FFIV','FICO','FSLR','FTNT','GDDY','GEN','GLW','HPE','HPQ','IBM','INTC','INTU','IT','JBL','KEYS','KLAC','LRCX','MCHP','MPWR','MSFT','MSI','MU','NOW','NTAP','NVDA','NXPI','ON','ORCL','PANW','PLTR','PTC','Q','QCOM','ROP','SMCI','SNDK','SNPS','STX','SWKS','TDY','TEL','TER','TRMB','TXN','TYL','VRSN','WDAY','WDC','ZBRA'],
+  'Health Care': ['A','ABBV','ABT','ALGN','AMGN','BAX','BDX','BIIB','BMY','BSX','CAH','CI','CNC','COO','COR','CRL','CVS','DGX','DHR','DVA','DXCM','ELV','EW','GEHC','GILD','HCA','HOLX','HSIC','HUM','IDXX','INCY','IQV','ISRG','JNJ','LH','LLY','MCK','MDT','MOH','MRK','MRNA','MTD','PFE','PODD','REGN','RMD','RVTY','SOLV','STE','SYK','TECH','TMO','UHS','UNH','VRTX','VTRS','WAT','WST','ZBH','ZTS'],
+  'Financials': ['ACGL','AFL','AIG','AIZ','AJG','ALL','AMP','AON','APO','ARES','AXP','BAC','BEN','BK','BLK','BRK-B','BRO','BX','C','CB','CBOE','CFG','CINF','CME','COF','COIN','CPAY','EG','ERIE','FDS','FIS','FISV','FITB','GL','GPN','GS','HBAN','HIG','HOOD','IBKR','ICE','IVZ','JKHY','JPM','KEY','KKR','L','MA','MCO','MET','MRSH','MS','MSCI','MTB','NDAQ','NTRS','PFG','PGR','PNC','PRU','PYPL','RF','RJF','SCHW','SPGI','STT','SYF','TFC','TROW','TRV','USB','V','WFC','WRB','WTW','XYZ'],
+  'Industrials': ['ADP','ALLE','AME','AOS','AXON','BA','BLDR','BR','CARR','CAT','CHRW','CMI','CPRT','CSX','CTAS','DAL','DE','DOV','EFX','EME','EMR','ETN','EXPD','FAST','FDX','FIX','FTV','GD','GE','GEV','GNRC','GWW','HII','HON','HUBB','HWM','IEX','IR','ITW','J','JBHT','JCI','LDOS','LHX','LII','LMT','LUV','MAS','MMM','NDSN','NOC','NSC','ODFL','OTIS','PAYC','PAYX','PCAR','PH','PNR','PWR','ROK','ROL','RSG','RTX','SNA','SWK','TDG','TT','TXT','UAL','UBER','UNP','UPS','URI','VLTO','VRSK','WAB','WM','XYL'],
+  'Consumer Discretionary': ['ABNB','AMZN','APTV','AZO','BBY','BKNG','CCL','CMG','CVNA','DASH','DECK','DHI','DPZ','DRI','EBAY','EXPE','F','GM','GPC','GRMN','HAS','HD','HLT','LEN','LOW','LULU','LVS','MAR','MCD','MGM','NCLH','NKE','NVR','ORLY','PHM','POOL','RCL','RL','ROST','SBUX','TJX','TPR','TSCO','TSLA','ULTA','WSM','WYNN','YUM'],
+  'Communication Services': ['CHTR','CMCSA','DIS','EA','FOX','FOXA','GOOG','GOOGL','LYV','META','MTCH','NFLX','NWS','NWSA','OMC','PSKY','T','TKO','TMUS','TTD','TTWO','VZ','WBD'],
+  'Consumer Staples': ['ADM','BF-B','BG','CAG','CHD','CL','CLX','COST','CPB','DG','DLTR','EL','GIS','HRL','HSY','KDP','KHC','KMB','KO','KR','KVUE','LW','MDLZ','MKC','MNST','MO','PEP','PG','PM','SJM','STZ','SYY','TAP','TGT','TSN','WMT'],
+  'Energy': ['APA','BKR','COP','CTRA','CVX','DVN','EOG','EQT','EXE','FANG','HAL','KMI','MPC','OKE','OXY','PSX','SLB','TPL','TRGP','VLO','WMB','XOM'],
+  'Utilities': ['AEE','AEP','AES','ATO','AWK','CEG','CMS','CNP','D','DTE','DUK','ED','EIX','ES','ETR','EVRG','EXC','FE','LNT','NEE','NI','NRG','PCG','PEG','PNW','PPL','SO','SRE','VST','WEC','XEL'],
+  'Materials': ['ALB','AMCR','APD','AVY','BALL','CF','CRH','CTVA','DD','DOW','ECL','FCX','IFF','IP','LIN','LYB','MLM','MOS','NEM','NUE','PKG','PPG','SHW','STLD','SW','VMC'],
+  'Real Estate': ['AMT','ARE','AVB','BXP','CBRE','CCI','CPT','CSGP','DLR','DOC','EQIX','EQR','ESS','EXR','FRT','HST','INVH','IRM','KIM','MAA','O','PLD','PSA','REG','SBAC','SPG','UDR','VICI','VTR','WELL','WY'],
+};
+
+// Korean short labels for sectors
+const SECTOR_LABELS = {
+  'Information Technology': 'IT',
+  'Health Care': '헬스케어',
+  'Financials': '금융',
+  'Industrials': '산업재',
+  'Consumer Discretionary': '경기소비재',
+  'Communication Services': '커뮤니케이션',
+  'Consumer Staples': '필수소비재',
+  'Energy': '에너지',
+  'Utilities': '유틸리티',
+  'Materials': '소재',
+  'Real Estate': '부동산',
+};
+
+let allData = [];
+let currentPeriod = '1d';
+let currentCategory = 'all';
+
+// ===== SHARE =====
+var SHARE_URL = 'https://herdvibe.com/15';
+function copyToClipboard(text){try{window.parent.postMessage({type:'clipboard',text:text},'*');}catch(e){}}
+function flashCopied(btn){if(!btn)return;var orig=btn.innerHTML;btn.style.background='#22c55e';btn.style.color='#fff';btn.style.borderColor='#22c55e';btn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>';setTimeout(function(){btn.style.background='';btn.style.color='';btn.style.borderColor='';btn.innerHTML=orig;},2000);}
+function doShare(p,btn){var u=SHARE_URL;var t=encodeURIComponent('S&P 500 히트맵 📊 전 종목 실시간 성적표 | herdvibe.com');var eu=encodeURIComponent(u);switch(p){case'twitter':window.open('https://twitter.com/intent/tweet?text='+t+'&url='+eu,'_blank');break;case'telegram':window.open('https://t.me/share/url?url='+eu+'&text='+t,'_blank');break;case'kakao':copyToClipboard(u);flashCopied(btn);showToast('링크 복사완료! 카카오톡에 붙여넣기 하세요');break;case'instagram':copyToClipboard(u);flashCopied(btn);showToast('링크 복사완료! 인스타그램에 붙여넣기 하세요');break;case'link':copyToClipboard(u);flashCopied(btn);showToast('링크가 복사되었습니다 ✓');break;}}
+
+// ===== COLORS =====
+function getChangeColor(c) {
+  if (c >= 7) return 'rgba(0,230,118,0.95)';
+  if (c >= 5) return 'rgba(0,200,83,0.9)';
+  if (c >= 3) return 'rgba(46,125,50,0.9)';
+  if (c >= 1) return 'rgba(27,94,32,0.7)';
+  if (c >= 0) return 'rgba(38,50,56,0.8)';
+  if (c >= -1) return 'rgba(55,71,79,0.8)';
+  if (c >= -3) return 'rgba(183,28,28,0.7)';
+  if (c >= -5) return 'rgba(211,47,47,0.85)';
+  return 'rgba(255,23,68,0.9)';
+}
+function getTextColor(c) {
+  const a = Math.abs(c);
+  if (a >= 5) return '#fff';
+  if (a >= 3) return '#e0e0e0';
+  if (a >= 1) return '#bdbdbd';
+  return '#9e9e9e';
+}
+function getChangeTextColor(c) {
+  if (c >= 3) return '#69f0ae';
+  if (c >= 0) return '#a5d6a7';
+  if (c >= -3) return '#ef9a9a';
+  return '#ff8a80';
+}
+
+// ===== TREEMAP LAYOUT =====
+function squarify(items, x, y, w, h) {
+  if (!items.length) return [];
+  if (items.length === 1) { items[0].x=x; items[0].y=y; items[0].w=w; items[0].h=h; return items; }
+  const total = items.reduce((s,i) => s+i.value, 0);
+  if (!total) return items;
+  const rects = [];
+  layoutRow(items, 0, x, y, w, h, total, rects);
+  return rects;
+}
+function layoutRow(items, si, x, y, w, h, ta, rects) {
+  if (si >= items.length) return;
+  const vert = w >= h;
+  const rem = items.slice(si);
+  const rt = rem.reduce((s,i) => s+i.value, 0);
+  let row = [rem[0]], rs = rem[0].value;
+  let best = worstRatio(row, rs, vert?h:w, rt, w, h);
+  for (let i=1; i<rem.length; i++) {
+    const tr = [...row, rem[i]], ts = rs + rem[i].value;
+    const r = worstRatio(tr, ts, vert?h:w, rt, w, h);
+    if (r <= best) { row=tr; rs=ts; best=r; } else break;
+  }
+  const frac = rs / rt;
+  if (vert) {
+    const rw = w * frac; let cy = y;
+    for (const it of row) { const ih = (it.value/rs)*h; it.x=x; it.y=cy; it.w=rw; it.h=ih; rects.push(it); cy+=ih; }
+    layoutRow(items, si+row.length, x+rw, y, w-rw, h, ta, rects);
+  } else {
+    const rh = h * frac; let cx = x;
+    for (const it of row) { const iw = (it.value/rs)*w; it.x=cx; it.y=y; it.w=iw; it.h=rh; rects.push(it); cx+=iw; }
+    layoutRow(items, si+row.length, x, y+rh, w, h-rh, ta, rects);
+  }
+}
+function worstRatio(row, rs, sl, ta, W, H) {
+  const vert = W>=H;
+  const rsz = (vert?W:H) * (rs/ta);
+  if (!rsz) return Infinity;
+  let worst = 0;
+  for (const it of row) {
+    const il = (it.value/rs) * (vert?H:W);
+    const r = Math.max(rsz/il, il/rsz);
+    if (r > worst) worst = r;
+  }
+  return worst;
+}
+
+// ===== HELPERS =====
+function getStockSector(symbol) { for (const [s,syms] of Object.entries(SECTORS)) if (syms.includes(symbol)) return s; return 'Other'; }
+function formatMcap(n) { if(n>=1e12) return `$${(n/1e12).toFixed(2)}T`; if(n>=1e9) return `$${(n/1e9).toFixed(1)}B`; if(n>=1e6) return `$${(n/1e6).toFixed(1)}M`; return `$${n.toLocaleString()}`; }
+function formatPrice(n) { if(n>=1000) return `$${n.toLocaleString(undefined,{maximumFractionDigits:0})}`; if(n>=1) return `$${n.toFixed(2)}`; return `$${n.toFixed(4)}`; }
+function formatVol(n) { if(n>=1e9) return `$${(n/1e9).toFixed(1)}B`; if(n>=1e6) return `${(n/1e6).toFixed(0)}M`; return `${(n/1e3).toFixed(0)}K`; }
+function getChange(stock) { if(currentPeriod==='5d') return stock.price_change_5d||0; if(currentPeriod==='1mo') return stock.price_change_1mo||0; return stock.price_change_1d||0; }
+function showToast(msg) { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
+
+// ===== RENDER =====
+function renderTreemap(data) {
+  const ct = document.getElementById('treemap');
+  const cw = ct.clientWidth, ch = 500;
+  ct.style.height = ch+'px';
+  let f = [...data];
+  if (currentCategory !== 'all') { const ci = SECTORS[currentCategory]||[]; f = f.filter(c => ci.includes(c.symbol)); }
+  f.sort((a,b) => b.market_cap-a.market_cap);
+  updateStats(f);
+  const items = f.map(c => ({...c, value:Math.sqrt(c.market_cap), change:getChange(c), sectorName:getStockSector(c.symbol)}));
+  const GAP=2, laid = squarify([...items], 0, 0, cw, ch);
+  ct.innerHTML = '';
+  laid.forEach((it, idx) => {
+    const el = document.createElement('div');
+    el.className = 'tree-cell';
+    const w=Math.max(0,it.w-GAP), h=Math.max(0,it.h-GAP), area=w*h;
+    let sc='size-xs';
+    if(area>40000) sc='size-xl'; else if(area>15000) sc='size-lg'; else if(area>5000) sc='size-md'; else if(area>1500) sc='size-sm';
+    el.classList.add(sc);
+    const chg=it.change, sign=chg>=0?'+':'';
+    el.style.cssText = `left:${it.x+GAP/2}px;top:${it.y+GAP/2}px;width:${w}px;height:${h}px;background:${getChangeColor(chg)};color:${getTextColor(chg)};animation-delay:${idx*4}ms;`;
+    el.innerHTML = `<div class="cell-inner"><div class="cell-symbol">${it.symbol}</div><div class="cell-name">${it.name}</div><div class="cell-change" style="color:${getChangeTextColor(chg)}">${sign}${chg.toFixed(1)}%</div></div>`;
+    el.addEventListener('mouseenter', e => showTooltip(e, it));
+    el.addEventListener('mousemove', e => moveTooltip(e));
+    el.addEventListener('mouseleave', hideTooltip);
+    ct.appendChild(el);
+  });
+}
+
+function updateStats(data) {
+  const g=data.filter(c=>getChange(c)>0).length, l=data.filter(c=>getChange(c)<0).length;
+  const avg=data.reduce((s,c)=>s+getChange(c),0)/(data.length||1);
+  document.getElementById('totalStocks').textContent=data.length;
+  document.getElementById('gainCount').textContent=g;
+  document.getElementById('lossCount').textContent=l;
+  const ae=document.getElementById('avgChange');
+  ae.textContent=`${avg>=0?'+':''}${avg.toFixed(2)}%`;
+  ae.className=avg>=0?'stat-green':'stat-red';
+}
+
+// ===== TOOLTIP =====
+function showTooltip(e, stock) {
+  const tt=document.getElementById('tooltip');
+  const c1d=stock.price_change_1d||0, c5d=stock.price_change_5d||0, c1mo=stock.price_change_1mo||0;
+  const clr=v=>v>=0?'#69f0ae':'#ff8a80';
+  const sgn=v=>v>=0?'+':'';
+  const sectorLabel = SECTOR_LABELS[stock.sectorName] || stock.sectorName;
+  tt.innerHTML=`<div class="tooltip-header"><div><div class="tooltip-name">${stock.name}</div><div class="tooltip-symbol">${stock.symbol} · ${sectorLabel}</div></div></div><div class="tooltip-row"><span class="tooltip-label">가격</span><span class="tooltip-value">${formatPrice(stock.current_price)}</span></div><div class="tooltip-row"><span class="tooltip-label">시가총액</span><span class="tooltip-value">${formatMcap(stock.market_cap)}</span></div><div class="tooltip-row"><span class="tooltip-label">거래량</span><span class="tooltip-value">${formatVol(stock.total_volume||0)}</span></div><div class="tooltip-row"><span class="tooltip-label">1D</span><span class="tooltip-value" style="color:${clr(c1d)}">${sgn(c1d)}${c1d.toFixed(2)}%</span></div><div class="tooltip-row"><span class="tooltip-label">1W</span><span class="tooltip-value" style="color:${clr(c5d)}">${sgn(c5d)}${c5d.toFixed(2)}%</span></div><div class="tooltip-row"><span class="tooltip-label">1M</span><span class="tooltip-value" style="color:${clr(c1mo)}">${sgn(c1mo)}${c1mo.toFixed(2)}%</span></div>`;
+  tt.classList.add('show');
+  moveTooltip(e);
+}
+function moveTooltip(e) {
+  const tt=document.getElementById('tooltip'), p=16;
+  let x=e.clientX+p, y=e.clientY+p;
+  const r=tt.getBoundingClientRect();
+  if(x+r.width>window.innerWidth) x=e.clientX-r.width-p;
+  if(y+r.height>window.innerHeight) y=e.clientY-r.height-p;
+  tt.style.left=x+'px'; tt.style.top=y+'px';
+}
+function hideTooltip() { document.getElementById('tooltip').classList.remove('show'); }
+
+// ===== CATEGORY FILTER =====
+function setupCategoryFilter() {
+  const ct=document.getElementById('categoryFilter');
+  Object.keys(SECTORS).forEach(sec => {
+    const b=document.createElement('button');
+    b.className='cat-btn'; b.dataset.cat=sec; b.textContent=SECTOR_LABELS[sec]||sec;
+    ct.appendChild(b);
+  });
+  ct.addEventListener('click', e => {
+    if(!e.target.classList.contains('cat-btn')) return;
+    ct.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');
+    currentCategory=e.target.dataset.cat;
+    renderTreemap(allData);
+  });
+}
+
+// ===== PERIOD TOGGLE =====
+document.querySelector('.period-toggle').addEventListener('click', e => {
+  if(!e.target.classList.contains('period-btn')) return;
+  document.querySelectorAll('.period-btn').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  currentPeriod=e.target.dataset.period;
+  renderTreemap(allData);
+});
+
+// ===== RESIZE =====
+let rt; window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(allData.length)renderTreemap(allData);},200);});
+
+// ===== MOCK DATA =====
+function generateMockData() {
+  const stocks=[
+    {symbol:'AAPL',name:'Apple',sector:'Information Technology',current_price:242,market_cap:3650000000000,total_volume:55000000},
+    {symbol:'MSFT',name:'Microsoft',sector:'Information Technology',current_price:430,market_cap:3200000000000,total_volume:22000000},
+    {symbol:'NVDA',name:'Nvidia',sector:'Information Technology',current_price:138,market_cap:3380000000000,total_volume:250000000},
+    {symbol:'AMZN',name:'Amazon',sector:'Consumer Discretionary',current_price:228,market_cap:2400000000000,total_volume:40000000},
+    {symbol:'GOOGL',name:'Alphabet',sector:'Communication Services',current_price:188,market_cap:2300000000000,total_volume:25000000},
+    {symbol:'META',name:'Meta',sector:'Communication Services',current_price:680,market_cap:1750000000000,total_volume:15000000},
+    {symbol:'BRK-B',name:'Berkshire Hathaway',sector:'Financials',current_price:480,market_cap:1100000000000,total_volume:3000000},
+    {symbol:'TSLA',name:'Tesla',sector:'Consumer Discretionary',current_price:350,market_cap:1100000000000,total_volume:90000000},
+    {symbol:'LLY',name:'Eli Lilly',sector:'Health Care',current_price:820,market_cap:780000000000,total_volume:3000000},
+    {symbol:'AVGO',name:'Broadcom',sector:'Information Technology',current_price:240,market_cap:1120000000000,total_volume:20000000},
+    {symbol:'JPM',name:'JPMorgan Chase',sector:'Financials',current_price:260,market_cap:750000000000,total_volume:8000000},
+    {symbol:'V',name:'Visa',sector:'Financials',current_price:320,market_cap:650000000000,total_volume:6000000},
+    {symbol:'UNH',name:'UnitedHealth',sector:'Health Care',current_price:520,market_cap:480000000000,total_volume:3500000},
+    {symbol:'MA',name:'Mastercard',sector:'Financials',current_price:540,market_cap:500000000000,total_volume:3000000},
+    {symbol:'XOM',name:'ExxonMobil',sector:'Energy',current_price:110,market_cap:480000000000,total_volume:15000000},
+    {symbol:'COST',name:'Costco',sector:'Consumer Staples',current_price:960,market_cap:425000000000,total_volume:2000000},
+    {symbol:'HD',name:'Home Depot',sector:'Consumer Discretionary',current_price:420,market_cap:420000000000,total_volume:3500000},
+    {symbol:'PG',name:'Procter & Gamble',sector:'Consumer Staples',current_price:170,market_cap:400000000000,total_volume:6000000},
+    {symbol:'JNJ',name:'Johnson & Johnson',sector:'Health Care',current_price:165,market_cap:395000000000,total_volume:7000000},
+    {symbol:'NFLX',name:'Netflix',sector:'Communication Services',current_price:960,market_cap:410000000000,total_volume:4000000},
+    {symbol:'CRM',name:'Salesforce',sector:'Information Technology',current_price:340,market_cap:330000000000,total_volume:5000000},
+    {symbol:'ABBV',name:'AbbVie',sector:'Health Care',current_price:190,market_cap:335000000000,total_volume:5500000},
+    {symbol:'BAC',name:'Bank of America',sector:'Financials',current_price:46,market_cap:355000000000,total_volume:30000000},
+    {symbol:'KO',name:'Coca-Cola',sector:'Consumer Staples',current_price:62,market_cap:268000000000,total_volume:12000000},
+    {symbol:'MRK',name:'Merck',sector:'Health Care',current_price:105,market_cap:265000000000,total_volume:10000000},
+    {symbol:'ORCL',name:'Oracle',sector:'Information Technology',current_price:185,market_cap:510000000000,total_volume:8000000},
+    {symbol:'CVX',name:'Chevron',sector:'Energy',current_price:155,market_cap:285000000000,total_volume:7000000},
+    {symbol:'AMD',name:'AMD',sector:'Information Technology',current_price:120,market_cap:195000000000,total_volume:45000000},
+    {symbol:'PEP',name:'PepsiCo',sector:'Consumer Staples',current_price:150,market_cap:205000000000,total_volume:5000000},
+    {symbol:'INTC',name:'Intel',sector:'Information Technology',current_price:22,market_cap:95000000000,total_volume:50000000},
+    {symbol:'DIS',name:'Walt Disney',sector:'Communication Services',current_price:110,market_cap:200000000000,total_volume:8000000},
+    {symbol:'WMT',name:'Walmart',sector:'Consumer Staples',current_price:95,market_cap:380000000000,total_volume:7000000},
+    {symbol:'CSCO',name:'Cisco',sector:'Information Technology',current_price:60,market_cap:240000000000,total_volume:18000000},
+    {symbol:'ADBE',name:'Adobe',sector:'Information Technology',current_price:450,market_cap:200000000000,total_volume:3000000},
+    {symbol:'NOW',name:'ServiceNow',sector:'Information Technology',current_price:1050,market_cap:215000000000,total_volume:1500000},
+    {symbol:'NEE',name:'NextEra Energy',sector:'Utilities',current_price:78,market_cap:160000000000,total_volume:8000000},
+    {symbol:'GS',name:'Goldman Sachs',sector:'Financials',current_price:620,market_cap:210000000000,total_volume:2500000},
+    {symbol:'CAT',name:'Caterpillar',sector:'Industrials',current_price:390,market_cap:190000000000,total_volume:2500000},
+    {symbol:'GE',name:'GE Aerospace',sector:'Industrials',current_price:200,market_cap:220000000000,total_volume:5000000},
+    {symbol:'LIN',name:'Linde',sector:'Materials',current_price:470,market_cap:225000000000,total_volume:1500000},
+  ];
+  return stocks.map(s=>({...s,price_change_1d:(Math.random()-0.45)*6,price_change_5d:(Math.random()-0.45)*10,price_change_1mo:(Math.random()-0.45)*18}));
+}
+
+// ===== LOAD =====
+async function loadData() {
+  try {
+    const r = await fetch(DATA_URL);
+    if(r.ok) { allData = await r.json(); }
+    else throw new Error('not found');
+  } catch(e) { console.log('Using mock data:', e.message); allData = generateMockData(); }
+  document.getElementById('loading').remove();
+  const n = new Date();
+  document.getElementById('dataTimestamp').textContent = `${n.getFullYear()}.${String(n.getMonth()+1).padStart(2,'0')}.${String(n.getDate()).padStart(2,'0')} ${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')} 기준`;
+  renderTreemap(allData);
+}
+
+setupCategoryFilter();
+loadData();
+</script>
+</body>
+</html>
