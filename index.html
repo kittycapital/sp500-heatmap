@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>S&P 500 히트맵 | Herdvibe</title>
 <meta property="og:title" content="S&P 500 히트맵 | Herdvibe">
-<meta property="og:description" content="S&P 500 전 종목 실시간 성적표 · 섹터별 분석">
+<meta property="og:description" content="S&P 500 · QQQ · DIA 전 종목 실시간 성적표 · 섹터별 분석">
 <meta property="og:image" content="https://raw.githubusercontent.com/kittycapital/kittycapital.github.io/main/assets/herdvibe-og.png">
 <meta property="og:url" content="https://herdvibe.com/15">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,10 +45,52 @@
     padding: 20px;
   }
 
+  /* ===== INDEX TAB BAR ===== */
+  .index-tab-bar {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 12px 0 0;
+    margin-bottom: 0;
+  }
+  .index-tab {
+    padding: 10px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  .index-tab:hover {
+    color: var(--text-secondary);
+  }
+  .index-tab.active {
+    color: var(--accent-yellow);
+    border-bottom-color: var(--accent-yellow);
+  }
+  .index-tab .tab-badge {
+    display: inline-block;
+    font-size: 0.55rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 4px;
+    vertical-align: super;
+  }
+  .index-tab.active .tab-badge {
+    color: var(--accent-yellow);
+    opacity: 0.7;
+  }
+
   /* ===== HEADER ===== */
   .header {
     text-align: center;
-    padding: 30px 0 20px;
+    padding: 20px 0 20px;
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 20px;
   }
@@ -324,7 +366,9 @@
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .container { padding: 12px; }
-    .header { padding: 20px 0 15px; margin-bottom: 15px; }
+    .index-tab { padding: 8px 18px; font-size: 0.75rem; }
+    .index-tab .tab-badge { font-size: 0.5rem; }
+    .header { padding: 15px 0 15px; margin-bottom: 15px; }
     .header h1 { font-size: 1.4rem; }
     .header .subtitle { font-size: 0.75rem; }
     .controls-bar { gap: 10px; }
@@ -339,15 +383,23 @@
   @media (max-width: 480px) {
     .container { padding: 10px; }
     .header h1 { font-size: 1.2rem; }
+    .index-tab { padding: 7px 14px; font-size: 0.7rem; }
     .period-btn { padding: 5px 10px; font-size: 0.65rem; }
   }
 </style>
 </head>
 <body>
 <div class="container">
+  <!-- INDEX TAB BAR -->
+  <nav class="index-tab-bar" id="indexTabBar">
+    <button class="index-tab active" data-index="sp500">S&P 500<span class="tab-badge">500</span></button>
+    <button class="index-tab" data-index="qqq">QQQ<span class="tab-badge">100</span></button>
+    <button class="index-tab" data-index="dia">DIA<span class="tab-badge">30</span></button>
+  </nav>
+
   <header class="header">
-    <h1>S&P 500 히트맵</h1>
-    <p class="subtitle">시가총액 기준 · 섹터별 분류 · <span id="dataTimestamp">—</span></p>
+    <h1 id="pageTitle">S&P 500 히트맵</h1>
+    <p class="subtitle"><span id="indexDesc">시가총액 기준 · 섹터별 분류</span> · <span id="dataTimestamp">—</span></p>
   </header>
 
   <div class="controls-bar">
@@ -412,23 +464,68 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const DATA_URL = 'data/sp500_heatmap.json';
-
-const SECTORS = {
-  'Information Technology': ['AAPL','ACN','ADBE','ADI','ADSK','AKAM','AMAT','AMD','ANET','APH','APP','AVGO','CDNS','CDW','CIEN','CRM','CRWD','CSCO','CTSH','DDOG','DELL','EPAM','FFIV','FICO','FSLR','FTNT','GDDY','GEN','GLW','HPE','HPQ','IBM','INTC','INTU','IT','JBL','KEYS','KLAC','LRCX','MCHP','MPWR','MSFT','MSI','MU','NOW','NTAP','NVDA','NXPI','ON','ORCL','PANW','PLTR','PTC','Q','QCOM','ROP','SMCI','SNDK','SNPS','STX','SWKS','TDY','TEL','TER','TRMB','TXN','TYL','VRSN','WDAY','WDC','ZBRA'],
-  'Health Care': ['A','ABBV','ABT','ALGN','AMGN','BAX','BDX','BIIB','BMY','BSX','CAH','CI','CNC','COO','COR','CRL','CVS','DGX','DHR','DVA','DXCM','ELV','EW','GEHC','GILD','HCA','HOLX','HSIC','HUM','IDXX','INCY','IQV','ISRG','JNJ','LH','LLY','MCK','MDT','MOH','MRK','MRNA','MTD','PFE','PODD','REGN','RMD','RVTY','SOLV','STE','SYK','TECH','TMO','UHS','UNH','VRTX','VTRS','WAT','WST','ZBH','ZTS'],
-  'Financials': ['ACGL','AFL','AIG','AIZ','AJG','ALL','AMP','AON','APO','ARES','AXP','BAC','BEN','BK','BLK','BRK-B','BRO','BX','C','CB','CBOE','CFG','CINF','CME','COF','COIN','CPAY','EG','ERIE','FDS','FIS','FISV','FITB','GL','GPN','GS','HBAN','HIG','HOOD','IBKR','ICE','IVZ','JKHY','JPM','KEY','KKR','L','MA','MCO','MET','MRSH','MS','MSCI','MTB','NDAQ','NTRS','PFG','PGR','PNC','PRU','PYPL','RF','RJF','SCHW','SPGI','STT','SYF','TFC','TROW','TRV','USB','V','WFC','WRB','WTW','XYZ'],
-  'Industrials': ['ADP','ALLE','AME','AOS','AXON','BA','BLDR','BR','CARR','CAT','CHRW','CMI','CPRT','CSX','CTAS','DAL','DE','DOV','EFX','EME','EMR','ETN','EXPD','FAST','FDX','FIX','FTV','GD','GE','GEV','GNRC','GWW','HII','HON','HUBB','HWM','IEX','IR','ITW','J','JBHT','JCI','LDOS','LHX','LII','LMT','LUV','MAS','MMM','NDSN','NOC','NSC','ODFL','OTIS','PAYC','PAYX','PCAR','PH','PNR','PWR','ROK','ROL','RSG','RTX','SNA','SWK','TDG','TT','TXT','UAL','UBER','UNP','UPS','URI','VLTO','VRSK','WAB','WM','XYL'],
-  'Consumer Discretionary': ['ABNB','AMZN','APTV','AZO','BBY','BKNG','CCL','CMG','CVNA','DASH','DECK','DHI','DPZ','DRI','EBAY','EXPE','F','GM','GPC','GRMN','HAS','HD','HLT','LEN','LOW','LULU','LVS','MAR','MCD','MGM','NCLH','NKE','NVR','ORLY','PHM','POOL','RCL','RL','ROST','SBUX','TJX','TPR','TSCO','TSLA','ULTA','WSM','WYNN','YUM'],
-  'Communication Services': ['CHTR','CMCSA','DIS','EA','FOX','FOXA','GOOG','GOOGL','LYV','META','MTCH','NFLX','NWS','NWSA','OMC','PSKY','T','TKO','TMUS','TTD','TTWO','VZ','WBD'],
-  'Consumer Staples': ['ADM','BF-B','BG','CAG','CHD','CL','CLX','COST','CPB','DG','DLTR','EL','GIS','HRL','HSY','KDP','KHC','KMB','KO','KR','KVUE','LW','MDLZ','MKC','MNST','MO','PEP','PG','PM','SJM','STZ','SYY','TAP','TGT','TSN','WMT'],
-  'Energy': ['APA','BKR','COP','CTRA','CVX','DVN','EOG','EQT','EXE','FANG','HAL','KMI','MPC','OKE','OXY','PSX','SLB','TPL','TRGP','VLO','WMB','XOM'],
-  'Utilities': ['AEE','AEP','AES','ATO','AWK','CEG','CMS','CNP','D','DTE','DUK','ED','EIX','ES','ETR','EVRG','EXC','FE','LNT','NEE','NI','NRG','PCG','PEG','PNW','PPL','SO','SRE','VST','WEC','XEL'],
-  'Materials': ['ALB','AMCR','APD','AVY','BALL','CF','CRH','CTVA','DD','DOW','ECL','FCX','IFF','IP','LIN','LYB','MLM','MOS','NEM','NUE','PKG','PPG','SHW','STLD','SW','VMC'],
-  'Real Estate': ['AMT','ARE','AVB','BXP','CBRE','CCI','CPT','CSGP','DLR','DOC','EQIX','EQR','ESS','EXR','FRT','HST','INVH','IRM','KIM','MAA','O','PLD','PSA','REG','SBAC','SPG','UDR','VICI','VTR','WELL','WY'],
+// ===== INDEX CONFIGURATIONS =====
+const INDEX_CONFIG = {
+  sp500: {
+    dataUrl: 'data/sp500_heatmap.json',
+    title: 'S&P 500 히트맵',
+    desc: '시가총액 기준 · 섹터별 분류',
+    shareUrl: 'https://herdvibe.com/15',
+    shareText: 'S&P 500 히트맵 📊 전 종목 실시간 성적표 | herdvibe.com',
+    sectors: {
+      'Information Technology': ['AAPL','ACN','ADBE','ADI','ADSK','AKAM','AMAT','AMD','ANET','APH','APP','AVGO','CDNS','CDW','CIEN','CRM','CRWD','CSCO','CTSH','DDOG','DELL','EPAM','FFIV','FICO','FSLR','FTNT','GDDY','GEN','GLW','HPE','HPQ','IBM','INTC','INTU','IT','JBL','KEYS','KLAC','LRCX','MCHP','MPWR','MRVL','MSFT','MSI','MU','NOW','NTAP','NVDA','NXPI','ON','ORCL','PANW','PLTR','PTC','Q','QCOM','ROP','SMCI','SNDK','SNPS','STX','SWKS','TDY','TEL','TER','TRMB','TTD','TXN','TYL','VRSN','WDAY','WDC','ZBRA'],
+      'Health Care': ['A','ABBV','ABT','ALGN','AMGN','BAX','BDX','BIIB','BMY','BSX','CAH','CI','CNC','COO','COR','CRL','CVS','DGX','DHR','DVA','DXCM','ELV','EW','GEHC','GILD','HCA','HOLX','HSIC','HUM','IDXX','INCY','IQV','ISRG','JNJ','LH','LLY','MCK','MDT','MOH','MRK','MRNA','MTD','PFE','PODD','REGN','RMD','RVTY','SOLV','STE','SYK','TECH','TMO','UHS','UNH','VRTX','VTRS','WAT','WST','ZBH','ZTS'],
+      'Financials': ['ACGL','AFL','AIG','AIZ','AJG','ALL','AMP','AON','APO','ARES','AXP','BAC','BEN','BK','BLK','BRK-B','BRO','BX','C','CB','CBOE','CFG','CINF','CME','COF','COIN','CPAY','EG','ERIE','FDS','FIS','FISV','FITB','GL','GPN','GS','HBAN','HIG','HOOD','IBKR','ICE','IVZ','JKHY','JPM','KEY','KKR','L','MA','MCO','MET','MRSH','MS','MSCI','MTB','NDAQ','NTRS','PFG','PGR','PNC','PRU','PYPL','RF','RJF','SCHW','SPGI','STT','SYF','TFC','TROW','TRV','USB','V','WFC','WRB','WTW','XYZ'],
+      'Industrials': ['ADP','ALLE','AME','AOS','AXON','BA','BLDR','BR','CARR','CAT','CHRW','CMI','CPRT','CSX','CTAS','DAL','DE','DOV','EFX','EME','EMR','ETN','EXPD','FAST','FDX','FIX','FTV','GD','GE','GEV','GNRC','GWW','HII','HON','HUBB','HWM','IEX','IR','ITW','J','JBHT','JCI','LDOS','LHX','LII','LMT','LUV','MAS','MMM','NDSN','NOC','NSC','ODFL','OTIS','PAYC','PAYX','PCAR','PH','PNR','PWR','ROK','ROL','RSG','RTX','SNA','SWK','TDG','TT','TXT','UAL','UBER','UNP','UPS','URI','VLTO','VRSK','WAB','WM','XYL'],
+      'Consumer Discretionary': ['ABNB','AMZN','APTV','AZO','BBY','BKNG','CCL','CMG','CVNA','DASH','DECK','DHI','DPZ','DRI','EBAY','EXPE','F','GM','GPC','GRMN','HAS','HD','HLT','LEN','LOW','LULU','LVS','MAR','MCD','MGM','NCLH','NKE','NVR','ORLY','PHM','POOL','RCL','RL','ROST','SBUX','TJX','TPR','TSCO','TSLA','ULTA','WSM','WYNN','YUM'],
+      'Communication Services': ['CHTR','CMCSA','DIS','EA','FOX','FOXA','GOOG','GOOGL','LYV','META','MTCH','NFLX','NWS','NWSA','OMC','PSKY','T','TKO','TMUS','TTD','TTWO','VZ','WBD'],
+      'Consumer Staples': ['ADM','BF-B','BG','CAG','CHD','CL','CLX','COST','CPB','DG','DLTR','EL','GIS','HRL','HSY','KDP','KHC','KMB','KO','KR','KVUE','LW','MDLZ','MKC','MNST','MO','PEP','PG','PM','SJM','STZ','SYY','TAP','TGT','TSN','WMT'],
+      'Energy': ['APA','BKR','COP','CTRA','CVX','DVN','EOG','EQT','EXE','FANG','HAL','KMI','MPC','OKE','OXY','PSX','SLB','TPL','TRGP','VLO','WMB','XOM'],
+      'Utilities': ['AEE','AEP','AES','ATO','AWK','CEG','CMS','CNP','D','DTE','DUK','ED','EIX','ES','ETR','EVRG','EXC','FE','LNT','NEE','NI','NRG','PCG','PEG','PNW','PPL','SO','SRE','VST','WEC','XEL'],
+      'Materials': ['ALB','AMCR','APD','AVY','BALL','CF','CRH','CTVA','DD','DOW','ECL','FCX','IFF','IP','LIN','LYB','MLM','MOS','NEM','NUE','PKG','PPG','SHW','STLD','SW','VMC'],
+      'Real Estate': ['AMT','ARE','AVB','BXP','CBRE','CCI','CPT','CSGP','DLR','DOC','EQIX','EQR','ESS','EXR','FRT','HST','INVH','IRM','KIM','MAA','O','PLD','PSA','REG','SBAC','SPG','UDR','VICI','VTR','WELL','WY'],
+    }
+  },
+  qqq: {
+    dataUrl: 'data/qqq_heatmap.json',
+    title: 'QQQ 히트맵',
+    desc: 'Nasdaq 100 · 비금융 대형주',
+    shareUrl: 'https://herdvibe.com/15',
+    shareText: 'QQQ 히트맵 📊 나스닥 100 실시간 성적표 | herdvibe.com',
+    sectors: {
+      'Information Technology': ['AAPL','ADBE','ADI','ADSK','AMAT','AMD','APP','ARM','ASML','AVGO','CDNS','CRWD','CSCO','CTSH','DDOG','FTNT','INTC','INTU','KLAC','LRCX','MCHP','MPWR','MRVL','MSFT','MSTR','MU','NVDA','NXPI','PANW','PLTR','QCOM','ROP','SHOP','SNPS','STX','TEAM','TXN','WDC','WDAY','ZS'],
+      'Consumer Discretionary': ['ABNB','AMZN','BKNG','DASH','MAR','MELI','ORLY','PDD','ROST','SBUX','TSLA'],
+      'Communication Services': ['CHTR','CMCSA','EA','GOOG','GOOGL','META','NFLX','TTWO','WBD'],
+      'Health Care': ['ALNY','AMGN','DXCM','GEHC','GILD','IDXX','INSM','ISRG','REGN','VRTX'],
+      'Consumer Staples': ['CCEP','COST','KDP','KHC','MDLZ','MNST','PEP','WMT'],
+      'Industrials': ['ADP','AXON','BKR','CSX','CTAS','CPRT','FAST','FER','HON','ODFL','PCAR','PAYX','TRI','VRSK'],
+      'Utilities': ['AEP','CEG','EXC','XEL'],
+      'Energy': ['FANG'],
+      'Materials': ['LIN'],
+      'Real Estate': ['CSGP'],
+    }
+  },
+  dia: {
+    dataUrl: 'data/dia_heatmap.json',
+    title: 'DIA 히트맵',
+    desc: 'Dow Jones 30 · 가격가중 지수',
+    shareUrl: 'https://herdvibe.com/15',
+    shareText: 'DIA 히트맵 📊 다우존스 30 실시간 성적표 | herdvibe.com',
+    sectors: {
+      'Information Technology': ['AAPL','CRM','CSCO','IBM','MSFT','NVDA'],
+      'Financials': ['AXP','GS','JPM','TRV','V'],
+      'Health Care': ['AMGN','JNJ','MRK','UNH'],
+      'Consumer Discretionary': ['AMZN','DIS','HD','MCD','NKE'],
+      'Industrials': ['BA','CAT','HON'],
+      'Consumer Staples': ['KO','PG','WMT'],
+      'Energy': ['CVX'],
+      'Materials': ['MMM','SHW'],
+      'Communication Services': ['VZ'],
+    }
+  }
 };
 
-// Korean short labels for sectors
+// Korean labels
 const SECTOR_LABELS = {
   'Information Technology': 'IT',
   'Health Care': '헬스케어',
@@ -446,12 +543,25 @@ const SECTOR_LABELS = {
 let allData = [];
 let currentPeriod = '1d';
 let currentCategory = 'all';
+let currentIndex = 'sp500';
+let dataCache = {}; // 캐시: { sp500: [...], qqq: [...], dia: [...] }
 
 // ===== SHARE =====
-var SHARE_URL = 'https://herdvibe.com/15';
 function copyToClipboard(text){try{window.parent.postMessage({type:'clipboard',text:text},'*');}catch(e){}}
 function flashCopied(btn){if(!btn)return;var orig=btn.innerHTML;btn.style.background='#22c55e';btn.style.color='#fff';btn.style.borderColor='#22c55e';btn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>';setTimeout(function(){btn.style.background='';btn.style.color='';btn.style.borderColor='';btn.innerHTML=orig;},2000);}
-function doShare(p,btn){var u=SHARE_URL;var t=encodeURIComponent('S&P 500 히트맵 📊 전 종목 실시간 성적표 | herdvibe.com');var eu=encodeURIComponent(u);switch(p){case'twitter':window.open('https://twitter.com/intent/tweet?text='+t+'&url='+eu,'_blank');break;case'telegram':window.open('https://t.me/share/url?url='+eu+'&text='+t,'_blank');break;case'kakao':copyToClipboard(u);flashCopied(btn);showToast('링크 복사완료! 카카오톡에 붙여넣기 하세요');break;case'instagram':copyToClipboard(u);flashCopied(btn);showToast('링크 복사완료! 인스타그램에 붙여넣기 하세요');break;case'link':copyToClipboard(u);flashCopied(btn);showToast('링크가 복사되었습니다 ✓');break;}}
+function doShare(p,btn){
+  var cfg = INDEX_CONFIG[currentIndex];
+  var u=cfg.shareUrl;
+  var t=encodeURIComponent(cfg.shareText);
+  var eu=encodeURIComponent(u);
+  switch(p){
+    case'twitter':window.open('https://twitter.com/intent/tweet?text='+t+'&url='+eu,'_blank');break;
+    case'telegram':window.open('https://t.me/share/url?url='+eu+'&text='+t,'_blank');break;
+    case'kakao':copyToClipboard(u);flashCopied(btn);showToast('링크 복사완료! 카카오톡에 붙여넣기 하세요');break;
+    case'instagram':copyToClipboard(u);flashCopied(btn);showToast('링크 복사완료! 인스타그램에 붙여넣기 하세요');break;
+    case'link':copyToClipboard(u);flashCopied(btn);showToast('링크가 복사되었습니다 ✓');break;
+  }
+}
 
 // ===== COLORS =====
 function getChangeColor(c) {
@@ -526,7 +636,11 @@ function worstRatio(row, rs, sl, ta, W, H) {
 }
 
 // ===== HELPERS =====
-function getStockSector(symbol) { for (const [s,syms] of Object.entries(SECTORS)) if (syms.includes(symbol)) return s; return 'Other'; }
+function getStockSector(symbol) {
+  const cfg = INDEX_CONFIG[currentIndex];
+  for (const [s,syms] of Object.entries(cfg.sectors)) if (syms.includes(symbol)) return s;
+  return 'Other';
+}
 function formatMcap(n) { if(n>=1e12) return `$${(n/1e12).toFixed(2)}T`; if(n>=1e9) return `$${(n/1e9).toFixed(1)}B`; if(n>=1e6) return `$${(n/1e6).toFixed(1)}M`; return `$${n.toLocaleString()}`; }
 function formatPrice(n) { if(n>=1000) return `$${n.toLocaleString(undefined,{maximumFractionDigits:0})}`; if(n>=1) return `$${n.toFixed(2)}`; return `$${n.toFixed(4)}`; }
 function formatVol(n) { if(n>=1e9) return `$${(n/1e9).toFixed(1)}B`; if(n>=1e6) return `${(n/1e6).toFixed(0)}M`; return `${(n/1e3).toFixed(0)}K`; }
@@ -536,10 +650,11 @@ function showToast(msg) { const t=document.getElementById('toast'); t.textConten
 // ===== RENDER =====
 function renderTreemap(data) {
   const ct = document.getElementById('treemap');
-  const cw = ct.clientWidth, ch = 650;
+  const cw = ct.clientWidth, ch = currentIndex === 'dia' ? 500 : 650;
   ct.style.height = ch+'px';
   let f = [...data];
-  if (currentCategory !== 'all') { const ci = SECTORS[currentCategory]||[]; f = f.filter(c => ci.includes(c.symbol)); }
+  const cfg = INDEX_CONFIG[currentIndex];
+  if (currentCategory !== 'all') { const ci = cfg.sectors[currentCategory]||[]; f = f.filter(c => ci.includes(c.symbol)); }
   f.sort((a,b) => b.market_cap-a.market_cap);
   updateStats(f);
   const items = f.map(c => ({...c, value:Math.sqrt(c.market_cap), change:getChange(c), sectorName:getStockSector(c.symbol)}));
@@ -597,7 +712,10 @@ function hideTooltip() { document.getElementById('tooltip').classList.remove('sh
 // ===== CATEGORY FILTER =====
 function setupCategoryFilter() {
   const ct=document.getElementById('categoryFilter');
-  Object.keys(SECTORS).forEach(sec => {
+  const cfg = INDEX_CONFIG[currentIndex];
+  // 기존 버튼 제거 (전체 제외)
+  ct.innerHTML = '<button class="cat-btn active" data-cat="all">전체</button>';
+  Object.keys(cfg.sectors).forEach(sec => {
     const b=document.createElement('button');
     b.className='cat-btn'; b.dataset.cat=sec; b.textContent=SECTOR_LABELS[sec]||sec;
     ct.appendChild(b);
@@ -620,12 +738,41 @@ document.querySelector('.period-toggle').addEventListener('click', e => {
   renderTreemap(allData);
 });
 
+// ===== INDEX TAB =====
+document.getElementById('indexTabBar').addEventListener('click', e => {
+  const tab = e.target.closest('.index-tab');
+  if (!tab) return;
+  const idx = tab.dataset.index;
+  if (idx === currentIndex) return;
+  document.querySelectorAll('.index-tab').forEach(b => b.classList.remove('active'));
+  tab.classList.add('active');
+  currentIndex = idx;
+  currentCategory = 'all';
+  switchIndex(idx);
+});
+
+function switchIndex(idx) {
+  const cfg = INDEX_CONFIG[idx];
+  document.getElementById('pageTitle').textContent = cfg.title;
+  document.getElementById('indexDesc').textContent = cfg.desc;
+  document.title = cfg.title + ' | Herdvibe';
+  // 섹터 필터 재구성
+  setupCategoryFilter();
+  // 데이터 로드 (캐시 확인)
+  if (dataCache[idx]) {
+    allData = dataCache[idx];
+    renderTreemap(allData);
+  } else {
+    loadData(idx);
+  }
+}
+
 // ===== RESIZE =====
 let rt; window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(allData.length)renderTreemap(allData);},200);});
 
 // ===== MOCK DATA =====
-function generateMockData() {
-  const stocks=[
+function generateMockData(idx) {
+  const allStocks=[
     {symbol:'AAPL',name:'Apple',sector:'Information Technology',current_price:242,market_cap:3650000000000,total_volume:55000000},
     {symbol:'MSFT',name:'Microsoft',sector:'Information Technology',current_price:430,market_cap:3200000000000,total_volume:22000000},
     {symbol:'NVDA',name:'Nvidia',sector:'Information Technology',current_price:138,market_cap:3380000000000,total_volume:250000000},
@@ -666,21 +813,58 @@ function generateMockData() {
     {symbol:'CAT',name:'Caterpillar',sector:'Industrials',current_price:390,market_cap:190000000000,total_volume:2500000},
     {symbol:'GE',name:'GE Aerospace',sector:'Industrials',current_price:200,market_cap:220000000000,total_volume:5000000},
     {symbol:'LIN',name:'Linde',sector:'Materials',current_price:470,market_cap:225000000000,total_volume:1500000},
+    {symbol:'BA',name:'Boeing',sector:'Industrials',current_price:215,market_cap:130000000000,total_volume:5000000},
+    {symbol:'IBM',name:'IBM',sector:'Information Technology',current_price:305,market_cap:280000000000,total_volume:4000000},
+    {symbol:'HON',name:'Honeywell',sector:'Industrials',current_price:240,market_cap:150000000000,total_volume:3000000},
+    {symbol:'AXP',name:'American Express',sector:'Financials',current_price:380,market_cap:170000000000,total_volume:2500000},
+    {symbol:'MMM',name:'3M',sector:'Materials',current_price:160,market_cap:85000000000,total_volume:3000000},
+    {symbol:'NKE',name:'Nike',sector:'Consumer Discretionary',current_price:60,market_cap:90000000000,total_volume:8000000},
+    {symbol:'MCD',name:'McDonald\'s',sector:'Consumer Discretionary',current_price:310,market_cap:220000000000,total_volume:3000000},
+    {symbol:'SHW',name:'Sherwin-Williams',sector:'Materials',current_price:325,market_cap:82000000000,total_volume:1500000},
+    {symbol:'TRV',name:'Travelers',sector:'Financials',current_price:295,market_cap:58000000000,total_volume:1200000},
+    {symbol:'VZ',name:'Verizon',sector:'Communication Services',current_price:40,market_cap:170000000000,total_volume:18000000},
+    {symbol:'AMGN',name:'Amgen',sector:'Health Care',current_price:380,market_cap:200000000000,total_volume:2500000},
   ];
+
+  // 인덱스별 필터
+  const cfg = INDEX_CONFIG[idx];
+  const indexSymbols = new Set();
+  Object.values(cfg.sectors).forEach(arr => arr.forEach(s => indexSymbols.add(s)));
+  let stocks = allStocks.filter(s => indexSymbols.has(s.symbol));
+  if (stocks.length < 5) stocks = allStocks.slice(0, idx === 'dia' ? 30 : idx === 'qqq' ? 40 : allStocks.length);
+
   return stocks.map(s=>({...s,price_change_1d:(Math.random()-0.45)*6,price_change_5d:(Math.random()-0.45)*10,price_change_1mo:(Math.random()-0.45)*18}));
 }
 
 // ===== LOAD =====
-async function loadData() {
+async function loadData(idx) {
+  idx = idx || currentIndex;
+  const cfg = INDEX_CONFIG[idx];
+  const loadEl = document.getElementById('loading');
+  if (!loadEl) {
+    // 이미 로딩 완료된 상태에서 탭 전환 시 임시 로딩
+    const ct = document.getElementById('treemap');
+    ct.innerHTML = '<div class="loading-overlay" id="loading"><div class="spinner"></div><div class="loading-text">Loading market data...</div></div>';
+  }
   try {
-    const r = await fetch(DATA_URL);
-    if(r.ok) { allData = await r.json(); }
+    const r = await fetch(cfg.dataUrl);
+    if(r.ok) {
+      const data = await r.json();
+      dataCache[idx] = data;
+      if (idx === currentIndex) { allData = data; }
+    }
     else throw new Error('not found');
-  } catch(e) { console.log('Using mock data:', e.message); allData = generateMockData(); }
-  document.getElementById('loading').remove();
+  } catch(e) {
+    console.log(`Using mock data for ${idx}:`, e.message);
+    const mock = generateMockData(idx);
+    dataCache[idx] = mock;
+    if (idx === currentIndex) { allData = mock; }
+  }
+  const ld = document.getElementById('loading');
+  if (ld) ld.remove();
   const n = new Date();
   document.getElementById('dataTimestamp').textContent = `${n.getFullYear()}.${String(n.getMonth()+1).padStart(2,'0')}.${String(n.getDate()).padStart(2,'0')} ${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')} 기준`;
-  renderTreemap(allData);
+  if (idx === currentIndex) renderTreemap(allData);
 }
 
 setupCategoryFilter();
