@@ -1,4 +1,4 @@
-name: Fetch S&P 500 Data
+name: Fetch Market Data
 
 on:
   schedule:
@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch S&P 500 data
+      - name: Fetch S&P 500, QQQ, DIA data
         run: python fetch_sp500_data.py
 
       - name: Commit and push data
@@ -32,5 +32,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/
-          git diff --staged --quiet || git commit -m "📊 Update S&P 500 data $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git diff --staged --quiet || git commit -m "📊 Update market data $(date -u +'%Y-%m-%d %H:%M') UTC"
           git push
