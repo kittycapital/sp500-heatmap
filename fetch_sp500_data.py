@@ -1,6 +1,7 @@
 """
-S&P 500 Heatmap Data Fetcher
-yfinance로 S&P 500 전체 종목 데이터 수집
+S&P 500 / QQQ / DIA Heatmap Data Fetcher (통합 버전)
+yfinance로 S&P 500, Nasdaq 100, Dow 30 종목 데이터 통합 수집
+겹치는 종목은 한 번만 API 호출하여 효율적으로 처리
 GitHub Actions에서 매일 한국시간 06:30 (UTC 21:30) 실행
 """
 
@@ -12,10 +13,11 @@ from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 OUTPUT_DIR = "data"
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "sp500_heatmap.json")
 
+# ============================================================
 # S&P 500 구성종목 (2026-02 기준, Wikipedia 기반)
 # {ticker: (name, sector)}
+# ============================================================
 SP500 = {
     'MMM': ('3M', 'Industrials'),
     'AOS': ('A. O. Smith', 'Industrials'),
@@ -100,7 +102,7 @@ SP500 = {
     'CHRW': ('C.H. Robinson', 'Industrials'),
     'CDNS': ('Cadence Design Systems', 'Information Technology'),
     'CPT': ('Camden Property Trust', 'Real Estate'),
-    'CPB': ('Campbell\'s Company', 'Consumer Staples'),
+    'CPB': ("Campbell's Company", 'Consumer Staples'),
     'COF': ('Capital One', 'Financials'),
     'CAH': ('Cardinal Health', 'Health Care'),
     'CCL': ('Carnival', 'Consumer Discretionary'),
@@ -171,7 +173,7 @@ SP500 = {
     'DG': ('Dollar General', 'Consumer Staples'),
     'DLTR': ('Dollar Tree', 'Consumer Staples'),
     'D': ('Dominion Energy', 'Utilities'),
-    'DPZ': ('Domino\'s', 'Consumer Discretionary'),
+    'DPZ': ("Domino's", 'Consumer Discretionary'),
     'DASH': ('DoorDash', 'Consumer Discretionary'),
     'DOV': ('Dover Corporation', 'Industrials'),
     'DOW': ('Dow Inc.', 'Materials'),
@@ -203,51 +205,50 @@ SP500 = {
     'ES': ('Eversource Energy', 'Utilities'),
     'EXC': ('Exelon', 'Utilities'),
     'EXE': ('Expand Energy', 'Energy'),
-    'EXPE': ('Expedia Group', 'Consumer Discretionary'),
     'EXPD': ('Expeditors International', 'Industrials'),
     'EXR': ('Extra Space Storage', 'Real Estate'),
     'XOM': ('ExxonMobil', 'Energy'),
-    'FFIV': ('F5, Inc.', 'Information Technology'),
-    'FDS': ('FactSet', 'Financials'),
-    'FICO': ('Fair Isaac', 'Information Technology'),
+    'FFIV': ('F5 Networks', 'Information Technology'),
+    'FANG': ('Diamondback Energy', 'Energy'),
     'FAST': ('Fastenal', 'Industrials'),
     'FRT': ('Federal Realty Investment Trust', 'Real Estate'),
     'FDX': ('FedEx', 'Industrials'),
     'FIS': ('Fidelity National Information Services', 'Financials'),
     'FITB': ('Fifth Third Bancorp', 'Financials'),
-    'FSLR': ('First Solar', 'Information Technology'),
+    'FICO': ('Fair Isaac Corporation', 'Information Technology'),
     'FE': ('FirstEnergy', 'Utilities'),
     'FISV': ('Fiserv', 'Financials'),
+    'FI': ('Fiserv', 'Financials'),
     'F': ('Ford Motor Company', 'Consumer Discretionary'),
     'FTNT': ('Fortinet', 'Information Technology'),
     'FTV': ('Fortive', 'Industrials'),
     'FOXA': ('Fox Corporation (Class A)', 'Communication Services'),
     'FOX': ('Fox Corporation (Class B)', 'Communication Services'),
-    'BEN': ('Franklin Resources', 'Financials'),
+    'BEN': ('Franklin Templeton', 'Financials'),
     'FCX': ('Freeport-McMoRan', 'Materials'),
+    'FSLR': ('First Solar', 'Information Technology'),
     'GRMN': ('Garmin', 'Consumer Discretionary'),
     'IT': ('Gartner', 'Information Technology'),
-    'GE': ('GE Aerospace', 'Industrials'),
     'GEHC': ('GE HealthCare', 'Health Care'),
-    'GEV': ('GE Vernova', 'Industrials'),
+    'GE': ('GE Aerospace', 'Industrials'),
     'GEN': ('Gen Digital', 'Information Technology'),
+    'GEV': ('GE Vernova', 'Industrials'),
     'GNRC': ('Generac', 'Industrials'),
     'GD': ('General Dynamics', 'Industrials'),
     'GIS': ('General Mills', 'Consumer Staples'),
     'GM': ('General Motors', 'Consumer Discretionary'),
-    'GPC': ('Genuine Parts Company', 'Consumer Discretionary'),
     'GILD': ('Gilead Sciences', 'Health Care'),
     'GPN': ('Global Payments', 'Financials'),
     'GL': ('Globe Life', 'Financials'),
     'GDDY': ('GoDaddy', 'Information Technology'),
     'GS': ('Goldman Sachs', 'Financials'),
     'HAL': ('Halliburton', 'Energy'),
-    'HIG': ('Hartford Financial', 'Financials'),
     'HAS': ('Hasbro', 'Consumer Discretionary'),
     'HCA': ('HCA Healthcare', 'Health Care'),
     'DOC': ('Healthpeak Properties', 'Real Estate'),
     'HSIC': ('Henry Schein', 'Health Care'),
     'HSY': ('Hershey Company', 'Consumer Staples'),
+    'HES': ('Hess Corporation', 'Energy'),
     'HPE': ('Hewlett Packard Enterprise', 'Information Technology'),
     'HLT': ('Hilton Worldwide', 'Consumer Discretionary'),
     'HOLX': ('Hologic', 'Health Care'),
@@ -257,21 +258,18 @@ SP500 = {
     'HST': ('Host Hotels & Resorts', 'Real Estate'),
     'HWM': ('Howmet Aerospace', 'Industrials'),
     'HPQ': ('HP Inc.', 'Information Technology'),
-    'HUBB': ('Hubbell Incorporated', 'Industrials'),
+    'HUBB': ('Hubbell', 'Industrials'),
     'HUM': ('Humana', 'Health Care'),
-    'HBAN': ('Huntington Bancshares', 'Financials'),
     'HII': ('Huntington Ingalls Industries', 'Industrials'),
+    'HBAN': ('Huntington Bancshares', 'Financials'),
     'IBM': ('IBM', 'Information Technology'),
-    'IEX': ('IDEX Corporation', 'Industrials'),
+    'IEX': ('Idex Corporation', 'Industrials'),
     'IDXX': ('Idexx Laboratories', 'Health Care'),
-    'ITW': ('Illinois Tool Works', 'Industrials'),
+    'IFF': ('International Flavors & Fragrances', 'Materials'),
     'INCY': ('Incyte', 'Health Care'),
     'IR': ('Ingersoll Rand', 'Industrials'),
-    'PODD': ('Insulet Corporation', 'Health Care'),
     'INTC': ('Intel', 'Information Technology'),
-    'IBKR': ('Interactive Brokers', 'Financials'),
     'ICE': ('Intercontinental Exchange', 'Financials'),
-    'IFF': ('International Flavors & Fragrances', 'Materials'),
     'IP': ('International Paper', 'Materials'),
     'INTU': ('Intuit', 'Information Technology'),
     'ISRG': ('Intuitive Surgical', 'Health Care'),
@@ -279,29 +277,29 @@ SP500 = {
     'INVH': ('Invitation Homes', 'Real Estate'),
     'IQV': ('IQVIA', 'Health Care'),
     'IRM': ('Iron Mountain', 'Real Estate'),
-    'JBHT': ('J.B. Hunt', 'Industrials'),
-    'JBL': ('Jabil', 'Information Technology'),
-    'JKHY': ('Jack Henry & Associates', 'Financials'),
+    'ITW': ('Illinois Tool Works', 'Industrials'),
     'J': ('Jacobs Solutions', 'Industrials'),
-    'JNJ': ('Johnson & Johnson', 'Health Care'),
+    'JBHT': ('J.B. Hunt Transport Services', 'Industrials'),
+    'JBL': ('Jabil', 'Information Technology'),
     'JCI': ('Johnson Controls', 'Industrials'),
+    'JNJ': ('Johnson & Johnson', 'Health Care'),
     'JPM': ('JPMorgan Chase', 'Financials'),
-    'KVUE': ('Kenvue', 'Consumer Staples'),
+    'JKHY': ('Jack Henry & Associates', 'Financials'),
     'KDP': ('Keurig Dr Pepper', 'Consumer Staples'),
     'KEY': ('KeyCorp', 'Financials'),
     'KEYS': ('Keysight Technologies', 'Information Technology'),
-    'KMB': ('Kimberly-Clark', 'Consumer Staples'),
+    'KHC': ('Kraft Heinz', 'Consumer Staples'),
     'KIM': ('Kimco Realty', 'Real Estate'),
     'KMI': ('Kinder Morgan', 'Energy'),
     'KKR': ('KKR & Co.', 'Financials'),
     'KLAC': ('KLA Corporation', 'Information Technology'),
-    'KHC': ('Kraft Heinz', 'Consumer Staples'),
+    'KMB': ('Kimberly-Clark', 'Consumer Staples'),
     'KR': ('Kroger', 'Consumer Staples'),
-    'LHX': ('L3Harris', 'Industrials'),
+    'KVUE': ('Kenvue', 'Consumer Staples'),
     'LH': ('Labcorp', 'Health Care'),
     'LRCX': ('Lam Research', 'Information Technology'),
     'LW': ('Lamb Weston', 'Consumer Staples'),
-    'LVS': ('Las Vegas Sands', 'Consumer Discretionary'),
+    'L': ('Loews Corporation', 'Financials'),
     'LDOS': ('Leidos', 'Industrials'),
     'LEN': ('Lennar', 'Consumer Discretionary'),
     'LII': ('Lennox International', 'Industrials'),
@@ -309,74 +307,67 @@ SP500 = {
     'LIN': ('Linde plc', 'Materials'),
     'LYV': ('Live Nation Entertainment', 'Communication Services'),
     'LMT': ('Lockheed Martin', 'Industrials'),
-    'L': ('Loews Corporation', 'Financials'),
     'LOW': ('Lowe\'s', 'Consumer Discretionary'),
-    'LULU': ('Lululemon Athletica', 'Consumer Discretionary'),
+    'LULU': ('Lululemon', 'Consumer Discretionary'),
+    'LVS': ('Las Vegas Sands', 'Consumer Discretionary'),
     'LYB': ('LyondellBasell', 'Materials'),
-    'MTB': ('M&T Bank', 'Financials'),
-    'MPC': ('Marathon Petroleum', 'Energy'),
-    'MAR': ('Marriott International', 'Consumer Discretionary'),
-    'MRSH': ('Marsh McLennan', 'Financials'),
-    'MLM': ('Martin Marietta Materials', 'Materials'),
-    'MAS': ('Masco', 'Industrials'),
-    'MA': ('Mastercard', 'Financials'),
-    'MTCH': ('Match Group', 'Communication Services'),
-    'MKC': ('McCormick & Company', 'Consumer Staples'),
+    'MCK': ('McKesson', 'Health Care'),
     'MCD': ('McDonald\'s', 'Consumer Discretionary'),
-    'MCK': ('McKesson Corporation', 'Health Care'),
     'MDT': ('Medtronic', 'Health Care'),
     'MRK': ('Merck & Co.', 'Health Care'),
     'META': ('Meta Platforms', 'Communication Services'),
     'MET': ('MetLife', 'Financials'),
-    'MTD': ('Mettler Toledo', 'Health Care'),
+    'MTD': ('Mettler-Toledo', 'Health Care'),
     'MGM': ('MGM Resorts', 'Consumer Discretionary'),
     'MCHP': ('Microchip Technology', 'Information Technology'),
     'MU': ('Micron Technology', 'Information Technology'),
     'MSFT': ('Microsoft', 'Information Technology'),
-    'MAA': ('Mid-America Apartment Communities', 'Real Estate'),
+    'MAA': ('Mid-America Apartment', 'Real Estate'),
     'MRNA': ('Moderna', 'Health Care'),
+    'MHK': ('Mohawk Industries', 'Consumer Discretionary'),
     'MOH': ('Molina Healthcare', 'Health Care'),
     'TAP': ('Molson Coors Beverage Company', 'Consumer Staples'),
     'MDLZ': ('Mondelez International', 'Consumer Staples'),
     'MPWR': ('Monolithic Power Systems', 'Information Technology'),
     'MNST': ('Monster Beverage', 'Consumer Staples'),
-    'MCO': ('Moody\'s Corporation', 'Financials'),
+    'MCO': ('Moody\'s', 'Financials'),
     'MS': ('Morgan Stanley', 'Financials'),
     'MOS': ('Mosaic Company', 'Materials'),
     'MSI': ('Motorola Solutions', 'Information Technology'),
     'MSCI': ('MSCI Inc.', 'Financials'),
-    'NDAQ': ('Nasdaq, Inc.', 'Financials'),
-    'NTAP': ('NetApp', 'Information Technology'),
-    'NFLX': ('Netflix', 'Communication Services'),
-    'NEM': ('Newmont', 'Materials'),
-    'NWSA': ('News Corp (Class A)', 'Communication Services'),
-    'NWS': ('News Corp (Class B)', 'Communication Services'),
-    'NEE': ('NextEra Energy', 'Utilities'),
-    'NKE': ('Nike, Inc.', 'Consumer Discretionary'),
-    'NI': ('NiSource', 'Utilities'),
-    'NDSN': ('Nordson Corporation', 'Industrials'),
+    'MRSH': ('Marsh McLennan', 'Financials'),
+    'NDAQ': ('Nasdaq Inc.', 'Financials'),
+    'NDSN': ('Nordson', 'Industrials'),
     'NSC': ('Norfolk Southern', 'Industrials'),
     'NTRS': ('Northern Trust', 'Financials'),
     'NOC': ('Northrop Grumman', 'Industrials'),
-    'NCLH': ('Norwegian Cruise Line Holdings', 'Consumer Discretionary'),
+    'NVDA': ('Nvidia', 'Information Technology'),
     'NRG': ('NRG Energy', 'Utilities'),
     'NUE': ('Nucor', 'Materials'),
-    'NVDA': ('Nvidia', 'Information Technology'),
-    'NVR': ('NVR, Inc.', 'Consumer Discretionary'),
+    'NTAP': ('NetApp', 'Information Technology'),
+    'NFLX': ('Netflix', 'Communication Services'),
+    'NEM': ('Newmont', 'Materials'),
+    'NEE': ('NextEra Energy', 'Utilities'),
+    'NI': ('NiSource', 'Utilities'),
+    'NKE': ('Nike', 'Consumer Discretionary'),
+    'NWSA': ('News Corp (Class A)', 'Communication Services'),
+    'NWS': ('News Corp (Class B)', 'Communication Services'),
+    'NOW': ('ServiceNow', 'Information Technology'),
     'NXPI': ('NXP Semiconductors', 'Information Technology'),
-    'ORLY': ('O\'Reilly Automotive', 'Consumer Discretionary'),
+    'O': ('Realty Income', 'Real Estate'),
+    'ODFL': ('Old Dominion Freight Line', 'Industrials'),
+    'OKE': ('ONEOK', 'Energy'),
+    'ORCL': ('Oracle Corporation', 'Information Technology'),
+    'ORLY': ("O'Reilly Automotive", 'Consumer Discretionary'),
+    'OTIS': ('Otis Worldwide', 'Industrials'),
     'OXY': ('Occidental Petroleum', 'Energy'),
-    'ODFL': ('Old Dominion', 'Industrials'),
     'OMC': ('Omnicom Group', 'Communication Services'),
     'ON': ('ON Semiconductor', 'Information Technology'),
-    'OKE': ('Oneok', 'Energy'),
-    'ORCL': ('Oracle Corporation', 'Information Technology'),
-    'OTIS': ('Otis Worldwide', 'Industrials'),
     'PCAR': ('Paccar', 'Industrials'),
     'PKG': ('Packaging Corporation of America', 'Materials'),
     'PLTR': ('Palantir Technologies', 'Information Technology'),
     'PANW': ('Palo Alto Networks', 'Information Technology'),
-    'PSKY': ('Paramount Skydance Corporation', 'Communication Services'),
+    'PARA': ('Paramount Global', 'Communication Services'),
     'PH': ('Parker Hannifin', 'Industrials'),
     'PAYX': ('Paychex', 'Industrials'),
     'PAYC': ('Paycom', 'Industrials'),
@@ -386,93 +377,81 @@ SP500 = {
     'PFE': ('Pfizer', 'Health Care'),
     'PCG': ('PG&E Corporation', 'Utilities'),
     'PM': ('Philip Morris International', 'Consumer Staples'),
-    'PSX': ('Phillips 66', 'Energy'),
-    'PNW': ('Pinnacle West Capital', 'Utilities'),
-    'PNC': ('PNC Financial Services', 'Financials'),
-    'POOL': ('Pool Corporation', 'Consumer Discretionary'),
-    'PPG': ('PPG Industries', 'Materials'),
-    'PPL': ('PPL Corporation', 'Utilities'),
     'PFG': ('Principal Financial Group', 'Financials'),
     'PG': ('Procter & Gamble', 'Consumer Staples'),
     'PGR': ('Progressive Corporation', 'Financials'),
     'PLD': ('Prologis', 'Real Estate'),
     'PRU': ('Prudential Financial', 'Financials'),
-    'PEG': ('Public Service Enterprise Group', 'Utilities'),
-    'PTC': ('PTC Inc.', 'Information Technology'),
     'PSA': ('Public Storage', 'Real Estate'),
+    'PTC': ('PTC Inc.', 'Information Technology'),
+    'PEG': ('Public Service Enterprise Group', 'Utilities'),
+    'PNW': ('Pinnacle West Capital', 'Utilities'),
+    'PPL': ('PPL Corporation', 'Utilities'),
+    'PPG': ('PPG Industries', 'Materials'),
+    'PSX': ('Phillips 66', 'Energy'),
     'PHM': ('PulteGroup', 'Consumer Discretionary'),
-    'PWR': ('Quanta Services', 'Industrials'),
     'QCOM': ('Qualcomm', 'Information Technology'),
+    'Q': ('Quintiles IMS Holdings', 'Information Technology'),
+    'PWR': ('Quanta Services', 'Industrials'),
     'DGX': ('Quest Diagnostics', 'Health Care'),
-    'Q': ('Qnity Electronics', 'Information Technology'),
-    'RL': ('Ralph Lauren Corporation', 'Consumer Discretionary'),
+    'RL': ('Ralph Lauren', 'Consumer Discretionary'),
     'RJF': ('Raymond James Financial', 'Financials'),
     'RTX': ('RTX Corporation', 'Industrials'),
-    'O': ('Realty Income', 'Real Estate'),
-    'REG': ('Regency Centers', 'Real Estate'),
-    'REGN': ('Regeneron Pharmaceuticals', 'Health Care'),
-    'RF': ('Regions Financial Corporation', 'Financials'),
-    'RSG': ('Republic Services', 'Industrials'),
     'RMD': ('ResMed', 'Health Care'),
-    'RVTY': ('Revvity', 'Health Care'),
-    'HOOD': ('Robinhood Markets', 'Financials'),
+    'REG': ('Regency Centers', 'Real Estate'),
+    'REGN': ('Regeneron', 'Health Care'),
+    'RF': ('Regions Financial', 'Financials'),
+    'RSG': ('Republic Services', 'Industrials'),
+    'RCL': ('Royal Caribbean', 'Consumer Discretionary'),
+    'RIVN': ('Rivian Automotive', 'Consumer Discretionary'),
     'ROK': ('Rockwell Automation', 'Industrials'),
-    'ROL': ('Rollins, Inc.', 'Industrials'),
-    'ROP': ('Roper Technologies', 'Information Technology'),
+    'ROL': ('Rollins', 'Industrials'),
+    'ROP': ('Roper Technologies', 'Industrials'),
     'ROST': ('Ross Stores', 'Consumer Discretionary'),
-    'RCL': ('Royal Caribbean Group', 'Consumer Discretionary'),
-    'SPGI': ('S&P Global', 'Financials'),
-    'CRM': ('Salesforce', 'Information Technology'),
-    'SNDK': ('Sandisk', 'Information Technology'),
+    'RHI': ('Robert Half International', 'Industrials'),
     'SBAC': ('SBA Communications', 'Real Estate'),
     'SLB': ('Schlumberger', 'Energy'),
     'STX': ('Seagate Technology', 'Information Technology'),
-    'SRE': ('Sempra', 'Utilities'),
-    'NOW': ('ServiceNow', 'Information Technology'),
+    'SRE': ('Sempra Energy', 'Utilities'),
     'SHW': ('Sherwin-Williams', 'Materials'),
     'SPG': ('Simon Property Group', 'Real Estate'),
-    'SWKS': ('Skyworks Solutions', 'Information Technology'),
+    'SMCI': ('Super Micro Computer', 'Information Technology'),
     'SJM': ('J.M. Smucker Company', 'Consumer Staples'),
-    'SW': ('Smurfit Westrock', 'Materials'),
     'SNA': ('Snap-on', 'Industrials'),
-    'SOLV': ('Solventum', 'Health Care'),
+    'SNPS': ('Synopsys', 'Information Technology'),
     'SO': ('Southern Company', 'Utilities'),
-    'LUV': ('Southwest Airlines', 'Industrials'),
+    'SW': ('Smurfit Westrock', 'Materials'),
     'SWK': ('Stanley Black & Decker', 'Industrials'),
     'SBUX': ('Starbucks', 'Consumer Discretionary'),
-    'STT': ('State Street Corporation', 'Financials'),
     'STLD': ('Steel Dynamics', 'Materials'),
     'STE': ('Steris', 'Health Care'),
-    'SYK': ('Stryker Corporation', 'Health Care'),
-    'SMCI': ('Supermicro', 'Information Technology'),
+    'STT': ('State Street', 'Financials'),
+    'SOLV': ('Solventum', 'Health Care'),
+    'SYK': ('Stryker', 'Health Care'),
     'SYF': ('Synchrony Financial', 'Financials'),
-    'SNPS': ('Synopsys', 'Information Technology'),
+    'SNDK': ('SanDisk', 'Information Technology'),
     'SYY': ('Sysco', 'Consumer Staples'),
     'TMUS': ('T-Mobile US', 'Communication Services'),
-    'TROW': ('T. Rowe Price', 'Financials'),
-    'TTWO': ('Take-Two Interactive', 'Communication Services'),
-    'TPR': ('Tapestry, Inc.', 'Consumer Discretionary'),
     'TRGP': ('Targa Resources', 'Energy'),
-    'TGT': ('Target Corporation', 'Consumer Staples'),
-    'TEL': ('TE Connectivity', 'Information Technology'),
+    'TGT': ('Target', 'Consumer Staples'),
     'TDY': ('Teledyne Technologies', 'Information Technology'),
+    'TFX': ('Teleflex', 'Health Care'),
+    'TEL': ('TE Connectivity', 'Information Technology'),
     'TER': ('Teradyne', 'Information Technology'),
     'TSLA': ('Tesla, Inc.', 'Consumer Discretionary'),
     'TXN': ('Texas Instruments', 'Information Technology'),
-    'TPL': ('Texas Pacific Land Corporation', 'Energy'),
+    'TPL': ('Texas Pacific Land', 'Energy'),
     'TXT': ('Textron', 'Industrials'),
     'TMO': ('Thermo Fisher Scientific', 'Health Care'),
     'TJX': ('TJX Companies', 'Consumer Discretionary'),
-    'TKO': ('TKO Group Holdings', 'Communication Services'),
-    'TTD': ('Trade Desk', 'Communication Services'),
-    'TSCO': ('Tractor Supply', 'Consumer Discretionary'),
+    'TSCO': ('Tractor Supply Company', 'Consumer Discretionary'),
     'TT': ('Trane Technologies', 'Industrials'),
     'TDG': ('TransDigm Group', 'Industrials'),
     'TRV': ('Travelers Companies', 'Financials'),
-    'TRMB': ('Trimble Inc.', 'Information Technology'),
+    'TRMB': ('Trimble', 'Information Technology'),
     'TFC': ('Truist Financial', 'Financials'),
-    'TYL': ('Tyler Technologies', 'Information Technology'),
     'TSN': ('Tyson Foods', 'Consumer Staples'),
+    'TYL': ('Tyler Technologies', 'Information Technology'),
     'USB': ('U.S. Bancorp', 'Financials'),
     'UBER': ('Uber', 'Industrials'),
     'UDR': ('UDR, Inc.', 'Real Estate'),
@@ -520,7 +499,102 @@ SP500 = {
     'ZBRA': ('Zebra Technologies', 'Information Technology'),
     'ZBH': ('Zimmer Biomet', 'Health Care'),
     'ZTS': ('Zoetis', 'Health Care'),
+    'CRM': ('Salesforce', 'Information Technology'),
+    'HIG': ('Hartford Financial Services', 'Financials'),
+    'HOOD': ('Robinhood Markets', 'Financials'),
+    'IBKR': ('Interactive Brokers', 'Financials'),
+    'LHX': ('L3Harris Technologies', 'Industrials'),
+    'MA': ('Mastercard', 'Financials'),
+    'MAR': ('Marriott International', 'Consumer Discretionary'),
+    'MAS': ('Masco Corporation', 'Industrials'),
+    'MKC': ('McCormick & Company', 'Consumer Staples'),
+    'MRVL': ('Marvell Technology', 'Information Technology'),
+    'MTB': ('M&T Bank', 'Financials'),
+    'NCLH': ('Norwegian Cruise Line Holdings', 'Consumer Discretionary'),
+    'NVR': ('NVR Inc.', 'Consumer Discretionary'),
+    'PNC': ('PNC Financial', 'Financials'),
+    'PODD': ('Insulet Corporation', 'Health Care'),
+    'POOL': ('Pool Corporation', 'Consumer Discretionary'),
+    'PSKY': ('Paramount Global', 'Communication Services'),
+    'SLB': ('Schlumberger', 'Energy'),
+    'SPGI': ('S&P Global', 'Financials'),
+    'SWKS': ('Skyworks Solutions', 'Information Technology'),
+    'TKO': ('TKO Group Holdings', 'Communication Services'),
+    'TMO': ('Thermo Fisher Scientific', 'Health Care'),
+    'TPR': ('Tapestry', 'Consumer Discretionary'),
+    'TROW': ('T. Rowe Price', 'Financials'),
+    'TTD': ('The Trade Desk', 'Information Technology'),
+    'TTWO': ('Take-Two Interactive', 'Communication Services'),
+    'EXPE': ('Expedia Group', 'Consumer Discretionary'),
+    'FDS': ('FactSet', 'Financials'),
+    'GPC': ('Genuine Parts Company', 'Consumer Discretionary'),
+    'HES': ('Hess Corporation', 'Energy'),
+    'LUV': ('Southwest Airlines', 'Industrials'),
+    'MHK': ('Mohawk Industries', 'Consumer Discretionary'),
+    'MLM': ('Martin Marietta Materials', 'Materials'),
+    'MPC': ('Marathon Petroleum', 'Energy'),
+    'NCLH': ('Norwegian Cruise Line Holdings', 'Consumer Discretionary'),
 }
+
+# ============================================================
+# Nasdaq 100 구성종목 (2026-02 기준)
+# S&P 500에 없는 종목만 추가 정의, 나머지는 SP500에서 참조
+# ============================================================
+NASDAQ100_EXTRA = {
+    'ASML': ('ASML Holding', 'Information Technology'),
+    'SHOP': ('Shopify', 'Information Technology'),
+    'PDD': ('PDD Holdings', 'Consumer Discretionary'),
+    'ARM': ('Arm Holdings', 'Information Technology'),
+    'FER': ('Ferrovial SE', 'Industrials'),
+    'MELI': ('MercadoLibre', 'Consumer Discretionary'),
+    'MSTR': ('MicroStrategy', 'Information Technology'),
+    'CCEP': ('Coca-Cola Europacific Partners', 'Consumer Staples'),
+    'ALNY': ('Alnylam Pharmaceuticals', 'Health Care'),
+    'INSM': ('Insmed Incorporated', 'Health Care'),
+    'TRI': ('Thomson Reuters', 'Industrials'),
+    'TEAM': ('Atlassian', 'Information Technology'),
+    'ZS': ('Zscaler', 'Information Technology'),
+}
+
+# Nasdaq 100 종목 목록 (101개 심볼 - GOOGL/GOOG 별도)
+NASDAQ100_TICKERS = [
+    'NVDA', 'AAPL', 'MSFT', 'AMZN', 'GOOGL', 'GOOG', 'META', 'AVGO', 'TSLA', 'WMT',
+    'ASML', 'MU', 'COST', 'NFLX', 'AMD', 'PLTR', 'CSCO', 'LRCX', 'AMAT', 'TMUS',
+    'LIN', 'INTC', 'PEP', 'AMGN', 'TXN', 'KLAC', 'GILD', 'ISRG', 'ADI', 'SHOP',
+    'QCOM', 'HON', 'PDD', 'APP', 'BKNG', 'ARM', 'PANW', 'VRTX', 'CMCSA', 'SBUX',
+    'INTU', 'ADBE', 'CEG', 'CRWD', 'MELI', 'WDC', 'MAR', 'STX', 'ADP', 'SNPS',
+    'DASH', 'REGN', 'CDNS', 'MNST', 'ORLY', 'CTAS', 'MDLZ', 'CSX', 'ABNB', 'WBD',
+    'AEP', 'MRVL', 'PCAR', 'ROST', 'BKR', 'FTNT', 'NXPI', 'MPWR', 'FER', 'FAST',
+    'IDXX', 'EA', 'FANG', 'ADSK', 'XEL', 'EXC', 'CCEP', 'ALNY', 'MCHP', 'DDOG',
+    'MSTR', 'KDP', 'ODFL', 'PYPL', 'TRI', 'GEHC', 'WDAY', 'TTWO', 'CPRT', 'ROP',
+    'AXON', 'PAYX', 'INSM', 'CTSH', 'CHTR', 'KHC', 'DXCM', 'ZS', 'VRSK', 'TEAM',
+    'CSGP',
+]
+
+# ============================================================
+# Dow Jones 30 구성종목 (2026-02 기준)
+# 모두 S&P 500에 포함됨
+# ============================================================
+DJIA_TICKERS = [
+    'AAPL', 'AMGN', 'AMZN', 'AXP', 'BA', 'CAT', 'CRM', 'CSCO', 'CVX', 'DIS',
+    'GS', 'HD', 'HON', 'IBM', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK',
+    'MSFT', 'NKE', 'NVDA', 'PG', 'SHW', 'TRV', 'UNH', 'V', 'VZ', 'WMT',
+]
+
+
+def get_all_tickers_info():
+    """모든 인덱스의 종목 정보를 통합한 딕셔너리 반환"""
+    combined = dict(SP500)
+    combined.update(NASDAQ100_EXTRA)
+    return combined
+
+
+def get_all_unique_tickers():
+    """세 인덱스의 모든 고유 티커 목록 반환"""
+    all_tickers = set(SP500.keys())
+    all_tickers.update(NASDAQ100_TICKERS)
+    all_tickers.update(DJIA_TICKERS)
+    return sorted(all_tickers)
 
 
 def fetch_batch(tickers, retries=2):
@@ -612,31 +686,15 @@ def process_stock(ticker, name, sector, price_data, market_cap):
         return None
 
 
-def main():
-    print(f"🚀 Fetching S&P 500 data at {datetime.now(timezone.utc).isoformat()}")
-
-    tickers = list(SP500.keys())
-    tickers_str = " ".join(tickers)
-
-    # 1) 가격 데이터 배치 다운로드
-    print(f"  📊 Downloading price data for {len(tickers)} stocks...")
-    raw_data = fetch_batch(tickers_str)
-    if raw_data is None:
-        print("  ❌ Failed to download price data")
-        return
-
-    # 2) 시가총액 병렬 조회
-    print("  💰 Fetching market caps...")
-    market_caps = get_market_caps(tickers)
-
-    # 3) 개별 종목 데이터 가공
-    print("  🔄 Processing stocks...")
+def build_index_data(index_tickers, all_info, raw_data, market_caps, all_tickers_list):
+    """특정 인덱스의 데이터를 빌드"""
     processed = []
-
-    for ticker in tickers:
-        name, sector = SP500[ticker]
+    for ticker in index_tickers:
+        if ticker not in all_info:
+            continue
+        name, sector = all_info[ticker]
         try:
-            if len(tickers) > 1:
+            if len(all_tickers_list) > 1:
                 price_data = raw_data[ticker]
             else:
                 price_data = raw_data
@@ -646,29 +704,84 @@ def main():
                 processed.append(result)
         except Exception as e:
             print(f"  ⚠️ Skipping {ticker}: {e}")
-
     # 시총 순 정렬
     processed.sort(key=lambda x: x["market_cap"], reverse=True)
+    return processed
 
-    print(f"  ✅ {len(processed)} stocks processed")
 
-    # 저장
+def save_data(data, filename, label):
+    """데이터를 JSON으로 저장"""
+    filepath = os.path.join(OUTPUT_DIR, filename)
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False)
+    print(f"  💾 {label}: {len(data)}개 종목 → {filepath}")
+    return filepath
+
+
+def main():
+    print(f"🚀 Fetching market data at {datetime.now(timezone.utc).isoformat()}")
+
+    all_info = get_all_tickers_info()
+    all_tickers = get_all_unique_tickers()
+
+    print(f"  📊 총 고유 티커: {len(all_tickers)}개")
+    print(f"     S&P 500: {len(SP500)}개")
+    print(f"     Nasdaq 100: {len(NASDAQ100_TICKERS)}개")
+    print(f"     Dow 30: {len(DJIA_TICKERS)}개")
+
+    # 1) 가격 데이터 통합 배치 다운로드
+    tickers_str = " ".join(all_tickers)
+    print(f"  📊 Downloading price data for {len(all_tickers)} unique stocks...")
+    raw_data = fetch_batch(tickers_str)
+    if raw_data is None:
+        print("  ❌ Failed to download price data")
+        return
+
+    # 2) 시가총액 통합 병렬 조회
+    print("  💰 Fetching market caps...")
+    market_caps = get_market_caps(all_tickers)
+
+    # 3) 인덱스별 데이터 가공
+    print("  🔄 Processing S&P 500...")
+    sp500_data = build_index_data(list(SP500.keys()), all_info, raw_data, market_caps, all_tickers)
+
+    print("  🔄 Processing Nasdaq 100 (QQQ)...")
+    qqq_data = build_index_data(NASDAQ100_TICKERS, all_info, raw_data, market_caps, all_tickers)
+
+    print("  🔄 Processing Dow 30 (DIA)...")
+    dia_data = build_index_data(DJIA_TICKERS, all_info, raw_data, market_caps, all_tickers)
+
+    # 4) 저장
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    save_data(sp500_data, "sp500_heatmap.json", "S&P 500")
+    save_data(qqq_data, "qqq_heatmap.json", "QQQ (Nasdaq 100)")
+    save_data(dia_data, "dia_heatmap.json", "DIA (Dow 30)")
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(processed, f, ensure_ascii=False)
-
+    # 통합 메타데이터
     meta = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "total_stocks": len(processed),
-        "stocks": processed,
+        "indexes": {
+            "sp500": {"total_stocks": len(sp500_data), "top5": [s["symbol"] for s in sp500_data[:5]]},
+            "qqq": {"total_stocks": len(qqq_data), "top5": [s["symbol"] for s in qqq_data[:5]]},
+            "dia": {"total_stocks": len(dia_data), "top5": [s["symbol"] for s in dia_data[:5]]},
+        }
+    }
+    meta_path = os.path.join(OUTPUT_DIR, "heatmap_meta.json")
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+    print(f"  📋 Meta saved to {meta_path}")
+
+    # 기존 호환성: sp500_heatmap_meta.json 도 유지
+    sp500_meta = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "total_stocks": len(sp500_data),
+        "stocks": sp500_data,
     }
     with open(os.path.join(OUTPUT_DIR, "sp500_heatmap_meta.json"), "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=2)
+        json.dump(sp500_meta, f, ensure_ascii=False, indent=2)
 
-    print(f"  💾 Saved to {OUTPUT_FILE}")
-    top5 = [s["symbol"] for s in processed[:5]]
-    print(f"  📊 Top 5 by market cap: {', '.join(top5)}")
+    print(f"\n  ✅ 완료!")
+    print(f"     S&P 500: {len(sp500_data)}개 | QQQ: {len(qqq_data)}개 | DIA: {len(dia_data)}개")
 
 
 if __name__ == "__main__":
