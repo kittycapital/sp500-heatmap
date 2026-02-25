@@ -651,7 +651,12 @@ function showToast(msg) { const t=document.getElementById('toast'); t.textConten
 // ===== RENDER =====
 function renderTreemap(data) {
   const ct = document.getElementById('treemap');
-  const cw = ct.clientWidth, ch = currentIndex === 'dia' ? 500 : 650;
+  const cw = ct.clientWidth;
+  let ch;
+  const isMobile = window.innerWidth <= 480;
+  const isTablet = window.innerWidth <= 768 && !isMobile;
+  if (currentIndex === 'dia') { ch = isMobile ? 650 : isTablet ? 550 : 500; }
+  else { ch = isMobile ? 920 : isTablet ? 780 : 650; }
   ct.style.height = ch+'px';
   let f = [...data];
   const cfg = INDEX_CONFIG[currentIndex];
@@ -866,7 +871,14 @@ async function loadData(idx) {
   const n = new Date();
   document.getElementById('dataTimestamp').textContent = `${n.getFullYear()}.${String(n.getMonth()+1).padStart(2,'0')}.${String(n.getDate()).padStart(2,'0')} ${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')} 기준`;
   if (idx === currentIndex) renderTreemap(allData);
+  if(typeof sendHeight==='function') setTimeout(sendHeight,200);
 }
+
+/* iframe resize */
+var _lastH=0,_ht,_frameId='hvHeatmap';
+function sendHeight(){clearTimeout(_ht);_ht=setTimeout(function(){var h=document.body.scrollHeight;if(Math.abs(h-_lastH)>5){_lastH=h;try{window.parent.postMessage({type:'resize',height:h,id:_frameId},'*');window.parent.postMessage({height:h,id:_frameId},'*');}catch(e){}}},150);}
+window.addEventListener('resize',sendHeight);window.addEventListener('load',function(){sendHeight();setTimeout(sendHeight,500);setTimeout(sendHeight,1500);});
+new MutationObserver(sendHeight).observe(document.body,{childList:true,subtree:true});setInterval(sendHeight,2000);
 
 setupCategoryFilter();
 loadData();
