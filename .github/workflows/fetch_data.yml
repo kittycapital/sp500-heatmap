@@ -3,7 +3,7 @@ name: Fetch Market Data
 on:
   schedule:
     # 한국시간 06:30 = UTC 21:30
-    - cron: '30 21 * * 1-5'  # 월~금만 (주말은 주식시장 휴장)
+    - cron: '0 22 * * 1-5'  # 월~금만 (주말은 주식시장 휴장)
   workflow_dispatch:  # 수동 실행
 
 jobs:
