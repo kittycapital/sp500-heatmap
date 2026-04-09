@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-04-08T22:35:51.696755+00:00",
+  "updated_at": "2026-04-09T22:37:45.231769+00:00",
   "indexes": {
     "sp500": {
       "total_stocks": 506,
       "top5": [
         "NVDA",
         "GOOGL",
-        "GOOG",
         "AAPL",
+        "GOOG",
         "MSFT"
       ]
     },
@@ -16,8 +16,8 @@
       "top5": [
         "NVDA",
         "GOOGL",
-        "GOOG",
         "AAPL",
+        "GOOG",
         "MSFT"
       ]
     },
@@ -28,7 +28,7 @@
         "AAPL",
         "MSFT",
         "AMZN",
-        "WMT"
+        "JPM"
       ]
     }
   }
