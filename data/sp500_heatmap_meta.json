@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-22T22:23:34.523757+00:00",
+  "updated_at": "2026-05-25T22:24:16.356881+00:00",
   "total_stocks": 506,
   "stocks": [
     {
@@ -11,7 +11,7 @@
       "price_change_1d": -1.9,
       "price_change_5d": -4.43,
       "price_change_1mo": 6.34,
-      "total_volume": 166941160
+      "total_volume": 168346300
     },
     {
       "symbol": "GOOGL",
@@ -22,7 +22,7 @@
       "price_change_1d": -1.21,
       "price_change_5d": -3.48,
       "price_change_1mo": 12.86,
-      "total_volume": 19134802
+      "total_volume": 20401900
     },
     {
       "symbol": "GOOG",
@@ -33,7 +33,7 @@
       "price_change_1d": -1.07,
       "price_change_5d": -3.54,
       "price_change_1mo": 12.33,
-      "total_volume": 13118344
+      "total_volume": 13337400
     },
     {
       "symbol": "AAPL",
@@ -44,7 +44,7 @@
       "price_change_1d": 1.26,
       "price_change_5d": 2.86,
       "price_change_1mo": 13.15,
-      "total_volume": 43605063
+      "total_volume": 43627900
     },
     {
       "symbol": "MSFT",
@@ -55,7 +55,7 @@
       "price_change_1d": -0.12,
       "price_change_5d": -0.58,
       "price_change_1mo": -3.11,
-      "total_volume": 21911688
+      "total_volume": 22341900
     },
     {
       "symbol": "AMZN",
@@ -66,7 +66,7 @@
       "price_change_1d": -0.8,
       "price_change_5d": 0.83,
       "price_change_1mo": 4.29,
-      "total_volume": 26386815
+      "total_volume": 27470500
     },
     {
       "symbol": "AVGO",
@@ -77,7 +77,7 @@
       "price_change_1d": -0.1,
       "price_change_5d": -2.6,
       "price_change_1mo": -2.01,
-      "total_volume": 14017536
+      "total_volume": 14062100
     },
     {
       "symbol": "TSLA",
@@ -88,7 +88,7 @@
       "price_change_1d": 1.95,
       "price_change_5d": 0.89,
       "price_change_1mo": 9.94,
-      "total_volume": 45068466
+      "total_volume": 45944100
     },
     {
       "symbol": "META",
@@ -99,7 +99,7 @@
       "price_change_1d": 0.47,
       "price_change_5d": -0.65,
       "price_change_1mo": -9.55,
-      "total_volume": 11103030
+      "total_volume": 11671600
     },
     {
       "symbol": "BRK-B",
@@ -110,7 +110,7 @@
       "price_change_1d": 1.33,
       "price_change_5d": 0.76,
       "price_change_1mo": 4.51,
-      "total_volume": 4304072
+      "total_volume": 4338200
     },
     {
       "symbol": "LLY",
@@ -121,7 +121,7 @@
       "price_change_1d": 2.24,
       "price_change_5d": 5.98,
       "price_change_1mo": 15.77,
-      "total_volume": 2749877
+      "total_volume": 3470600
     },
     {
       "symbol": "MU",
@@ -132,7 +132,7 @@
       "price_change_1d": -1.46,
       "price_change_5d": 3.63,
       "price_change_1mo": 54.06,
-      "total_volume": 35452282
+      "total_volume": 35775900
     },
     {
       "symbol": "JPM",
@@ -143,7 +143,7 @@
       "price_change_1d": 1.12,
       "price_change_5d": 2.88,
       "price_change_1mo": -2.12,
-      "total_volume": 4389236
+      "total_volume": 5973900
     },
     {
       "symbol": "AMD",
@@ -154,18 +154,7 @@
       "price_change_1d": 3.99,
       "price_change_5d": 10.24,
       "price_change_1mo": 54.06,
-      "total_volume": 34611133
-    },
-    {
-      "symbol": "V",
-      "name": "Visa Inc.",
-      "sector": "Financials",
-      "current_price": 328.88,
-      "market_cap": 625445510229.8584,
-      "price_change_1d": -0.68,
-      "price_change_5d": 0.96,
-      "price_change_1mo": 5.87,
-      "total_volume": 7461064
+      "total_volume": 34661300
     },
     {
       "symbol": "INTC",
@@ -176,7 +165,7 @@
       "price_change_1d": 1.13,
       "price_change_5d": 10.18,
       "price_change_1mo": 83.61,
-      "total_volume": 81852556
+      "total_volume": 82206800
     },
     {
       "symbol": "JNJ",
@@ -187,7 +176,7 @@
       "price_change_1d": 1.13,
       "price_change_5d": 3.37,
       "price_change_1mo": 3.64,
-      "total_volume": 5460721
+      "total_volume": 5462300
     },
     {
       "symbol": "ORCL",
@@ -198,7 +187,7 @@
       "price_change_1d": 1.22,
       "price_change_5d": -0.45,
       "price_change_1mo": 2.44,
-      "total_volume": 9467888
+      "total_volume": 10844900
     },
     {
       "symbol": "CSCO",
@@ -209,7 +198,7 @@
       "price_change_1d": 1.87,
       "price_change_5d": 1.86,
       "price_change_1mo": 34.09,
-      "total_volume": 21670360
+      "total_volume": 22217500
     },
     {
       "symbol": "COST",
@@ -220,7 +209,7 @@
       "price_change_1d": -2.11,
       "price_change_5d": -1.97,
       "price_change_1mo": 2.59,
-      "total_volume": 1998521
+      "total_volume": 2048300
     },
     {
       "symbol": "MA",
@@ -231,7 +220,7 @@
       "price_change_1d": -0.22,
       "price_change_5d": 0.88,
       "price_change_1mo": -2.28,
-      "total_volume": 1958814
+      "total_volume": 1959300
     },
     {
       "symbol": "CAT",
@@ -242,7 +231,7 @@
       "price_change_1d": 1.61,
       "price_change_5d": -0.95,
       "price_change_1mo": 8.78,
-      "total_volume": 1987194
+      "total_volume": 1987600
     },
     {
       "symbol": "LRCX",
@@ -253,7 +242,7 @@
       "price_change_1d": 1.03,
       "price_change_5d": 7.25,
       "price_change_1mo": 14.99,
-      "total_volume": 7840843
+      "total_volume": 7854700
     },
     {
       "symbol": "CVX",
@@ -264,7 +253,7 @@
       "price_change_1d": 0.22,
       "price_change_5d": 1.09,
       "price_change_1mo": 3.68,
-      "total_volume": 5353518
+      "total_volume": 7209600
     },
     {
       "symbol": "ABBV",
@@ -275,7 +264,7 @@
       "price_change_1d": 0.56,
       "price_change_5d": 2.52,
       "price_change_1mo": 7.58,
-      "total_volume": 3974116
+      "total_volume": 5406100
     },
     {
       "symbol": "NFLX",
@@ -286,7 +275,7 @@
       "price_change_1d": -0.78,
       "price_change_5d": 1.82,
       "price_change_1mo": -4.98,
-      "total_volume": 23709091
+      "total_volume": 23790900
     },
     {
       "symbol": "BAC",
@@ -297,7 +286,7 @@
       "price_change_1d": 0.6,
       "price_change_5d": 4.08,
       "price_change_1mo": -2.48,
-      "total_volume": 20210946
+      "total_volume": 26666900
     },
     {
       "symbol": "UNH",
@@ -308,7 +297,7 @@
       "price_change_1d": 1.57,
       "price_change_5d": -1.37,
       "price_change_1mo": 9.89,
-      "total_volume": 5413328
+      "total_volume": 5598600
     },
     {
       "symbol": "KO",
@@ -319,18 +308,18 @@
       "price_change_1d": 0.38,
       "price_change_5d": 0.82,
       "price_change_1mo": 9.18,
-      "total_volume": 8065809
+      "total_volume": 8240200
     },
     {
       "symbol": "AMAT",
       "name": "Applied Materials",
       "sector": "Information Technology",
       "current_price": 432.16,
-      "market_cap": 342966443029.0061,
+      "market_cap": 343117510176.3663,
       "price_change_1d": 1.12,
       "price_change_5d": -0.9,
       "price_change_1mo": 7.24,
-      "total_volume": 4797775
+      "total_volume": 4889300
     },
     {
       "symbol": "PG",
@@ -341,7 +330,7 @@
       "price_change_1d": 0.73,
       "price_change_5d": 2.03,
       "price_change_1mo": 1.87,
-      "total_volume": 4615776
+      "total_volume": 4616700
     },
     {
       "symbol": "PLTR",
@@ -352,7 +341,7 @@
       "price_change_1d": -0.39,
       "price_change_5d": 2.16,
       "price_change_1mo": -10.31,
-      "total_volume": 27261935
+      "total_volume": 27484300
     },
     {
       "symbol": "MS",
@@ -363,7 +352,7 @@
       "price_change_1d": 0.26,
       "price_change_5d": 4.43,
       "price_change_1mo": 5.79,
-      "total_volume": 2980952
+      "total_volume": 3734200
     },
     {
       "symbol": "GE",
@@ -374,7 +363,7 @@
       "price_change_1d": 0.36,
       "price_change_5d": 7.57,
       "price_change_1mo": 9.61,
-      "total_volume": 2735109
+      "total_volume": 3502100
     },
     {
       "symbol": "HD",
@@ -385,7 +374,7 @@
       "price_change_1d": -0.23,
       "price_change_5d": 5.23,
       "price_change_1mo": -7.78,
-      "total_volume": 2959468
+      "total_volume": 2963800
     },
     {
       "symbol": "MRK",
@@ -396,7 +385,7 @@
       "price_change_1d": 5.64,
       "price_change_5d": 9.9,
       "price_change_1mo": 8.43,
-      "total_volume": 12239197
+      "total_volume": 14749200
     },
     {
       "symbol": "PM",
@@ -407,7 +396,7 @@
       "price_change_1d": 0.28,
       "price_change_5d": -0.33,
       "price_change_1mo": 15.27,
-      "total_volume": 2385097
+      "total_volume": 2385200
     },
     {
       "symbol": "GS",
@@ -418,7 +407,7 @@
       "price_change_1d": 0.87,
       "price_change_5d": 5.09,
       "price_change_1mo": 6.62,
-      "total_volume": 1922710
+      "total_volume": 1923500
     },
     {
       "symbol": "TXN",
@@ -429,7 +418,7 @@
       "price_change_1d": 3.63,
       "price_change_5d": 2.14,
       "price_change_1mo": 31.51,
-      "total_volume": 6955684
+      "total_volume": 7129100
     },
     {
       "symbol": "GEV",
@@ -440,7 +429,7 @@
       "price_change_1d": -0.49,
       "price_change_5d": -1.0,
       "price_change_1mo": -7.88,
-      "total_volume": 1471350
+      "total_volume": 1472300
     },
     {
       "symbol": "QCOM",
@@ -451,7 +440,7 @@
       "price_change_1d": 11.6,
       "price_change_5d": 18.2,
       "price_change_1mo": 75.03,
-      "total_volume": 29938766
+      "total_volume": 30332300
     },
     {
       "symbol": "KLAC",
@@ -462,7 +451,7 @@
       "price_change_1d": 2.51,
       "price_change_5d": 4.79,
       "price_change_1mo": 4.34,
-      "total_volume": 721890
+      "total_volume": 723100
     },
     {
       "symbol": "LIN",
@@ -473,7 +462,7 @@
       "price_change_1d": 0.6,
       "price_change_5d": 2.27,
       "price_change_1mo": 4.64,
-      "total_volume": 1320582
+      "total_volume": 1454000
     },
     {
       "symbol": "IBM",
@@ -484,7 +473,7 @@
       "price_change_1d": 0.34,
       "price_change_5d": 15.75,
       "price_change_1mo": 1.53,
-      "total_volume": 17770449
+      "total_volume": 19025900
     },
     {
       "symbol": "RTX",
@@ -492,10 +481,10 @@
       "sector": "Industrials",
       "current_price": 177.01,
       "market_cap": 238376426192.727,
-      "price_change_1d": 0.59,
-      "price_change_5d": 3.41,
-      "price_change_1mo": -2.16,
-      "total_volume": 4075754
+      "price_change_1d": 1.0,
+      "price_change_5d": 3.84,
+      "price_change_1mo": -1.75,
+      "total_volume": 4315400
     },
     {
       "symbol": "SNDK",
@@ -506,7 +495,7 @@
       "price_change_1d": -4.12,
       "price_change_5d": 5.05,
       "price_change_1mo": 51.03,
-      "total_volume": 9524317
+      "total_volume": 9593600
     },
     {
       "symbol": "C",
@@ -517,7 +506,7 @@
       "price_change_1d": -0.1,
       "price_change_5d": 1.35,
       "price_change_1mo": -3.12,
-      "total_volume": 4811038
+      "total_volume": 6331000
     },
     {
       "symbol": "AXP",
@@ -528,7 +517,7 @@
       "price_change_1d": 0.67,
       "price_change_5d": -0.54,
       "price_change_1mo": -6.34,
-      "total_volume": 1826328
+      "total_volume": 2209200
     },
     {
       "symbol": "PANW",
@@ -539,7 +528,7 @@
       "price_change_1d": 3.03,
       "price_change_5d": 7.31,
       "price_change_1mo": 43.81,
-      "total_volume": 6624381
+      "total_volume": 6626100
     },
     {
       "symbol": "TMUS",
@@ -550,7 +539,7 @@
       "price_change_1d": 0.3,
       "price_change_5d": 3.37,
       "price_change_1mo": 1.35,
-      "total_volume": 3260279
+      "total_volume": 3973800
     },
     {
       "symbol": "PEP",
@@ -561,7 +550,7 @@
       "price_change_1d": 1.16,
       "price_change_5d": 0.97,
       "price_change_1mo": -2.09,
-      "total_volume": 6289900
+      "total_volume": 7774400
     },
     {
       "symbol": "MCD",
@@ -572,7 +561,7 @@
       "price_change_1d": -0.67,
       "price_change_5d": 2.13,
       "price_change_1mo": -5.93,
-      "total_volume": 2121433
+      "total_volume": 3056200
     },
     {
       "symbol": "ANET",
@@ -583,7 +572,7 @@
       "price_change_1d": 3.66,
       "price_change_5d": 8.49,
       "price_change_1mo": -13.33,
-      "total_volume": 9302725
+      "total_volume": 10554600
     },
     {
       "symbol": "ADI",
@@ -594,7 +583,7 @@
       "price_change_1d": 3.35,
       "price_change_5d": -4.89,
       "price_change_1mo": 4.1,
-      "total_volume": 4887698
+      "total_volume": 6107800
     },
     {
       "symbol": "DELL",
@@ -605,7 +594,7 @@
       "price_change_1d": 16.77,
       "price_change_5d": 21.98,
       "price_change_1mo": 37.52,
-      "total_volume": 15237483
+      "total_volume": 15256900
     },
     {
       "symbol": "NEE",
@@ -616,18 +605,18 @@
       "price_change_1d": -1.27,
       "price_change_5d": -5.15,
       "price_change_1mo": -1.61,
-      "total_volume": 8986898
+      "total_volume": 10755400
     },
     {
       "symbol": "AMGN",
       "name": "Amgen",
       "sector": "Health Care",
       "current_price": 339.3,
-      "market_cap": 183221993408.20312,
+      "market_cap": 183123010779.96423,
       "price_change_1d": 0.56,
       "price_change_5d": 3.98,
       "price_change_1mo": -1.17,
-      "total_volume": 1470684
+      "total_volume": 1566200
     },
     {
       "symbol": "STX",
@@ -638,7 +627,7 @@
       "price_change_1d": 0.28,
       "price_change_5d": 2.17,
       "price_change_1mo": 40.15,
-      "total_volume": 2529123
+      "total_volume": 2531400
     },
     {
       "symbol": "DIS",
@@ -649,7 +638,7 @@
       "price_change_1d": -0.56,
       "price_change_5d": 0.27,
       "price_change_1mo": -1.74,
-      "total_volume": 3840363
+      "total_volume": 5693300
     },
     {
       "symbol": "T",
@@ -660,7 +649,7 @@
       "price_change_1d": -0.32,
       "price_change_5d": 5.12,
       "price_change_1mo": -2.77,
-      "total_volume": 21371385
+      "total_volume": 25271100
     },
     {
       "symbol": "TJX",
@@ -671,7 +660,7 @@
       "price_change_1d": 0.51,
       "price_change_5d": 7.35,
       "price_change_1mo": 0.2,
-      "total_volume": 3621635
+      "total_volume": 4844800
     },
     {
       "symbol": "BA",
@@ -682,7 +671,7 @@
       "price_change_1d": -0.27,
       "price_change_5d": -0.67,
       "price_change_1mo": -5.3,
-      "total_volume": 3844386
+      "total_volume": 4632400
     },
     {
       "symbol": "MRVL",
@@ -693,7 +682,7 @@
       "price_change_1d": 2.96,
       "price_change_5d": 10.99,
       "price_change_1mo": 24.8,
-      "total_volume": 19702156
+      "total_volume": 19768800
     },
     {
       "symbol": "CRWD",
@@ -704,7 +693,7 @@
       "price_change_1d": 2.35,
       "price_change_5d": 11.68,
       "price_change_1mo": 42.17,
-      "total_volume": 2724252
+      "total_volume": 2778400
     },
     {
       "symbol": "GLW",
@@ -715,7 +704,7 @@
       "price_change_1d": 1.13,
       "price_change_5d": 1.17,
       "price_change_1mo": 14.99,
-      "total_volume": 8321054
+      "total_volume": 9609400
     },
     {
       "symbol": "GILD",
@@ -726,7 +715,7 @@
       "price_change_1d": 2.96,
       "price_change_5d": 3.69,
       "price_change_1mo": 1.1,
-      "total_volume": 5929432
+      "total_volume": 5973400
     },
     {
       "symbol": "TMO",
@@ -737,7 +726,7 @@
       "price_change_1d": -0.24,
       "price_change_5d": 2.27,
       "price_change_1mo": -12.78,
-      "total_volume": 1408703
+      "total_volume": 1686100
     },
     {
       "symbol": "BLK",
@@ -748,7 +737,7 @@
       "price_change_1d": 0.87,
       "price_change_5d": -0.82,
       "price_change_1mo": 0.99,
-      "total_volume": 332211
+      "total_volume": 450900
     },
     {
       "symbol": "APH",
@@ -759,7 +748,7 @@
       "price_change_1d": 5.77,
       "price_change_5d": 5.65,
       "price_change_1mo": -10.85,
-      "total_volume": 17565752
+      "total_volume": 17730600
     },
     {
       "symbol": "APP",
@@ -770,7 +759,7 @@
       "price_change_1d": -0.87,
       "price_change_5d": -3.86,
       "price_change_1mo": -0.42,
-      "total_volume": 3778503
+      "total_volume": 3822200
     },
     {
       "symbol": "UNP",
@@ -781,7 +770,7 @@
       "price_change_1d": 0.17,
       "price_change_5d": -1.73,
       "price_change_1mo": 6.61,
-      "total_volume": 2191058
+      "total_volume": 2597300
     },
     {
       "symbol": "SCHW",
@@ -792,7 +781,7 @@
       "price_change_1d": -0.29,
       "price_change_5d": -0.8,
       "price_change_1mo": -1.35,
-      "total_volume": 5267473
+      "total_volume": 7065600
     },
     {
       "symbol": "ISRG",
@@ -803,7 +792,7 @@
       "price_change_1d": -0.39,
       "price_change_5d": 4.03,
       "price_change_1mo": -9.41,
-      "total_volume": 2000166
+      "total_volume": 2009100
     },
     {
       "symbol": "ABT",
@@ -814,7 +803,7 @@
       "price_change_1d": -0.41,
       "price_change_5d": 3.48,
       "price_change_1mo": -4.68,
-      "total_volume": 7951571
+      "total_volume": 9516400
     },
     {
       "symbol": "ETN",
@@ -825,7 +814,7 @@
       "price_change_1d": 2.58,
       "price_change_5d": -2.03,
       "price_change_1mo": -5.18,
-      "total_volume": 2327691
+      "total_volume": 2353500
     },
     {
       "symbol": "PFE",
@@ -836,7 +825,7 @@
       "price_change_1d": -0.19,
       "price_change_5d": 2.25,
       "price_change_1mo": -1.76,
-      "total_volume": 17476677
+      "total_volume": 22299800
     },
     {
       "symbol": "CRM",
@@ -847,7 +836,7 @@
       "price_change_1d": 2.13,
       "price_change_5d": 3.78,
       "price_change_1mo": -5.13,
-      "total_volume": 9981179
+      "total_volume": 10176700
     },
     {
       "symbol": "COP",
@@ -858,7 +847,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": -1.59,
       "price_change_1mo": -1.02,
-      "total_volume": 4025274
+      "total_volume": 4947400
     },
     {
       "symbol": "UBER",
@@ -869,7 +858,7 @@
       "price_change_1d": -2.43,
       "price_change_5d": -4.35,
       "price_change_1mo": -4.97,
-      "total_volume": 19455535
+      "total_volume": 19638200
     },
     {
       "symbol": "BX",
@@ -880,7 +869,7 @@
       "price_change_1d": -0.05,
       "price_change_5d": 0.53,
       "price_change_1mo": -7.8,
-      "total_volume": 3078841
+      "total_volume": 3968600
     },
     {
       "symbol": "HON",
@@ -891,7 +880,7 @@
       "price_change_1d": 1.84,
       "price_change_5d": 6.88,
       "price_change_1mo": 4.18,
-      "total_volume": 5070537
+      "total_volume": 5071100
     },
     {
       "symbol": "DE",
@@ -902,7 +891,7 @@
       "price_change_1d": -0.41,
       "price_change_5d": -5.82,
       "price_change_1mo": -8.77,
-      "total_volume": 1753593
+      "total_volume": 1763900
     },
     {
       "symbol": "PLD",
@@ -913,7 +902,7 @@
       "price_change_1d": 0.88,
       "price_change_5d": 3.82,
       "price_change_1mo": 3.17,
-      "total_volume": 1409954
+      "total_volume": 2327700
     },
     {
       "symbol": "CB",
@@ -924,7 +913,7 @@
       "price_change_1d": -0.72,
       "price_change_5d": 1.15,
       "price_change_1mo": 0.76,
-      "total_volume": 1073452
+      "total_volume": 1396500
     },
     {
       "symbol": "BKNG",
@@ -935,7 +924,7 @@
       "price_change_1d": 0.86,
       "price_change_5d": 4.5,
       "price_change_1mo": -10.22,
-      "total_volume": 7277094
+      "total_volume": 7379700
     },
     {
       "symbol": "SPGI",
@@ -946,7 +935,7 @@
       "price_change_1d": 0.45,
       "price_change_5d": 3.58,
       "price_change_1mo": -7.01,
-      "total_volume": 972148
+      "total_volume": 2187600
     },
     {
       "symbol": "MO",
@@ -957,7 +946,7 @@
       "price_change_1d": 0.26,
       "price_change_5d": 1.11,
       "price_change_1mo": 13.38,
-      "total_volume": 4495321
+      "total_volume": 4505300
     },
     {
       "symbol": "LMT",
@@ -968,7 +957,7 @@
       "price_change_1d": 2.0,
       "price_change_5d": 3.34,
       "price_change_1mo": -4.0,
-      "total_volume": 1046959
+      "total_volume": 1050600
     },
     {
       "symbol": "DHR",
@@ -979,7 +968,7 @@
       "price_change_1d": -0.77,
       "price_change_5d": 6.23,
       "price_change_1mo": -6.54,
-      "total_volume": 2994948
+      "total_volume": 2995000
     },
     {
       "symbol": "BMY",
@@ -990,7 +979,7 @@
       "price_change_1d": -0.15,
       "price_change_5d": 4.32,
       "price_change_1mo": 1.12,
-      "total_volume": 6488240
+      "total_volume": 6489200
     },
     {
       "symbol": "SYK",
@@ -1001,7 +990,7 @@
       "price_change_1d": 0.95,
       "price_change_5d": 3.17,
       "price_change_1mo": -3.91,
-      "total_volume": 1465314
+      "total_volume": 1893100
     },
     {
       "symbol": "LOW",
@@ -1012,7 +1001,7 @@
       "price_change_1d": -1.09,
       "price_change_5d": -1.55,
       "price_change_1mo": -12.3,
-      "total_volume": 2800985
+      "total_volume": 2801300
     },
     {
       "symbol": "CVS",
@@ -1023,7 +1012,7 @@
       "price_change_1d": -0.06,
       "price_change_5d": -2.74,
       "price_change_1mo": 23.09,
-      "total_volume": 4828075
+      "total_volume": 4838500
     },
     {
       "symbol": "SBUX",
@@ -1034,7 +1023,7 @@
       "price_change_1d": -0.98,
       "price_change_5d": -3.47,
       "price_change_1mo": 4.21,
-      "total_volume": 8991049
+      "total_volume": 9095700
     },
     {
       "symbol": "COF",
@@ -1045,7 +1034,7 @@
       "price_change_1d": 0.61,
       "price_change_5d": 0.76,
       "price_change_1mo": -5.43,
-      "total_volume": 2452381
+      "total_volume": 3291900
     },
     {
       "symbol": "PGR",
@@ -1056,7 +1045,7 @@
       "price_change_1d": 0.27,
       "price_change_5d": -0.11,
       "price_change_1mo": -1.58,
-      "total_volume": 5439099
+      "total_volume": 5461100
     },
     {
       "symbol": "NEM",
@@ -1067,7 +1056,7 @@
       "price_change_1d": -0.64,
       "price_change_5d": -1.3,
       "price_change_1mo": -3.76,
-      "total_volume": 5004450
+      "total_volume": 5038900
     },
     {
       "symbol": "ACN",
@@ -1078,18 +1067,7 @@
       "price_change_1d": 0.77,
       "price_change_5d": 6.17,
       "price_change_1mo": -5.71,
-      "total_volume": 2782443
-    },
-    {
-      "symbol": "VRTX",
-      "name": "Vertex Pharmaceuticals",
-      "sector": "Health Care",
-      "current_price": 434.52,
-      "market_cap": 110283527006.45041,
-      "price_change_1d": 0.23,
-      "price_change_5d": -0.56,
-      "price_change_1mo": -0.72,
-      "total_volume": 1708254
+      "total_volume": 3450300
     },
     {
       "symbol": "PH",
@@ -1100,7 +1078,7 @@
       "price_change_1d": 0.26,
       "price_change_5d": 0.49,
       "price_change_1mo": -8.96,
-      "total_volume": 501361
+      "total_volume": 702900
     },
     {
       "symbol": "PWR",
@@ -1111,7 +1089,7 @@
       "price_change_1d": 0.91,
       "price_change_5d": -6.05,
       "price_change_1mo": 17.87,
-      "total_volume": 774701
+      "total_volume": 774700
     },
     {
       "symbol": "SO",
@@ -1122,7 +1100,7 @@
       "price_change_1d": 0.33,
       "price_change_5d": 3.01,
       "price_change_1mo": 3.77,
-      "total_volume": 2150635
+      "total_volume": 3396200
     },
     {
       "symbol": "EQIX",
@@ -1133,7 +1111,7 @@
       "price_change_1d": 0.13,
       "price_change_5d": 2.42,
       "price_change_1mo": -1.56,
-      "total_volume": 425927
+      "total_volume": 427200
     },
     {
       "symbol": "CEG",
@@ -1144,7 +1122,7 @@
       "price_change_1d": 2.88,
       "price_change_5d": 10.06,
       "price_change_1mo": 2.57,
-      "total_volume": 2709258
+      "total_volume": 2877600
     },
     {
       "symbol": "NOW",
@@ -1155,7 +1133,7 @@
       "price_change_1d": 2.45,
       "price_change_5d": 7.43,
       "price_change_1mo": -0.91,
-      "total_volume": 21832090
+      "total_volume": 23542800
     },
     {
       "symbol": "CME",
@@ -1166,7 +1144,7 @@
       "price_change_1d": 0.67,
       "price_change_5d": -2.55,
       "price_change_1mo": 1.93,
-      "total_volume": 1301316
+      "total_volume": 1437400
     },
     {
       "symbol": "CDNS",
@@ -1177,7 +1155,7 @@
       "price_change_1d": 4.22,
       "price_change_5d": 7.59,
       "price_change_1mo": 12.66,
-      "total_volume": 2175936
+      "total_volume": 2206200
     },
     {
       "symbol": "HWM",
@@ -1188,7 +1166,7 @@
       "price_change_1d": -1.29,
       "price_change_5d": -1.46,
       "price_change_1mo": 6.55,
-      "total_volume": 1690932
+      "total_volume": 1694800
     },
     {
       "symbol": "MDT",
@@ -1199,7 +1177,7 @@
       "price_change_1d": 0.58,
       "price_change_5d": 3.22,
       "price_change_1mo": -5.55,
-      "total_volume": 5417834
+      "total_volume": 7051500
     },
     {
       "symbol": "SNPS",
@@ -1210,7 +1188,7 @@
       "price_change_1d": 4.12,
       "price_change_5d": 4.44,
       "price_change_1mo": 9.95,
-      "total_volume": 1845271
+      "total_volume": 1873100
     },
     {
       "symbol": "TT",
@@ -1221,7 +1199,7 @@
       "price_change_1d": 0.76,
       "price_change_5d": -3.34,
       "price_change_1mo": -5.48,
-      "total_volume": 942393
+      "total_volume": 1187700
     },
     {
       "symbol": "ADBE",
@@ -1232,7 +1210,7 @@
       "price_change_1d": 0.27,
       "price_change_5d": -1.15,
       "price_change_1mo": -4.37,
-      "total_volume": 3778049
+      "total_volume": 3779300
     },
     {
       "symbol": "FTNT",
@@ -1243,7 +1221,7 @@
       "price_change_1d": 3.45,
       "price_change_5d": 9.08,
       "price_change_1mo": 53.78,
-      "total_volume": 5628418
+      "total_volume": 5819100
     },
     {
       "symbol": "DUK",
@@ -1254,7 +1232,7 @@
       "price_change_1d": 0.81,
       "price_change_5d": 3.9,
       "price_change_1mo": 1.2,
-      "total_volume": 1748177
+      "total_volume": 2446300
     },
     {
       "symbol": "MAR",
@@ -1262,21 +1240,21 @@
       "sector": "Consumer Discretionary",
       "current_price": 369.15,
       "market_cap": 97340653571.02237,
-      "price_change_1d": -0.38,
-      "price_change_5d": 4.52,
-      "price_change_1mo": 0.55,
-      "total_volume": 820017
+      "price_change_1d": -0.18,
+      "price_change_5d": 4.73,
+      "price_change_1mo": 0.75,
+      "total_volume": 820100
     },
     {
       "symbol": "BK",
       "name": "BNY Mellon",
       "sector": "Financials",
-      "current_price": 138.98,
-      "market_cap": 94143743640.0,
-      "price_change_1d": 1.33,
-      "price_change_5d": 2.21,
-      "price_change_1mo": 1.17,
-      "total_volume": 2907687
+      "current_price": 139.15,
+      "market_cap": 95509633660.67505,
+      "price_change_1d": 0.12,
+      "price_change_5d": 3.06,
+      "price_change_1mo": 2.81,
+      "total_volume": 3572619
     },
     {
       "symbol": "FDX",
@@ -1287,7 +1265,7 @@
       "price_change_1d": 1.36,
       "price_change_5d": 4.9,
       "price_change_1mo": 2.14,
-      "total_volume": 1082273
+      "total_volume": 1508100
     },
     {
       "symbol": "GD",
@@ -1298,7 +1276,7 @@
       "price_change_1d": 1.23,
       "price_change_5d": 2.51,
       "price_change_1mo": 6.91,
-      "total_volume": 523620
+      "total_volume": 689300
     },
     {
       "symbol": "MCK",
@@ -1309,7 +1287,7 @@
       "price_change_1d": -0.05,
       "price_change_5d": 0.72,
       "price_change_1mo": -7.62,
-      "total_volume": 637491
+      "total_volume": 2323900
     },
     {
       "symbol": "ADP",
@@ -1320,18 +1298,18 @@
       "price_change_1d": 2.38,
       "price_change_5d": 5.05,
       "price_change_1mo": 11.71,
-      "total_volume": 2273409
+      "total_volume": 2282600
     },
     {
       "symbol": "CMCSA",
       "name": "Comcast",
       "sector": "Communication Services",
-      "current_price": 25.2,
-      "market_cap": 90038020506.64558,
-      "price_change_1d": 0.5,
-      "price_change_5d": 1.8,
-      "price_change_1mo": -14.18,
-      "total_volume": 26571443
+      "current_price": 25.21,
+      "market_cap": 90055878651.49707,
+      "price_change_1d": 0.52,
+      "price_change_5d": 1.82,
+      "price_change_1mo": -14.16,
+      "total_volume": 26573600
     },
     {
       "symbol": "FCX",
@@ -1342,7 +1320,7 @@
       "price_change_1d": -0.51,
       "price_change_5d": -1.62,
       "price_change_1mo": -11.9,
-      "total_volume": 7837990
+      "total_volume": 7856200
     },
     {
       "symbol": "CMI",
@@ -1350,10 +1328,10 @@
       "sector": "Industrials",
       "current_price": 639.55,
       "market_cap": 88250906115.41315,
-      "price_change_1d": 0.12,
-      "price_change_5d": -8.18,
-      "price_change_1mo": 0.05,
-      "total_volume": 1106851
+      "price_change_1d": 0.43,
+      "price_change_5d": -7.89,
+      "price_change_1mo": 0.37,
+      "total_volume": 1106900
     },
     {
       "symbol": "PNC",
@@ -1364,7 +1342,7 @@
       "price_change_1d": 0.39,
       "price_change_5d": 3.0,
       "price_change_1mo": -2.59,
-      "total_volume": 794040
+      "total_volume": 1204500
     },
     {
       "symbol": "INTU",
@@ -1375,7 +1353,7 @@
       "price_change_1d": 4.19,
       "price_change_5d": -18.59,
       "price_change_1mo": -21.71,
-      "total_volume": 12331140
+      "total_volume": 12469600
     },
     {
       "symbol": "HCA",
@@ -1386,7 +1364,7 @@
       "price_change_1d": 0.38,
       "price_change_5d": -6.84,
       "price_change_1mo": -16.39,
-      "total_volume": 889840
+      "total_volume": 1109800
     },
     {
       "symbol": "ICE",
@@ -1397,7 +1375,7 @@
       "price_change_1d": 0.98,
       "price_change_5d": -0.9,
       "price_change_1mo": -3.68,
-      "total_volume": 2055141
+      "total_volume": 2827800
     },
     {
       "symbol": "BSX",
@@ -1408,7 +1386,7 @@
       "price_change_1d": 1.1,
       "price_change_5d": 9.68,
       "price_change_1mo": -10.93,
-      "total_volume": 11685544
+      "total_volume": 11738100
     },
     {
       "symbol": "UPS",
@@ -1419,7 +1397,7 @@
       "price_change_1d": 2.82,
       "price_change_5d": 3.83,
       "price_change_1mo": -2.45,
-      "total_volume": 3875584
+      "total_volume": 4540300
     },
     {
       "symbol": "ELV",
@@ -1430,7 +1408,7 @@
       "price_change_1d": 1.25,
       "price_change_5d": 0.51,
       "price_change_1mo": 20.26,
-      "total_volume": 582827
+      "total_volume": 1090600
     },
     {
       "symbol": "AMT",
@@ -1441,7 +1419,7 @@
       "price_change_1d": 0.04,
       "price_change_5d": 7.75,
       "price_change_1mo": 4.28,
-      "total_volume": 2069878
+      "total_volume": 2069900
     },
     {
       "symbol": "SLB",
@@ -1452,7 +1430,7 @@
       "price_change_1d": 0.05,
       "price_change_5d": 3.43,
       "price_change_1mo": 5.39,
-      "total_volume": 6884043
+      "total_volume": 10203400
     },
     {
       "symbol": "USB",
@@ -1463,7 +1441,7 @@
       "price_change_1d": 0.49,
       "price_change_5d": 3.22,
       "price_change_1mo": -3.13,
-      "total_volume": 3727220
+      "total_volume": 5106900
     },
     {
       "symbol": "MNST",
@@ -1474,7 +1452,7 @@
       "price_change_1d": 0.54,
       "price_change_5d": -0.34,
       "price_change_1mo": 14.27,
-      "total_volume": 3181296
+      "total_volume": 3239000
     },
     {
       "symbol": "CSX",
@@ -1485,7 +1463,7 @@
       "price_change_1d": -0.83,
       "price_change_5d": -0.31,
       "price_change_1mo": 5.42,
-      "total_volume": 8929139
+      "total_volume": 10760800
     },
     {
       "symbol": "KKR",
@@ -1496,7 +1474,7 @@
       "price_change_1d": -0.76,
       "price_change_5d": -3.02,
       "price_change_1mo": -11.04,
-      "total_volume": 2787844
+      "total_volume": 2824900
     },
     {
       "symbol": "JCI",
@@ -1507,7 +1485,7 @@
       "price_change_1d": 2.13,
       "price_change_5d": -3.3,
       "price_change_1mo": -1.04,
-      "total_volume": 2601396
+      "total_volume": 3502700
     },
     {
       "symbol": "CIEN",
@@ -1518,7 +1496,7 @@
       "price_change_1d": -0.59,
       "price_change_5d": 5.28,
       "price_change_1mo": 16.99,
-      "total_volume": 1413086
+      "total_volume": 1620800
     },
     {
       "symbol": "NXPI",
@@ -1529,7 +1507,7 @@
       "price_change_1d": 5.71,
       "price_change_5d": 8.57,
       "price_change_1mo": 40.19,
-      "total_volume": 2894452
+      "total_volume": 2948500
     },
     {
       "symbol": "MMM",
@@ -1537,10 +1515,10 @@
       "sector": "Industrials",
       "current_price": 152.44,
       "market_cap": 79507714540.19757,
-      "price_change_1d": 0.55,
-      "price_change_5d": 4.25,
-      "price_change_1mo": 4.57,
-      "total_volume": 3208937
+      "price_change_1d": 1.07,
+      "price_change_5d": 4.79,
+      "price_change_1mo": 5.11,
+      "total_volume": 3209100
     },
     {
       "symbol": "MDLZ",
@@ -1551,7 +1529,7 @@
       "price_change_1d": 0.42,
       "price_change_5d": 2.18,
       "price_change_1mo": 10.17,
-      "total_volume": 6853846
+      "total_volume": 7049600
     },
     {
       "symbol": "DDOG",
@@ -1562,7 +1540,7 @@
       "price_change_1d": 1.96,
       "price_change_5d": 6.89,
       "price_change_1mo": 68.25,
-      "total_volume": 3515287
+      "total_volume": 4870800
     },
     {
       "symbol": "MRSH",
@@ -1573,7 +1551,7 @@
       "price_change_1d": -0.61,
       "price_change_5d": 1.9,
       "price_change_1mo": -6.49,
-      "total_volume": 1870160
+      "total_volume": 2463700
     },
     {
       "symbol": "NOC",
@@ -1584,7 +1562,7 @@
       "price_change_1d": 0.73,
       "price_change_5d": 2.75,
       "price_change_1mo": -5.77,
-      "total_volume": 651422
+      "total_volume": 652000
     },
     {
       "symbol": "ABNB",
@@ -1595,7 +1573,7 @@
       "price_change_1d": -1.42,
       "price_change_5d": -0.38,
       "price_change_1mo": -8.21,
-      "total_volume": 3087984
+      "total_volume": 3097300
     },
     {
       "symbol": "MCO",
@@ -1606,7 +1584,7 @@
       "price_change_1d": 0.84,
       "price_change_5d": 4.71,
       "price_change_1mo": -3.54,
-      "total_volume": 386130
+      "total_volume": 502900
     },
     {
       "symbol": "MPWR",
@@ -1617,7 +1595,7 @@
       "price_change_1d": 1.83,
       "price_change_5d": 2.57,
       "price_change_1mo": 4.45,
-      "total_volume": 467317
+      "total_volume": 476600
     },
     {
       "symbol": "EMR",
@@ -1628,7 +1606,7 @@
       "price_change_1d": 1.13,
       "price_change_5d": 2.53,
       "price_change_1mo": -4.06,
-      "total_volume": 2950713
+      "total_volume": 2950700
     },
     {
       "symbol": "SHW",
@@ -1636,10 +1614,10 @@
       "sector": "Materials",
       "current_price": 309.08,
       "market_cap": 76230134426.9224,
-      "price_change_1d": -0.08,
-      "price_change_5d": 2.99,
-      "price_change_1mo": -7.78,
-      "total_volume": 1239588
+      "price_change_1d": 0.18,
+      "price_change_5d": 3.26,
+      "price_change_1mo": -7.54,
+      "total_volume": 1274400
     },
     {
       "symbol": "ORLY",
@@ -1650,7 +1628,7 @@
       "price_change_1d": -0.65,
       "price_change_5d": 3.67,
       "price_change_1mo": -2.32,
-      "total_volume": 4274964
+      "total_volume": 4453700
     },
     {
       "symbol": "ROST",
@@ -1661,7 +1639,7 @@
       "price_change_1d": 8.11,
       "price_change_5d": 10.37,
       "price_change_1mo": 3.74,
-      "total_volume": 4410990
+      "total_volume": 4588700
     },
     {
       "symbol": "CI",
@@ -1672,7 +1650,7 @@
       "price_change_1d": 1.5,
       "price_change_5d": 0.34,
       "price_change_1mo": 4.2,
-      "total_volume": 995819
+      "total_volume": 1435100
     },
     {
       "symbol": "EOG",
@@ -1683,7 +1661,7 @@
       "price_change_1d": 0.89,
       "price_change_5d": 0.68,
       "price_change_1mo": 6.17,
-      "total_volume": 2035378
+      "total_volume": 2515100
     },
     {
       "symbol": "KMI",
@@ -1694,7 +1672,7 @@
       "price_change_1d": 0.87,
       "price_change_5d": 0.48,
       "price_change_1mo": 7.21,
-      "total_volume": 6671612
+      "total_volume": 6676500
     },
     {
       "symbol": "MPC",
@@ -1705,7 +1683,7 @@
       "price_change_1d": 2.5,
       "price_change_5d": 0.23,
       "price_change_1mo": 15.11,
-      "total_volume": 1909832
+      "total_volume": 1926300
     },
     {
       "symbol": "APO",
@@ -1716,18 +1694,7 @@
       "price_change_1d": -1.83,
       "price_change_5d": -4.67,
       "price_change_1mo": -0.01,
-      "total_volume": 2094619
-    },
-    {
-      "symbol": "VLO",
-      "name": "Valero Energy",
-      "sector": "Energy",
-      "current_price": 246.96,
-      "market_cap": 73330521836.28726,
-      "price_change_1d": 2.43,
-      "price_change_5d": -1.04,
-      "price_change_1mo": 5.88,
-      "total_volume": 2490211
+      "total_volume": 2524300
     },
     {
       "symbol": "HLT",
@@ -1735,10 +1702,10 @@
       "sector": "Consumer Discretionary",
       "current_price": 321.08,
       "market_cap": 73093336224.95813,
-      "price_change_1d": -0.52,
-      "price_change_5d": 1.55,
-      "price_change_1mo": -3.77,
-      "total_volume": 1017109
+      "price_change_1d": -0.47,
+      "price_change_5d": 1.6,
+      "price_change_1mo": -3.73,
+      "total_volume": 1053700
     },
     {
       "symbol": "ITW",
@@ -1749,7 +1716,7 @@
       "price_change_1d": 0.91,
       "price_change_5d": 1.82,
       "price_change_1mo": -5.57,
-      "total_volume": 677862
+      "total_volume": 874200
     },
     {
       "symbol": "CL",
@@ -1760,7 +1727,7 @@
       "price_change_1d": 0.19,
       "price_change_5d": 2.81,
       "price_change_1mo": 10.03,
-      "total_volume": 2600261
+      "total_volume": 3771900
     },
     {
       "symbol": "AEP",
@@ -1771,7 +1738,7 @@
       "price_change_1d": 1.53,
       "price_change_5d": 5.15,
       "price_change_1mo": 0.7,
-      "total_volume": 3280306
+      "total_volume": 3280600
     },
     {
       "symbol": "ECL",
@@ -1782,7 +1749,7 @@
       "price_change_1d": 1.26,
       "price_change_5d": 2.3,
       "price_change_1mo": -5.8,
-      "total_volume": 1246112
+      "total_volume": 1254700
     },
     {
       "symbol": "PSX",
@@ -1793,7 +1760,7 @@
       "price_change_1d": 2.09,
       "price_change_5d": 1.58,
       "price_change_1mo": 11.41,
-      "total_volume": 1538977
+      "total_volume": 1898500
     },
     {
       "symbol": "GM",
@@ -1804,7 +1771,7 @@
       "price_change_1d": 2.05,
       "price_change_5d": 5.25,
       "price_change_1mo": -0.27,
-      "total_volume": 5341980
+      "total_volume": 6440900
     },
     {
       "symbol": "NSC",
@@ -1815,7 +1782,7 @@
       "price_change_1d": 0.99,
       "price_change_5d": -0.45,
       "price_change_1mo": 5.89,
-      "total_volume": 1124163
+      "total_volume": 1600100
     },
     {
       "symbol": "DASH",
@@ -1826,7 +1793,7 @@
       "price_change_1d": 0.62,
       "price_change_5d": 0.66,
       "price_change_1mo": -12.08,
-      "total_volume": 5077995
+      "total_volume": 5102600
     },
     {
       "symbol": "AON",
@@ -1837,7 +1804,7 @@
       "price_change_1d": 0.17,
       "price_change_5d": 2.38,
       "price_change_1mo": -0.37,
-      "total_volume": 638995
+      "total_volume": 929000
     },
     {
       "symbol": "CTAS",
@@ -1848,7 +1815,7 @@
       "price_change_1d": 0.33,
       "price_change_5d": 2.74,
       "price_change_1mo": -0.72,
-      "total_volume": 1327372
+      "total_volume": 1338500
     },
     {
       "symbol": "RCL",
@@ -1859,7 +1826,7 @@
       "price_change_1d": -1.62,
       "price_change_5d": -1.61,
       "price_change_1mo": -3.59,
-      "total_volume": 3166580
+      "total_volume": 3179900
     },
     {
       "symbol": "TDG",
@@ -1870,7 +1837,7 @@
       "price_change_1d": 0.35,
       "price_change_5d": 5.62,
       "price_change_1mo": 2.17,
-      "total_volume": 348419
+      "total_volume": 448600
     },
     {
       "symbol": "DLR",
@@ -1881,7 +1848,7 @@
       "price_change_1d": -1.15,
       "price_change_5d": 1.87,
       "price_change_1mo": -4.4,
-      "total_volume": 1692472
+      "total_volume": 1692500
     },
     {
       "symbol": "MSI",
@@ -1892,7 +1859,7 @@
       "price_change_1d": 0.96,
       "price_change_5d": 2.75,
       "price_change_1mo": -8.51,
-      "total_volume": 767166
+      "total_volume": 957100
     },
     {
       "symbol": "CRH",
@@ -1903,7 +1870,7 @@
       "price_change_1d": -0.65,
       "price_change_5d": -2.75,
       "price_change_1mo": -13.23,
-      "total_volume": 2725647
+      "total_volume": 3940200
     },
     {
       "symbol": "REGN",
@@ -1914,7 +1881,7 @@
       "price_change_1d": -0.58,
       "price_change_5d": -8.37,
       "price_change_1mo": -14.3,
-      "total_volume": 994796
+      "total_volume": 994900
     },
     {
       "symbol": "HOOD",
@@ -1925,7 +1892,7 @@
       "price_change_1d": -3.0,
       "price_change_5d": -4.54,
       "price_change_1mo": -16.73,
-      "total_volume": 20601616
+      "total_volume": 20708000
     },
     {
       "symbol": "SPG",
@@ -1936,7 +1903,7 @@
       "price_change_1d": -0.24,
       "price_change_5d": 2.19,
       "price_change_1mo": 1.35,
-      "total_volume": 1151858
+      "total_volume": 1152000
     },
     {
       "symbol": "NKE",
@@ -1947,7 +1914,7 @@
       "price_change_1d": 0.63,
       "price_change_5d": 6.66,
       "price_change_1mo": -2.21,
-      "total_volume": 14563809
+      "total_volume": 14886500
     },
     {
       "symbol": "BKR",
@@ -1958,7 +1925,7 @@
       "price_change_1d": 0.4,
       "price_change_5d": 3.03,
       "price_change_1mo": 5.98,
-      "total_volume": 7589526
+      "total_volume": 8382600
     },
     {
       "symbol": "TRV",
@@ -1969,7 +1936,7 @@
       "price_change_1d": -0.25,
       "price_change_5d": 2.24,
       "price_change_1mo": 1.58,
-      "total_volume": 943428
+      "total_volume": 1386300
     },
     {
       "symbol": "APD",
@@ -1980,18 +1947,18 @@
       "price_change_1d": -0.25,
       "price_change_5d": -2.0,
       "price_change_1mo": -2.46,
-      "total_volume": 823890
+      "total_volume": 1038000
     },
     {
       "symbol": "FIX",
       "name": "Comfort Systems USA",
       "sector": "Industrials",
       "current_price": 1828.25,
-      "market_cap": 64358831678.0,
+      "market_cap": 64325087667.75,
       "price_change_1d": -0.39,
       "price_change_5d": -8.25,
       "price_change_1mo": 6.06,
-      "total_volume": 219950
+      "total_volume": 250200
     },
     {
       "symbol": "RSG",
@@ -2002,7 +1969,7 @@
       "price_change_1d": 0.4,
       "price_change_5d": 0.29,
       "price_change_1mo": 1.77,
-      "total_volume": 1361167
+      "total_volume": 1612000
     },
     {
       "symbol": "SRE",
@@ -2013,7 +1980,7 @@
       "price_change_1d": 1.37,
       "price_change_5d": 2.62,
       "price_change_1mo": 0.45,
-      "total_volume": 1503034
+      "total_volume": 2201900
     },
     {
       "symbol": "TFC",
@@ -2024,7 +1991,7 @@
       "price_change_1d": 1.02,
       "price_change_5d": 3.02,
       "price_change_1mo": -4.04,
-      "total_volume": 3775768
+      "total_volume": 5460900
     },
     {
       "symbol": "AFL",
@@ -2035,7 +2002,7 @@
       "price_change_1d": 0.04,
       "price_change_5d": 1.42,
       "price_change_1mo": 3.24,
-      "total_volume": 1600850
+      "total_volume": 2296200
     },
     {
       "symbol": "D",
@@ -2046,7 +2013,7 @@
       "price_change_1d": -0.91,
       "price_change_5d": 9.62,
       "price_change_1mo": 11.03,
-      "total_volume": 6259805
+      "total_volume": 6459900
     },
     {
       "symbol": "F",
@@ -2057,7 +2024,7 @@
       "price_change_1d": 9.22,
       "price_change_5d": 11.42,
       "price_change_1mo": 19.7,
-      "total_volume": 109226862
+      "total_volume": 109613500
     },
     {
       "symbol": "TRGP",
@@ -2068,7 +2035,7 @@
       "price_change_1d": 2.41,
       "price_change_5d": 1.75,
       "price_change_1mo": 17.49,
-      "total_volume": 577498
+      "total_volume": 808500
     },
     {
       "symbol": "OKE",
@@ -2079,7 +2046,7 @@
       "price_change_1d": 1.52,
       "price_change_5d": 1.85,
       "price_change_1mo": 10.57,
-      "total_volume": 1840038
+      "total_volume": 3099500
     },
     {
       "symbol": "TEL",
@@ -2087,10 +2054,10 @@
       "sector": "Information Technology",
       "current_price": 202.78,
       "market_cap": 59190629764.901886,
-      "price_change_1d": 0.1,
-      "price_change_5d": -1.14,
-      "price_change_1mo": -8.26,
-      "total_volume": 2156504
+      "price_change_1d": 0.49,
+      "price_change_5d": -0.75,
+      "price_change_1mo": -7.91,
+      "total_volume": 2156500
     },
     {
       "symbol": "KEYS",
@@ -2101,7 +2068,7 @@
       "price_change_1d": 2.67,
       "price_change_5d": -0.7,
       "price_change_1mo": 2.24,
-      "total_volume": 1181280
+      "total_volume": 1626800
     },
     {
       "symbol": "GWW",
@@ -2112,7 +2079,7 @@
       "price_change_1d": 0.69,
       "price_change_5d": -1.94,
       "price_change_1mo": 8.33,
-      "total_volume": 185284
+      "total_volume": 280100
     },
     {
       "symbol": "URI",
@@ -2123,7 +2090,7 @@
       "price_change_1d": 0.69,
       "price_change_5d": -2.34,
       "price_change_1mo": 17.16,
-      "total_volume": 256551
+      "total_volume": 339300
     },
     {
       "symbol": "OXY",
@@ -2134,7 +2101,7 @@
       "price_change_1d": -0.03,
       "price_change_5d": -1.36,
       "price_change_1mo": 3.09,
-      "total_volume": 6390743
+      "total_volume": 7904200
     },
     {
       "symbol": "LHX",
@@ -2145,7 +2112,7 @@
       "price_change_1d": 1.84,
       "price_change_5d": 2.83,
       "price_change_1mo": -5.93,
-      "total_volume": 824162
+      "total_volume": 944800
     },
     {
       "symbol": "O",
@@ -2156,7 +2123,7 @@
       "price_change_1d": -0.34,
       "price_change_5d": 1.47,
       "price_change_1mo": -1.66,
-      "total_volume": 4331006
+      "total_volume": 4332500
     },
     {
       "symbol": "PCAR",
@@ -2167,7 +2134,7 @@
       "price_change_1d": 0.01,
       "price_change_5d": -0.88,
       "price_change_1mo": -12.44,
-      "total_volume": 2320311
+      "total_volume": 2403600
     },
     {
       "symbol": "TGT",
@@ -2178,7 +2145,7 @@
       "price_change_1d": -0.44,
       "price_change_5d": 3.34,
       "price_change_1mo": -2.92,
-      "total_volume": 4227599
+      "total_volume": 4943000
     },
     {
       "symbol": "FANG",
@@ -2189,7 +2156,7 @@
       "price_change_1d": -0.13,
       "price_change_5d": -1.4,
       "price_change_1mo": 4.1,
-      "total_volume": 1497430
+      "total_volume": 1522900
     },
     {
       "symbol": "AZO",
@@ -2200,7 +2167,7 @@
       "price_change_1d": -0.92,
       "price_change_5d": 2.57,
       "price_change_1mo": -5.11,
-      "total_volume": 511183
+      "total_volume": 512000
     },
     {
       "symbol": "TER",
@@ -2211,7 +2178,7 @@
       "price_change_1d": 1.41,
       "price_change_5d": 6.13,
       "price_change_1mo": -6.91,
-      "total_volume": 2703313
+      "total_volume": 2708500
     },
     {
       "symbol": "ALL",
@@ -2222,7 +2189,7 @@
       "price_change_1d": 1.01,
       "price_change_5d": -0.35,
       "price_change_1mo": 1.14,
-      "total_volume": 1247374
+      "total_volume": 1247400
     },
     {
       "symbol": "DVN",
@@ -2233,7 +2200,7 @@
       "price_change_1d": 0.23,
       "price_change_5d": -4.59,
       "price_change_1mo": 0.21,
-      "total_volume": 8991636
+      "total_volume": 9119200
     },
     {
       "symbol": "MET",
@@ -2244,7 +2211,7 @@
       "price_change_1d": -0.28,
       "price_change_5d": 5.36,
       "price_change_1mo": 10.05,
-      "total_volume": 3779051
+      "total_volume": 3779200
     },
     {
       "symbol": "PSA",
@@ -2255,7 +2222,7 @@
       "price_change_1d": 0.09,
       "price_change_5d": 4.37,
       "price_change_1mo": 0.14,
-      "total_volume": 491897
+      "total_volume": 675500
     },
     {
       "symbol": "COR",
@@ -2266,7 +2233,7 @@
       "price_change_1d": 3.57,
       "price_change_5d": 6.67,
       "price_change_1mo": -10.62,
-      "total_volume": 1479336
+      "total_volume": 2144700
     },
     {
       "symbol": "CTVA",
@@ -2277,7 +2244,7 @@
       "price_change_1d": 0.66,
       "price_change_5d": -3.22,
       "price_change_1mo": 0.26,
-      "total_volume": 1363432
+      "total_volume": 2135400
     },
     {
       "symbol": "NUE",
@@ -2288,7 +2255,7 @@
       "price_change_1d": 2.46,
       "price_change_5d": 2.19,
       "price_change_1mo": 8.28,
-      "total_volume": 1118951
+      "total_volume": 1135800
     },
     {
       "symbol": "AJG",
@@ -2299,7 +2266,7 @@
       "price_change_1d": -1.28,
       "price_change_5d": 2.4,
       "price_change_1mo": -7.4,
-      "total_volume": 979630
+      "total_volume": 1240300
     },
     {
       "symbol": "CARR",
@@ -2310,7 +2277,7 @@
       "price_change_1d": 1.54,
       "price_change_5d": -2.37,
       "price_change_1mo": 4.48,
-      "total_volume": 3866382
+      "total_volume": 4926800
     },
     {
       "symbol": "NDAQ",
@@ -2321,7 +2288,7 @@
       "price_change_1d": 0.66,
       "price_change_5d": -0.05,
       "price_change_1mo": 5.37,
-      "total_volume": 2140517
+      "total_volume": 2549700
     },
     {
       "symbol": "ETR",
@@ -2332,7 +2299,7 @@
       "price_change_1d": 0.12,
       "price_change_5d": 3.09,
       "price_change_1mo": 2.3,
-      "total_volume": 1293241
+      "total_volume": 2768000
     },
     {
       "symbol": "AME",
@@ -2343,7 +2310,7 @@
       "price_change_1d": 0.6,
       "price_change_5d": -1.48,
       "price_change_1mo": -2.58,
-      "total_volume": 891685
+      "total_volume": 891700
     },
     {
       "symbol": "EBAY",
@@ -2354,7 +2321,7 @@
       "price_change_1d": -1.18,
       "price_change_5d": -0.33,
       "price_change_1mo": 9.58,
-      "total_volume": 3989813
+      "total_volume": 4202700
     },
     {
       "symbol": "ADSK",
@@ -2365,18 +2332,18 @@
       "price_change_1d": 0.33,
       "price_change_5d": 1.85,
       "price_change_1mo": -2.66,
-      "total_volume": 2184319
+      "total_volume": 2455200
     },
     {
       "symbol": "MCHP",
       "name": "Microchip Technology",
       "sector": "Information Technology",
       "current_price": 93.43,
-      "market_cap": 50558286006.081436,
-      "price_change_1d": 2.55,
-      "price_change_5d": -0.45,
-      "price_change_1mo": 13.28,
-      "total_volume": 8706155
+      "market_cap": 50646467389.25947,
+      "price_change_1d": 3.06,
+      "price_change_5d": 0.05,
+      "price_change_1mo": 13.84,
+      "total_volume": 8837400
     },
     {
       "symbol": "FAST",
@@ -2387,7 +2354,7 @@
       "price_change_1d": 0.94,
       "price_change_5d": 1.57,
       "price_change_1mo": -1.42,
-      "total_volume": 5582896
+      "total_volume": 5583200
     },
     {
       "symbol": "EA",
@@ -2398,7 +2365,7 @@
       "price_change_1d": -0.45,
       "price_change_5d": 0.16,
       "price_change_1mo": -0.89,
-      "total_volume": 1852902
+      "total_volume": 2333900
     },
     {
       "symbol": "ROK",
@@ -2409,7 +2376,7 @@
       "price_change_1d": 2.73,
       "price_change_5d": 1.1,
       "price_change_1mo": 11.47,
-      "total_volume": 685413
+      "total_volume": 858100
     },
     {
       "symbol": "DAL",
@@ -2420,7 +2387,7 @@
       "price_change_1d": 0.65,
       "price_change_5d": 8.42,
       "price_change_1mo": 11.59,
-      "total_volume": 5872870
+      "total_volume": 6437100
     },
     {
       "symbol": "HPE",
@@ -2431,7 +2398,7 @@
       "price_change_1d": 10.63,
       "price_change_5d": 13.53,
       "price_change_1mo": 31.81,
-      "total_volume": 28182448
+      "total_volume": 30707000
     },
     {
       "symbol": "EW",
@@ -2442,7 +2409,7 @@
       "price_change_1d": 3.1,
       "price_change_5d": 5.41,
       "price_change_1mo": 5.21,
-      "total_volume": 4154247
+      "total_volume": 4941700
     },
     {
       "symbol": "CVNA",
@@ -2453,7 +2420,7 @@
       "price_change_1d": 6.04,
       "price_change_5d": 1.65,
       "price_change_1mo": -18.09,
-      "total_volume": 9334928
+      "total_volume": 9360900
     },
     {
       "symbol": "COIN",
@@ -2464,7 +2431,7 @@
       "price_change_1d": -4.43,
       "price_change_5d": -5.34,
       "price_change_1mo": -10.3,
-      "total_volume": 7779986
+      "total_volume": 7892000
     },
     {
       "symbol": "EXC",
@@ -2475,7 +2442,7 @@
       "price_change_1d": 1.94,
       "price_change_5d": 6.57,
       "price_change_1mo": 0.81,
-      "total_volume": 9228162
+      "total_volume": 9228200
     },
     {
       "symbol": "CAH",
@@ -2486,7 +2453,7 @@
       "price_change_1d": 0.03,
       "price_change_5d": 2.81,
       "price_change_1mo": 0.06,
-      "total_volume": 913402
+      "total_volume": 1537300
     },
     {
       "symbol": "GRMN",
@@ -2497,7 +2464,7 @@
       "price_change_1d": 0.39,
       "price_change_5d": 6.63,
       "price_change_1mo": -9.71,
-      "total_volume": 359019
+      "total_volume": 494600
     },
     {
       "symbol": "ON",
@@ -2508,7 +2475,7 @@
       "price_change_1d": 6.01,
       "price_change_5d": 2.73,
       "price_change_1mo": 30.58,
-      "total_volume": 8436240
+      "total_volume": 8492600
     },
     {
       "symbol": "FITB",
@@ -2519,7 +2486,7 @@
       "price_change_1d": 0.65,
       "price_change_5d": 4.5,
       "price_change_1mo": -2.14,
-      "total_volume": 3534007
+      "total_volume": 3609100
     },
     {
       "symbol": "IDXX",
@@ -2530,7 +2497,7 @@
       "price_change_1d": 1.14,
       "price_change_5d": 5.78,
       "price_change_1mo": -3.28,
-      "total_volume": 464364
+      "total_volume": 466000
     },
     {
       "symbol": "ODFL",
@@ -2541,7 +2508,7 @@
       "price_change_1d": 1.34,
       "price_change_5d": 3.62,
       "price_change_1mo": -4.32,
-      "total_volume": 1259413
+      "total_volume": 1269900
     },
     {
       "symbol": "MSCI",
@@ -2552,7 +2519,7 @@
       "price_change_1d": 1.07,
       "price_change_5d": 4.78,
       "price_change_1mo": -2.86,
-      "total_volume": 296247
+      "total_volume": 412300
     },
     {
       "symbol": "STT",
@@ -2563,7 +2530,7 @@
       "price_change_1d": 0.17,
       "price_change_5d": 0.72,
       "price_change_1mo": 1.02,
-      "total_volume": 840062
+      "total_volume": 1542100
     },
     {
       "symbol": "CMG",
@@ -2574,18 +2541,18 @@
       "price_change_1d": 0.27,
       "price_change_5d": 0.74,
       "price_change_1mo": -6.32,
-      "total_volume": 18623867
+      "total_volume": 18624200
     },
     {
       "symbol": "TTWO",
       "name": "Take-Two Interactive",
       "sector": "Communication Services",
       "current_price": 227.55,
-      "market_cap": 42136675577.910645,
+      "market_cap": 42187770565.7959,
       "price_change_1d": -4.42,
       "price_change_5d": -6.14,
       "price_change_1mo": 4.29,
-      "total_volume": 6897866
+      "total_volume": 7045300
     },
     {
       "symbol": "KR",
@@ -2596,7 +2563,7 @@
       "price_change_1d": 0.27,
       "price_change_5d": 1.86,
       "price_change_1mo": -0.68,
-      "total_volume": 5116798
+      "total_volume": 5117300
     },
     {
       "symbol": "AIG",
@@ -2607,7 +2574,7 @@
       "price_change_1d": -2.0,
       "price_change_5d": 1.24,
       "price_change_1mo": 1.34,
-      "total_volume": 1529976
+      "total_volume": 2533800
     },
     {
       "symbol": "DHI",
@@ -2618,7 +2585,7 @@
       "price_change_1d": -0.28,
       "price_change_5d": 6.16,
       "price_change_1mo": -10.56,
-      "total_volume": 1491434
+      "total_volume": 1811300
     },
     {
       "symbol": "BDX",
@@ -2629,7 +2596,7 @@
       "price_change_1d": 0.94,
       "price_change_5d": 2.9,
       "price_change_1mo": -5.15,
-      "total_volume": 1004167
+      "total_volume": 1291300
     },
     {
       "symbol": "AMP",
@@ -2640,7 +2607,7 @@
       "price_change_1d": 0.39,
       "price_change_5d": -3.84,
       "price_change_1mo": -3.11,
-      "total_volume": 500610
+      "total_volume": 629500
     },
     {
       "symbol": "ED",
@@ -2651,7 +2618,7 @@
       "price_change_1d": 1.06,
       "price_change_5d": 3.02,
       "price_change_1mo": 1.22,
-      "total_volume": 2228634
+      "total_volume": 2238100
     },
     {
       "symbol": "CCI",
@@ -2662,7 +2629,7 @@
       "price_change_1d": -0.63,
       "price_change_5d": 5.54,
       "price_change_1mo": 6.34,
-      "total_volume": 2604452
+      "total_volume": 3045300
     },
     {
       "symbol": "PEG",
@@ -2673,7 +2640,7 @@
       "price_change_1d": 1.31,
       "price_change_5d": 4.02,
       "price_change_1mo": 1.27,
-      "total_volume": 1457846
+      "total_volume": 2009000
     },
     {
       "symbol": "KDP",
@@ -2684,7 +2651,7 @@
       "price_change_1d": 1.18,
       "price_change_5d": 0.66,
       "price_change_1mo": 9.72,
-      "total_volume": 5930045
+      "total_volume": 5933200
     },
     {
       "symbol": "HSY",
@@ -2695,7 +2662,7 @@
       "price_change_1d": 2.31,
       "price_change_5d": 4.17,
       "price_change_1mo": 4.04,
-      "total_volume": 1289834
+      "total_volume": 1621000
     },
     {
       "symbol": "PYPL",
@@ -2706,7 +2673,7 @@
       "price_change_1d": -0.16,
       "price_change_5d": -0.41,
       "price_change_1mo": -13.65,
-      "total_volume": 10631026
+      "total_volume": 10668100
     },
     {
       "symbol": "LYV",
@@ -2717,7 +2684,7 @@
       "price_change_1d": -0.26,
       "price_change_5d": -1.97,
       "price_change_1mo": 7.06,
-      "total_volume": 1013286
+      "total_volume": 1226000
     },
     {
       "symbol": "JBL",
@@ -2728,7 +2695,7 @@
       "price_change_1d": 2.23,
       "price_change_5d": 7.22,
       "price_change_1mo": 8.33,
-      "total_volume": 638558
+      "total_volume": 800100
     },
     {
       "symbol": "CBRE",
@@ -2739,7 +2706,7 @@
       "price_change_1d": 0.02,
       "price_change_5d": 0.86,
       "price_change_1mo": -14.62,
-      "total_volume": 1423267
+      "total_volume": 1784000
     },
     {
       "symbol": "EME",
@@ -2750,7 +2717,7 @@
       "price_change_1d": -0.03,
       "price_change_5d": -7.03,
       "price_change_1mo": -1.29,
-      "total_volume": 195572
+      "total_volume": 251600
     },
     {
       "symbol": "IRM",
@@ -2761,7 +2728,7 @@
       "price_change_1d": -0.68,
       "price_change_5d": 1.11,
       "price_change_1mo": 7.87,
-      "total_volume": 653411
+      "total_volume": 949800
     },
     {
       "symbol": "CBOE",
@@ -2772,7 +2739,7 @@
       "price_change_1d": 1.54,
       "price_change_5d": -1.56,
       "price_change_1mo": 20.14,
-      "total_volume": 492780
+      "total_volume": 492900
     },
     {
       "symbol": "ADM",
@@ -2783,7 +2750,7 @@
       "price_change_1d": 0.52,
       "price_change_5d": -2.95,
       "price_change_1mo": 12.39,
-      "total_volume": 2329169
+      "total_volume": 2468300
     },
     {
       "symbol": "HIG",
@@ -2794,7 +2761,7 @@
       "price_change_1d": 0.0,
       "price_change_5d": 1.57,
       "price_change_1mo": -1.51,
-      "total_volume": 718882
+      "total_volume": 1067100
     },
     {
       "symbol": "HUM",
@@ -2805,7 +2772,7 @@
       "price_change_1d": 1.41,
       "price_change_5d": 0.93,
       "price_change_1mo": 41.65,
-      "total_volume": 677832
+      "total_volume": 677900
     },
     {
       "symbol": "SYY",
@@ -2816,7 +2783,7 @@
       "price_change_1d": -0.92,
       "price_change_5d": 5.13,
       "price_change_1mo": 1.01,
-      "total_volume": 1700225
+      "total_volume": 3331600
     },
     {
       "symbol": "PCG",
@@ -2827,7 +2794,7 @@
       "price_change_1d": 0.3,
       "price_change_5d": 2.23,
       "price_change_1mo": -2.31,
-      "total_volume": 9481322
+      "total_volume": 14143400
     },
     {
       "symbol": "IBKR",
@@ -2838,7 +2805,7 @@
       "price_change_1d": -2.96,
       "price_change_5d": -6.49,
       "price_change_1mo": 4.15,
-      "total_volume": 8378997
+      "total_volume": 8381300
     },
     {
       "symbol": "EQT",
@@ -2849,7 +2816,7 @@
       "price_change_1d": 0.31,
       "price_change_5d": 3.02,
       "price_change_1mo": -1.08,
-      "total_volume": 4458666
+      "total_volume": 5201700
     },
     {
       "symbol": "PRU",
@@ -2860,7 +2827,7 @@
       "price_change_1d": -0.12,
       "price_change_5d": 2.15,
       "price_change_1mo": 9.77,
-      "total_volume": 940843
+      "total_volume": 1301600
     },
     {
       "symbol": "CCL",
@@ -2871,7 +2838,7 @@
       "price_change_1d": -0.76,
       "price_change_5d": 6.08,
       "price_change_1mo": -2.97,
-      "total_volume": 16397126
+      "total_volume": 17155700
     },
     {
       "symbol": "PAYX",
@@ -2882,7 +2849,7 @@
       "price_change_1d": 2.92,
       "price_change_5d": 5.96,
       "price_change_1mo": 5.16,
-      "total_volume": 2580282
+      "total_volume": 2593000
     },
     {
       "symbol": "HAL",
@@ -2893,7 +2860,7 @@
       "price_change_1d": -1.17,
       "price_change_5d": -0.69,
       "price_change_1mo": 6.03,
-      "total_volume": 7002712
+      "total_volume": 9325000
     },
     {
       "symbol": "STLD",
@@ -2904,7 +2871,7 @@
       "price_change_1d": 3.53,
       "price_change_5d": 4.66,
       "price_change_1mo": 5.53,
-      "total_volume": 1146790
+      "total_volume": 1187600
     },
     {
       "symbol": "KVUE",
@@ -2915,7 +2882,7 @@
       "price_change_1d": 0.4,
       "price_change_5d": 2.45,
       "price_change_1mo": 2.49,
-      "total_volume": 8269841
+      "total_volume": 13689600
     },
     {
       "symbol": "ACGL",
@@ -2926,7 +2893,7 @@
       "price_change_1d": 0.18,
       "price_change_5d": 2.47,
       "price_change_1mo": -0.49,
-      "total_volume": 1859395
+      "total_volume": 1942100
     },
     {
       "symbol": "ROP",
@@ -2937,7 +2904,7 @@
       "price_change_1d": 0.88,
       "price_change_5d": 1.88,
       "price_change_1mo": -10.36,
-      "total_volume": 1015494
+      "total_volume": 1015500
     },
     {
       "symbol": "KMB",
@@ -2948,7 +2915,7 @@
       "price_change_1d": 0.42,
       "price_change_5d": 3.37,
       "price_change_1mo": 2.47,
-      "total_volume": 2265229
+      "total_volume": 2265500
     },
     {
       "symbol": "Q",
@@ -2959,7 +2926,7 @@
       "price_change_1d": 2.73,
       "price_change_5d": -0.19,
       "price_change_1mo": 12.7,
-      "total_volume": 1562280
+      "total_volume": 1564800
     },
     {
       "symbol": "LVS",
@@ -2970,7 +2937,7 @@
       "price_change_1d": -0.04,
       "price_change_5d": -3.38,
       "price_change_1mo": -12.55,
-      "total_volume": 2894121
+      "total_volume": 3826800
     },
     {
       "symbol": "CPRT",
@@ -2981,7 +2948,7 @@
       "price_change_1d": -1.77,
       "price_change_5d": 4.61,
       "price_change_1mo": 0.33,
-      "total_volume": 15029339
+      "total_volume": 15032900
     },
     {
       "symbol": "A",
@@ -2992,7 +2959,7 @@
       "price_change_1d": 0.15,
       "price_change_5d": 2.92,
       "price_change_1mo": -4.57,
-      "total_volume": 1666706
+      "total_volume": 2036500
     },
     {
       "symbol": "UAL",
@@ -3003,7 +2970,7 @@
       "price_change_1d": 0.32,
       "price_change_5d": 7.66,
       "price_change_1mo": 9.0,
-      "total_volume": 4040954
+      "total_volume": 4047200
     },
     {
       "symbol": "HBAN",
@@ -3014,7 +2981,7 @@
       "price_change_1d": 0.44,
       "price_change_5d": 3.31,
       "price_change_1mo": -5.35,
-      "total_volume": 13795324
+      "total_volume": 14027800
     },
     {
       "symbol": "MLM",
@@ -3025,7 +2992,7 @@
       "price_change_1d": -0.28,
       "price_change_5d": -3.97,
       "price_change_1mo": -12.14,
-      "total_volume": 464214
+      "total_volume": 520800
     },
     {
       "symbol": "EL",
@@ -3036,7 +3003,7 @@
       "price_change_1d": 11.92,
       "price_change_5d": 10.01,
       "price_change_1mo": 15.21,
-      "total_volume": 8104150
+      "total_volume": 8105900
     },
     {
       "symbol": "MTB",
@@ -3047,7 +3014,7 @@
       "price_change_1d": 0.4,
       "price_change_5d": 4.04,
       "price_change_1mo": -2.02,
-      "total_volume": 532320
+      "total_volume": 718800
     },
     {
       "symbol": "AXON",
@@ -3058,7 +3025,7 @@
       "price_change_1d": -0.99,
       "price_change_5d": -1.5,
       "price_change_1mo": -4.25,
-      "total_volume": 1302261
+      "total_volume": 1324000
     },
     {
       "symbol": "NTRS",
@@ -3069,7 +3036,7 @@
       "price_change_1d": 0.39,
       "price_change_5d": 2.39,
       "price_change_1mo": -0.04,
-      "total_volume": 691641
+      "total_volume": 728900
     },
     {
       "symbol": "AEE",
@@ -3080,7 +3047,7 @@
       "price_change_1d": 1.32,
       "price_change_5d": 4.64,
       "price_change_1mo": 1.88,
-      "total_volume": 1273661
+      "total_volume": 1816600
     },
     {
       "symbol": "VICI",
@@ -3091,7 +3058,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": 2.15,
       "price_change_1mo": 1.06,
-      "total_volume": 12140010
+      "total_volume": 12160800
     },
     {
       "symbol": "FISV",
@@ -3102,7 +3069,7 @@
       "price_change_1d": 2.35,
       "price_change_5d": 3.25,
       "price_change_1mo": -9.69,
-      "total_volume": 6406220
+      "total_volume": 6465700
     },
     {
       "symbol": "EXR",
@@ -3113,7 +3080,7 @@
       "price_change_1d": -0.42,
       "price_change_5d": 4.67,
       "price_change_1mo": 1.42,
-      "total_volume": 524865
+      "total_volume": 801900
     },
     {
       "symbol": "DTE",
@@ -3124,7 +3091,7 @@
       "price_change_1d": 1.08,
       "price_change_5d": 3.95,
       "price_change_1mo": 1.2,
-      "total_volume": 777511
+      "total_volume": 1070400
     },
     {
       "symbol": "RMD",
@@ -3135,7 +3102,7 @@
       "price_change_1d": -0.45,
       "price_change_5d": 3.06,
       "price_change_1mo": -6.02,
-      "total_volume": 912685
+      "total_volume": 1095700
     },
     {
       "symbol": "ATO",
@@ -3146,7 +3113,7 @@
       "price_change_1d": 0.2,
       "price_change_5d": 0.75,
       "price_change_1mo": -2.56,
-      "total_volume": 1013388
+      "total_volume": 1472300
     },
     {
       "symbol": "RJF",
@@ -3157,7 +3124,7 @@
       "price_change_1d": 0.69,
       "price_change_5d": -1.72,
       "price_change_1mo": -1.98,
-      "total_volume": 732161
+      "total_volume": 1336500
     },
     {
       "symbol": "GEHC",
@@ -3168,7 +3135,7 @@
       "price_change_1d": -0.16,
       "price_change_5d": 5.71,
       "price_change_1mo": -10.02,
-      "total_volume": 3175146
+      "total_volume": 3181500
     },
     {
       "symbol": "CNC",
@@ -3179,7 +3146,7 @@
       "price_change_1d": 2.37,
       "price_change_5d": 1.49,
       "price_change_1mo": 51.91,
-      "total_volume": 2083331
+      "total_volume": 2917600
     },
     {
       "symbol": "NRG",
@@ -3190,7 +3157,7 @@
       "price_change_1d": 0.53,
       "price_change_5d": 7.7,
       "price_change_1mo": -7.71,
-      "total_volume": 2147291
+      "total_volume": 2147300
     },
     {
       "symbol": "FICO",
@@ -3201,7 +3168,7 @@
       "price_change_1d": 0.96,
       "price_change_5d": 12.86,
       "price_change_1mo": 27.8,
-      "total_volume": 301113
+      "total_volume": 303200
     },
     {
       "symbol": "TDY",
@@ -3212,7 +3179,7 @@
       "price_change_1d": 2.2,
       "price_change_5d": 0.63,
       "price_change_1mo": -5.52,
-      "total_volume": 233380
+      "total_volume": 280400
     },
     {
       "symbol": "BIIB",
@@ -3223,7 +3190,7 @@
       "price_change_1d": 2.26,
       "price_change_5d": 0.42,
       "price_change_1mo": 1.94,
-      "total_volume": 795597
+      "total_volume": 892900
     },
     {
       "symbol": "DOV",
@@ -3234,18 +3201,7 @@
       "price_change_1d": 1.03,
       "price_change_5d": -0.41,
       "price_change_1mo": -2.9,
-      "total_volume": 412778
-    },
-    {
-      "symbol": "VRSN",
-      "name": "Verisign",
-      "sector": "Information Technology",
-      "current_price": 310.0,
-      "market_cap": 28210000000.0,
-      "price_change_1d": 1.33,
-      "price_change_5d": 4.45,
-      "price_change_1mo": 15.19,
-      "total_volume": 802844
+      "total_volume": 566600
     },
     {
       "symbol": "KHC",
@@ -3256,7 +3212,7 @@
       "price_change_1d": 1.06,
       "price_change_5d": 3.8,
       "price_change_1mo": 8.68,
-      "total_volume": 10368639
+      "total_volume": 11189600
     },
     {
       "symbol": "ARES",
@@ -3267,7 +3223,7 @@
       "price_change_1d": 0.34,
       "price_change_5d": 0.81,
       "price_change_1mo": 2.78,
-      "total_volume": 1693861
+      "total_volume": 1751000
     },
     {
       "symbol": "IQV",
@@ -3278,7 +3234,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": -0.72,
       "price_change_1mo": -4.17,
-      "total_volume": 1540791
+      "total_volume": 1791000
     },
     {
       "symbol": "CNP",
@@ -3289,7 +3245,7 @@
       "price_change_1d": 0.85,
       "price_change_5d": 3.69,
       "price_change_1mo": 2.24,
-      "total_volume": 3106436
+      "total_volume": 4955400
     },
     {
       "symbol": "TPR",
@@ -3300,7 +3256,7 @@
       "price_change_1d": -0.45,
       "price_change_5d": 7.09,
       "price_change_1mo": -5.25,
-      "total_volume": 976813
+      "total_volume": 1321300
     },
     {
       "symbol": "OTIS",
@@ -3311,7 +3267,7 @@
       "price_change_1d": 1.59,
       "price_change_5d": 2.48,
       "price_change_1mo": -6.0,
-      "total_volume": 2756329
+      "total_volume": 3585600
     },
     {
       "symbol": "DXCM",
@@ -3322,7 +3278,7 @@
       "price_change_1d": 0.28,
       "price_change_5d": 16.99,
       "price_change_1mo": 13.7,
-      "total_volume": 6726842
+      "total_volume": 6727000
     },
     {
       "symbol": "IR",
@@ -3333,7 +3289,7 @@
       "price_change_1d": 0.9,
       "price_change_5d": 0.8,
       "price_change_1mo": -15.26,
-      "total_volume": 3949722
+      "total_volume": 4447800
     },
     {
       "symbol": "TPL",
@@ -3344,7 +3300,7 @@
       "price_change_1d": 1.27,
       "price_change_5d": 4.38,
       "price_change_1mo": -8.53,
-      "total_volume": 231213
+      "total_volume": 288300
     },
     {
       "symbol": "FSLR",
@@ -3355,7 +3311,7 @@
       "price_change_1d": 3.6,
       "price_change_5d": 10.49,
       "price_change_1mo": 36.64,
-      "total_volume": 2380342
+      "total_volume": 2476700
     },
     {
       "symbol": "NTAP",
@@ -3366,7 +3322,7 @@
       "price_change_1d": 12.43,
       "price_change_5d": 16.2,
       "price_change_1mo": 25.53,
-      "total_volume": 6667503
+      "total_volume": 6667700
     },
     {
       "symbol": "EIX",
@@ -3377,7 +3333,7 @@
       "price_change_1d": 1.22,
       "price_change_5d": 2.92,
       "price_change_1mo": 2.59,
-      "total_volume": 1336709
+      "total_volume": 1767600
     },
     {
       "symbol": "PPL",
@@ -3388,7 +3344,7 @@
       "price_change_1d": 0.41,
       "price_change_5d": 4.13,
       "price_change_1mo": -3.86,
-      "total_volume": 5232926
+      "total_volume": 6548600
     },
     {
       "symbol": "FOXA",
@@ -3399,7 +3355,7 @@
       "price_change_1d": -0.44,
       "price_change_5d": -1.34,
       "price_change_1mo": -2.41,
-      "total_volume": 1513782
+      "total_volume": 1557600
     },
     {
       "symbol": "FE",
@@ -3410,7 +3366,7 @@
       "price_change_1d": 1.78,
       "price_change_5d": 5.68,
       "price_change_1mo": -3.39,
-      "total_volume": 3440545
+      "total_volume": 4451700
     },
     {
       "symbol": "CFG",
@@ -3421,7 +3377,7 @@
       "price_change_1d": 0.18,
       "price_change_5d": 3.34,
       "price_change_1mo": -2.79,
-      "total_volume": 2049165
+      "total_volume": 2741200
     },
     {
       "symbol": "AVB",
@@ -3432,7 +3388,7 @@
       "price_change_1d": 0.84,
       "price_change_5d": 2.66,
       "price_change_1mo": 8.37,
-      "total_volume": 937142
+      "total_volume": 1311900
     },
     {
       "symbol": "ES",
@@ -3443,7 +3399,7 @@
       "price_change_1d": 0.53,
       "price_change_5d": 5.45,
       "price_change_1mo": 5.64,
-      "total_volume": 2524611
+      "total_volume": 2578900
     },
     {
       "symbol": "CINF",
@@ -3454,7 +3410,7 @@
       "price_change_1d": -0.16,
       "price_change_5d": 1.01,
       "price_change_1mo": 1.1,
-      "total_volume": 314092
+      "total_volume": 332100
     },
     {
       "symbol": "DOW",
@@ -3465,7 +3421,7 @@
       "price_change_1d": 0.28,
       "price_change_5d": -7.07,
       "price_change_1mo": -7.21,
-      "total_volume": 9009101
+      "total_volume": 9010400
     },
     {
       "symbol": "EXPE",
@@ -3476,7 +3432,7 @@
       "price_change_1d": -1.59,
       "price_change_5d": -1.41,
       "price_change_1mo": -18.88,
-      "total_volume": 1546316
+      "total_volume": 1549900
     },
     {
       "symbol": "STZ",
@@ -3487,7 +3443,7 @@
       "price_change_1d": -0.88,
       "price_change_5d": 5.02,
       "price_change_1mo": -4.07,
-      "total_volume": 1095403
+      "total_volume": 1403900
     },
     {
       "symbol": "ROL",
@@ -3498,7 +3454,7 @@
       "price_change_1d": 0.83,
       "price_change_5d": 0.07,
       "price_change_1mo": -3.03,
-      "total_volume": 1615746
+      "total_volume": 2083200
     },
     {
       "symbol": "HUBB",
@@ -3509,7 +3465,7 @@
       "price_change_1d": 3.04,
       "price_change_5d": -1.03,
       "price_change_1mo": -13.6,
-      "total_volume": 752222
+      "total_volume": 824493
     },
     {
       "symbol": "CTSH",
@@ -3520,18 +3476,18 @@
       "price_change_1d": 0.82,
       "price_change_5d": 12.71,
       "price_change_1mo": -9.67,
-      "total_volume": 9208347
+      "total_volume": 9235800
     },
     {
       "symbol": "EQR",
       "name": "Equity Residential",
       "sector": "Real Estate",
       "current_price": 66.2,
-      "market_cap": 24803267713.592606,
+      "market_cap": 24805942789.269287,
       "price_change_1d": 0.67,
       "price_change_5d": 3.63,
       "price_change_1mo": 7.29,
-      "total_volume": 1559758
+      "total_volume": 2035000
     },
     {
       "symbol": "CTRA",
@@ -3553,7 +3509,7 @@
       "price_change_1d": 1.07,
       "price_change_5d": 0.73,
       "price_change_1mo": -3.84,
-      "total_volume": 1049534
+      "total_volume": 1121400
     },
     {
       "symbol": "JBHT",
@@ -3564,7 +3520,7 @@
       "price_change_1d": -0.18,
       "price_change_5d": -1.31,
       "price_change_1mo": 4.95,
-      "total_volume": 839399
+      "total_volume": 839400
     },
     {
       "symbol": "SYF",
@@ -3575,7 +3531,7 @@
       "price_change_1d": -0.24,
       "price_change_5d": 0.63,
       "price_change_1mo": -8.35,
-      "total_volume": 2162763
+      "total_volume": 2991900
     },
     {
       "symbol": "FOX",
@@ -3586,7 +3542,7 @@
       "price_change_1d": -0.68,
       "price_change_5d": -1.09,
       "price_change_1mo": -2.27,
-      "total_volume": 872659
+      "total_volume": 1212500
     },
     {
       "symbol": "PPG",
@@ -3597,7 +3553,7 @@
       "price_change_1d": 1.08,
       "price_change_5d": 5.01,
       "price_change_1mo": -2.85,
-      "total_volume": 1060675
+      "total_volume": 1459800
     },
     {
       "symbol": "RF",
@@ -3608,7 +3564,7 @@
       "price_change_1d": 0.43,
       "price_change_5d": 4.39,
       "price_change_1mo": -1.35,
-      "total_volume": 8337335
+      "total_volume": 9709400
     },
     {
       "symbol": "EXE",
@@ -3619,7 +3575,7 @@
       "price_change_1d": 0.36,
       "price_change_5d": 1.29,
       "price_change_1mo": 2.25,
-      "total_volume": 1446617
+      "total_volume": 1467700
     },
     {
       "symbol": "BG",
@@ -3627,10 +3583,10 @@
       "sector": "Consumer Staples",
       "current_price": 120.71,
       "market_cap": 23419926484.02111,
-      "price_change_1d": 0.21,
-      "price_change_5d": -1.42,
-      "price_change_1mo": -4.02,
-      "total_volume": 1820648
+      "price_change_1d": 0.81,
+      "price_change_5d": -0.83,
+      "price_change_1mo": -3.45,
+      "total_volume": 1821200
     },
     {
       "symbol": "KEY",
@@ -3641,7 +3597,7 @@
       "price_change_1d": 0.33,
       "price_change_5d": 2.47,
       "price_change_1mo": -2.18,
-      "total_volume": 3447228
+      "total_volume": 6087100
     },
     {
       "symbol": "DRI",
@@ -3652,7 +3608,7 @@
       "price_change_1d": 3.27,
       "price_change_5d": 3.89,
       "price_change_1mo": 1.89,
-      "total_volume": 1291193
+      "total_volume": 1503900
     },
     {
       "symbol": "DG",
@@ -3663,7 +3619,7 @@
       "price_change_1d": 0.51,
       "price_change_5d": 3.19,
       "price_change_1mo": -14.25,
-      "total_volume": 2063215
+      "total_volume": 2435200
     },
     {
       "symbol": "HPQ",
@@ -3674,7 +3630,7 @@
       "price_change_1d": 15.25,
       "price_change_5d": 21.29,
       "price_change_1mo": 23.48,
-      "total_volume": 45907332
+      "total_volume": 48651200
     },
     {
       "symbol": "CMS",
@@ -3685,7 +3641,7 @@
       "price_change_1d": 1.21,
       "price_change_5d": 4.03,
       "price_change_1mo": 0.17,
-      "total_volume": 1479586
+      "total_volume": 2153900
     },
     {
       "symbol": "NI",
@@ -3696,18 +3652,7 @@
       "price_change_1d": 0.29,
       "price_change_5d": 3.35,
       "price_change_1mo": 2.77,
-      "total_volume": 1587460
-    },
-    {
-      "symbol": "RL",
-      "name": "Ralph Lauren",
-      "sector": "Consumer Discretionary",
-      "current_price": 377.78,
-      "market_cap": 22908828082.995758,
-      "price_change_1d": 0.77,
-      "price_change_5d": 15.6,
-      "price_change_1mo": 0.66,
-      "total_volume": 745154
+      "total_volume": 2489600
     },
     {
       "symbol": "TSN",
@@ -3718,7 +3663,7 @@
       "price_change_1d": -2.14,
       "price_change_5d": -1.12,
       "price_change_1mo": 0.77,
-      "total_volume": 2031501
+      "total_volume": 2031600
     },
     {
       "symbol": "CHD",
@@ -3729,7 +3674,7 @@
       "price_change_1d": 0.64,
       "price_change_5d": 2.34,
       "price_change_1mo": 3.94,
-      "total_volume": 737266
+      "total_volume": 1038300
     },
     {
       "symbol": "CPAY",
@@ -3740,7 +3685,7 @@
       "price_change_1d": 0.13,
       "price_change_5d": 5.99,
       "price_change_1mo": 5.2,
-      "total_volume": 307148
+      "total_volume": 419800
     },
     {
       "symbol": "ULTA",
@@ -3751,7 +3696,7 @@
       "price_change_1d": 2.18,
       "price_change_5d": 4.2,
       "price_change_1mo": -8.67,
-      "total_volume": 471916
+      "total_volume": 481300
     },
     {
       "symbol": "FIS",
@@ -3762,7 +3707,7 @@
       "price_change_1d": -0.14,
       "price_change_5d": 4.21,
       "price_change_1mo": -8.95,
-      "total_volume": 3127198
+      "total_volume": 3860400
     },
     {
       "symbol": "LYB",
@@ -3773,7 +3718,18 @@
       "price_change_1d": -0.51,
       "price_change_5d": -7.11,
       "price_change_1mo": -3.17,
-      "total_volume": 2434414
+      "total_volume": 6063200
+    },
+    {
+      "symbol": "RL",
+      "name": "Ralph Lauren",
+      "sector": "Consumer Discretionary",
+      "current_price": 377.78,
+      "market_cap": 22484085119.22821,
+      "price_change_1d": 0.77,
+      "price_change_5d": 15.6,
+      "price_change_1mo": 0.66,
+      "total_volume": 885600
     },
     {
       "symbol": "PFG",
@@ -3784,18 +3740,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": 3.3,
       "price_change_1mo": 6.59,
-      "total_volume": 652276
-    },
-    {
-      "symbol": "VRSK",
-      "name": "Verisk Analytics",
-      "sector": "Industrials",
-      "current_price": 171.11,
-      "market_cap": 22419147122.369385,
-      "price_change_1d": -0.29,
-      "price_change_5d": 5.27,
-      "price_change_1mo": -4.35,
-      "total_volume": 1629736
+      "total_volume": 724100
     },
     {
       "symbol": "L",
@@ -3806,7 +3751,7 @@
       "price_change_1d": -0.28,
       "price_change_5d": 2.9,
       "price_change_1mo": -1.61,
-      "total_volume": 451894
+      "total_volume": 701300
     },
     {
       "symbol": "MTD",
@@ -3817,7 +3762,7 @@
       "price_change_1d": 1.16,
       "price_change_5d": 6.93,
       "price_change_1mo": -15.8,
-      "total_volume": 105517
+      "total_volume": 134500
     },
     {
       "symbol": "FFIV",
@@ -3828,7 +3773,7 @@
       "price_change_1d": 2.59,
       "price_change_5d": 8.56,
       "price_change_1mo": 26.5,
-      "total_volume": 450922
+      "total_volume": 451100
     },
     {
       "symbol": "PHM",
@@ -3839,7 +3784,7 @@
       "price_change_1d": 0.11,
       "price_change_5d": 5.74,
       "price_change_1mo": -8.73,
-      "total_volume": 972120
+      "total_volume": 1294700
     },
     {
       "symbol": "TROW",
@@ -3850,7 +3795,7 @@
       "price_change_1d": 1.41,
       "price_change_5d": 1.35,
       "price_change_1mo": 3.14,
-      "total_volume": 1910670
+      "total_volume": 2006100
     },
     {
       "symbol": "LEN",
@@ -3861,7 +3806,7 @@
       "price_change_1d": 0.03,
       "price_change_5d": 7.97,
       "price_change_1mo": -5.92,
-      "total_volume": 1799262
+      "total_volume": 2179000
     },
     {
       "symbol": "SBAC",
@@ -3869,10 +3814,10 @@
       "sector": "Real Estate",
       "current_price": 205.57,
       "market_cap": 21803375181.518738,
-      "price_change_1d": -1.2,
-      "price_change_5d": 2.98,
-      "price_change_1mo": -2.97,
-      "total_volume": 612733
+      "price_change_1d": -0.6,
+      "price_change_5d": 3.6,
+      "price_change_1mo": -2.38,
+      "total_volume": 632100
     },
     {
       "symbol": "DGX",
@@ -3883,7 +3828,7 @@
       "price_change_1d": 0.72,
       "price_change_5d": 4.61,
       "price_change_1mo": -4.31,
-      "total_volume": 697292
+      "total_volume": 871300
     },
     {
       "symbol": "AKAM",
@@ -3894,7 +3839,7 @@
       "price_change_1d": 0.68,
       "price_change_5d": -2.42,
       "price_change_1mo": 51.61,
-      "total_volume": 3735200
+      "total_volume": 3736400
     },
     {
       "symbol": "SMCI",
@@ -3905,7 +3850,7 @@
       "price_change_1d": 6.34,
       "price_change_5d": 14.63,
       "price_change_1mo": 21.93,
-      "total_volume": 38454885
+      "total_volume": 39371100
     },
     {
       "symbol": "OMC",
@@ -3916,18 +3861,7 @@
       "price_change_1d": 1.57,
       "price_change_5d": 5.79,
       "price_change_1mo": -4.07,
-      "total_volume": 1842900
-    },
-    {
-      "symbol": "VLTO",
-      "name": "Veralto",
-      "sector": "Industrials",
-      "current_price": 86.8,
-      "market_cap": 21318017038.30948,
-      "price_change_1d": 0.98,
-      "price_change_5d": 2.32,
-      "price_change_1mo": -2.47,
-      "total_volume": 1171072
+      "total_volume": 2525300
     },
     {
       "symbol": "LH",
@@ -3938,7 +3872,7 @@
       "price_change_1d": 1.63,
       "price_change_5d": 3.81,
       "price_change_1mo": -4.65,
-      "total_volume": 331650
+      "total_volume": 543200
     },
     {
       "symbol": "STE",
@@ -3949,7 +3883,7 @@
       "price_change_1d": -1.41,
       "price_change_5d": 2.1,
       "price_change_1mo": -3.12,
-      "total_volume": 455288
+      "total_volume": 645500
     },
     {
       "symbol": "EXPD",
@@ -3960,7 +3894,7 @@
       "price_change_1d": 0.82,
       "price_change_5d": 1.95,
       "price_change_1mo": 6.76,
-      "total_volume": 552980
+      "total_volume": 1261900
     },
     {
       "symbol": "CHRW",
@@ -3971,7 +3905,7 @@
       "price_change_1d": -2.19,
       "price_change_5d": 6.5,
       "price_change_1mo": -4.45,
-      "total_volume": 1479121
+      "total_volume": 1512700
     },
     {
       "symbol": "CHTR",
@@ -3982,7 +3916,7 @@
       "price_change_1d": -2.52,
       "price_change_5d": 3.43,
       "price_change_1mo": -40.14,
-      "total_volume": 2082617
+      "total_volume": 2100900
     },
     {
       "symbol": "ALB",
@@ -3993,7 +3927,7 @@
       "price_change_1d": 0.99,
       "price_change_5d": -4.88,
       "price_change_1mo": -11.66,
-      "total_volume": 1658002
+      "total_volume": 1676100
     },
     {
       "symbol": "GPN",
@@ -4004,7 +3938,7 @@
       "price_change_1d": 0.92,
       "price_change_5d": 8.4,
       "price_change_1mo": 2.29,
-      "total_volume": 1721781
+      "total_volume": 2094100
     },
     {
       "symbol": "LUV",
@@ -4015,7 +3949,7 @@
       "price_change_1d": 0.2,
       "price_change_5d": 6.13,
       "price_change_1mo": 3.84,
-      "total_volume": 5211379
+      "total_volume": 7028500
     },
     {
       "symbol": "SW",
@@ -4026,7 +3960,7 @@
       "price_change_1d": 0.82,
       "price_change_5d": 1.52,
       "price_change_1mo": -3.04,
-      "total_volume": 3220126
+      "total_volume": 3880300
     },
     {
       "symbol": "EFX",
@@ -4034,10 +3968,10 @@
       "sector": "Industrials",
       "current_price": 164.04,
       "market_cap": 19788898481.955338,
-      "price_change_1d": 0.58,
-      "price_change_5d": 3.58,
-      "price_change_1mo": -8.18,
-      "total_volume": 847837
+      "price_change_1d": 0.92,
+      "price_change_5d": 3.94,
+      "price_change_1mo": -7.87,
+      "total_volume": 1054800
     },
     {
       "symbol": "DD",
@@ -4048,7 +3982,7 @@
       "price_change_1d": 2.06,
       "price_change_5d": -2.41,
       "price_change_1mo": 5.07,
-      "total_volume": 2276527
+      "total_volume": 2276700
     },
     {
       "symbol": "BRO",
@@ -4059,7 +3993,7 @@
       "price_change_1d": -1.2,
       "price_change_5d": 2.74,
       "price_change_1mo": -14.57,
-      "total_volume": 1517594
+      "total_volume": 2550000
     },
     {
       "symbol": "INCY",
@@ -4070,7 +4004,7 @@
       "price_change_1d": -0.26,
       "price_change_5d": 1.94,
       "price_change_1mo": 0.43,
-      "total_volume": 855496
+      "total_volume": 879800
     },
     {
       "symbol": "EVRG",
@@ -4078,10 +4012,10 @@
       "sector": "Utilities",
       "current_price": 83.94,
       "market_cap": 19349263881.27594,
-      "price_change_1d": 0.35,
-      "price_change_5d": 4.27,
-      "price_change_1mo": 5.4,
-      "total_volume": 1609339
+      "price_change_1d": 1.19,
+      "price_change_5d": 5.15,
+      "price_change_1mo": 6.28,
+      "total_volume": 1609800
     },
     {
       "symbol": "PKG",
@@ -4092,7 +4026,7 @@
       "price_change_1d": 1.01,
       "price_change_5d": 1.81,
       "price_change_1mo": 5.2,
-      "total_volume": 330399
+      "total_volume": 475600
     },
     {
       "symbol": "IFF",
@@ -4103,7 +4037,7 @@
       "price_change_1d": 0.04,
       "price_change_5d": 2.98,
       "price_change_1mo": 5.77,
-      "total_volume": 943147
+      "total_volume": 1298300
     },
     {
       "symbol": "LNT",
@@ -4114,7 +4048,7 @@
       "price_change_1d": 0.91,
       "price_change_5d": 4.3,
       "price_change_1mo": 4.99,
-      "total_volume": 1718518
+      "total_volume": 1950600
     },
     {
       "symbol": "RIVN",
@@ -4125,7 +4059,7 @@
       "price_change_1d": 0.49,
       "price_change_5d": 3.12,
       "price_change_1mo": -19.84,
-      "total_volume": 26984050
+      "total_volume": 27028500
     },
     {
       "symbol": "SNA",
@@ -4136,7 +4070,7 @@
       "price_change_1d": 1.2,
       "price_change_5d": 2.64,
       "price_change_1mo": -3.46,
-      "total_volume": 194221
+      "total_volume": 298900
     },
     {
       "symbol": "CF",
@@ -4147,7 +4081,7 @@
       "price_change_1d": 0.01,
       "price_change_5d": -2.83,
       "price_change_1mo": -0.21,
-      "total_volume": 1616729
+      "total_volume": 1618700
     },
     {
       "symbol": "MRNA",
@@ -4158,7 +4092,7 @@
       "price_change_1d": -0.8,
       "price_change_5d": -4.4,
       "price_change_1mo": -15.68,
-      "total_volume": 4191287
+      "total_volume": 4217900
     },
     {
       "symbol": "DLTR",
@@ -4169,7 +4103,7 @@
       "price_change_1d": -0.76,
       "price_change_5d": 6.03,
       "price_change_1mo": -6.85,
-      "total_volume": 2386380
+      "total_volume": 2397000
     },
     {
       "symbol": "FTV",
@@ -4180,7 +4114,7 @@
       "price_change_1d": 0.19,
       "price_change_5d": 0.7,
       "price_change_1mo": -2.84,
-      "total_volume": 1480132
+      "total_volume": 2052200
     },
     {
       "symbol": "GIS",
@@ -4191,7 +4125,7 @@
       "price_change_1d": 0.66,
       "price_change_5d": 2.12,
       "price_change_1mo": -4.26,
-      "total_volume": 6573394
+      "total_volume": 6602400
     },
     {
       "symbol": "ESS",
@@ -4202,7 +4136,7 @@
       "price_change_1d": 1.06,
       "price_change_5d": 3.61,
       "price_change_1mo": 9.72,
-      "total_volume": 239667
+      "total_volume": 368000
     },
     {
       "symbol": "AMCR",
@@ -4213,7 +4147,7 @@
       "price_change_1d": -0.31,
       "price_change_5d": 4.61,
       "price_change_1mo": -4.69,
-      "total_volume": 2119427
+      "total_volume": 2881100
     },
     {
       "symbol": "BR",
@@ -4224,7 +4158,7 @@
       "price_change_1d": 0.31,
       "price_change_5d": 3.34,
       "price_change_1mo": -6.32,
-      "total_volume": 879010
+      "total_volume": 896000
     },
     {
       "symbol": "INVH",
@@ -4235,7 +4169,7 @@
       "price_change_1d": 0.9,
       "price_change_5d": 4.87,
       "price_change_1mo": 9.78,
-      "total_volume": 2772769
+      "total_volume": 4077900
     },
     {
       "symbol": "PTC",
@@ -4246,7 +4180,7 @@
       "price_change_1d": 1.64,
       "price_change_5d": 4.45,
       "price_change_1mo": 5.43,
-      "total_volume": 896927
+      "total_volume": 929300
     },
     {
       "symbol": "HOLX",
@@ -4268,7 +4202,7 @@
       "price_change_1d": 0.86,
       "price_change_5d": -3.07,
       "price_change_1mo": -1.05,
-      "total_volume": 258715
+      "total_volume": 367000
     },
     {
       "symbol": "TSCO",
@@ -4279,7 +4213,7 @@
       "price_change_1d": -0.16,
       "price_change_5d": 3.43,
       "price_change_1mo": -18.84,
-      "total_volume": 7391681
+      "total_volume": 7565900
     },
     {
       "symbol": "IP",
@@ -4287,10 +4221,10 @@
       "sector": "Materials",
       "current_price": 31.29,
       "market_cap": 16568586601.247269,
-      "price_change_1d": -0.67,
-      "price_change_5d": 3.4,
-      "price_change_1mo": -6.12,
-      "total_volume": 6103607
+      "price_change_1d": 0.82,
+      "price_change_5d": 4.95,
+      "price_change_1mo": -4.72,
+      "total_volume": 6173600
     },
     {
       "symbol": "NVR",
@@ -4301,7 +4235,7 @@
       "price_change_1d": -0.18,
       "price_change_5d": 8.51,
       "price_change_1mo": -8.68,
-      "total_volume": 15166
+      "total_volume": 19400
     },
     {
       "symbol": "KIM",
@@ -4312,29 +4246,29 @@
       "price_change_1d": 0.25,
       "price_change_5d": 4.83,
       "price_change_1mo": 2.29,
-      "total_volume": 1789873
+      "total_volume": 3370900
     },
     {
       "symbol": "NWS",
       "name": "News Corp (Class B)",
       "sector": "Communication Services",
       "current_price": 29.68,
-      "market_cap": 16207731556.571182,
+      "market_cap": 16204749458.54052,
       "price_change_1d": -1.33,
       "price_change_5d": -0.2,
       "price_change_1mo": -3.45,
-      "total_volume": 1008971
+      "total_volume": 1022300
     },
     {
       "symbol": "NDSN",
       "name": "Nordson",
       "sector": "Industrials",
       "current_price": 289.9,
-      "market_cap": 16171664719.723938,
+      "market_cap": 16152632785.124634,
       "price_change_1d": 1.09,
       "price_change_5d": 5.46,
       "price_change_1mo": 3.74,
-      "total_volume": 514125
+      "total_volume": 558300
     },
     {
       "symbol": "BEN",
@@ -4345,7 +4279,7 @@
       "price_change_1d": 0.52,
       "price_change_5d": -2.54,
       "price_change_1mo": 12.84,
-      "total_volume": 2034989
+      "total_volume": 2563300
     },
     {
       "symbol": "TXT",
@@ -4356,7 +4290,7 @@
       "price_change_1d": 1.76,
       "price_change_5d": 3.45,
       "price_change_1mo": 2.65,
-      "total_volume": 843680
+      "total_volume": 843700
     },
     {
       "symbol": "GNRC",
@@ -4367,7 +4301,7 @@
       "price_change_1d": 9.02,
       "price_change_5d": 2.45,
       "price_change_1mo": 26.42,
-      "total_volume": 1090288
+      "total_volume": 1204800
     },
     {
       "symbol": "LDOS",
@@ -4378,7 +4312,7 @@
       "price_change_1d": 2.41,
       "price_change_5d": 1.88,
       "price_change_1mo": -16.39,
-      "total_volume": 774705
+      "total_volume": 774900
     },
     {
       "symbol": "IEX",
@@ -4386,10 +4320,10 @@
       "sector": "Industrials",
       "current_price": 208.78,
       "market_cap": 15452862466.209595,
-      "price_change_1d": 1.54,
-      "price_change_5d": 0.52,
-      "price_change_1mo": 2.53,
-      "total_volume": 460959
+      "price_change_1d": 1.9,
+      "price_change_5d": 0.88,
+      "price_change_1mo": 2.89,
+      "total_volume": 673000
     },
     {
       "symbol": "HST",
@@ -4400,7 +4334,7 @@
       "price_change_1d": -0.13,
       "price_change_5d": 4.68,
       "price_change_1mo": 7.34,
-      "total_volume": 6930189
+      "total_volume": 7643900
     },
     {
       "symbol": "MAA",
@@ -4411,7 +4345,7 @@
       "price_change_1d": 0.87,
       "price_change_5d": 4.32,
       "price_change_1mo": 5.26,
-      "total_volume": 614329
+      "total_volume": 863900
     },
     {
       "symbol": "LULU",
@@ -4422,7 +4356,7 @@
       "price_change_1d": 0.33,
       "price_change_5d": 6.75,
       "price_change_1mo": -22.19,
-      "total_volume": 2219967
+      "total_volume": 2259200
     },
     {
       "symbol": "DECK",
@@ -4433,7 +4367,7 @@
       "price_change_1d": 3.95,
       "price_change_5d": 14.01,
       "price_change_1mo": -0.95,
-      "total_volume": 5155837
+      "total_volume": 5163700
     },
     {
       "symbol": "BALL",
@@ -4444,7 +4378,7 @@
       "price_change_1d": 0.28,
       "price_change_5d": 2.37,
       "price_change_1mo": -9.83,
-      "total_volume": 1218282
+      "total_volume": 1658900
     },
     {
       "symbol": "GEN",
@@ -4455,7 +4389,7 @@
       "price_change_1d": -0.12,
       "price_change_5d": 6.41,
       "price_change_1mo": 24.83,
-      "total_volume": 5358819
+      "total_volume": 5733400
     },
     {
       "symbol": "REG",
@@ -4466,7 +4400,7 @@
       "price_change_1d": 0.64,
       "price_change_5d": 3.66,
       "price_change_1mo": -0.2,
-      "total_volume": 913593
+      "total_volume": 996900
     },
     {
       "symbol": "TKO",
@@ -4477,7 +4411,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": 0.75,
       "price_change_1mo": 2.81,
-      "total_volume": 556362
+      "total_volume": 556400
     },
     {
       "symbol": "CDW",
@@ -4485,21 +4419,21 @@
       "sector": "Information Technology",
       "current_price": 110.82,
       "market_cap": 14157637400.83274,
-      "price_change_1d": 3.69,
-      "price_change_5d": 8.57,
-      "price_change_1mo": -22.2,
-      "total_volume": 1501377
+      "price_change_1d": 4.3,
+      "price_change_5d": 9.22,
+      "price_change_1mo": -21.74,
+      "total_volume": 1519600
     },
     {
       "symbol": "NWSA",
       "name": "News Corp (Class A)",
       "sector": "Communication Services",
       "current_price": 25.89,
-      "market_cap": 14138078025.357635,
+      "market_cap": 14135476727.66896,
       "price_change_1d": -1.41,
       "price_change_5d": -0.12,
       "price_change_1mo": -2.85,
-      "total_volume": 3739103
+      "total_volume": 3844000
     },
     {
       "symbol": "EG",
@@ -4510,7 +4444,7 @@
       "price_change_1d": -1.05,
       "price_change_5d": 0.3,
       "price_change_1mo": 2.23,
-      "total_volume": 139940
+      "total_volume": 192000
     },
     {
       "symbol": "CSGP",
@@ -4521,7 +4455,7 @@
       "price_change_1d": 0.06,
       "price_change_5d": 3.89,
       "price_change_1mo": -12.43,
-      "total_volume": 4476713
+      "total_volume": 4615700
     },
     {
       "symbol": "APA",
@@ -4532,7 +4466,7 @@
       "price_change_1d": 1.2,
       "price_change_5d": -0.46,
       "price_change_1mo": 1.94,
-      "total_volume": 3867492
+      "total_volume": 3872700
     },
     {
       "symbol": "MAS",
@@ -4540,10 +4474,10 @@
       "sector": "Industrials",
       "current_price": 67.26,
       "market_cap": 13694612972.051659,
-      "price_change_1d": 0.16,
-      "price_change_5d": 3.25,
-      "price_change_1mo": -9.06,
-      "total_volume": 1884276
+      "price_change_1d": 0.64,
+      "price_change_5d": 3.75,
+      "price_change_1mo": -8.62,
+      "total_volume": 2337700
     },
     {
       "symbol": "GPC",
@@ -4554,7 +4488,7 @@
       "price_change_1d": 0.26,
       "price_change_5d": 5.38,
       "price_change_1mo": -12.41,
-      "total_volume": 958921
+      "total_volume": 959100
     },
     {
       "symbol": "DOC",
@@ -4565,7 +4499,7 @@
       "price_change_1d": 0.46,
       "price_change_5d": 2.45,
       "price_change_1mo": 21.46,
-      "total_volume": 4652313
+      "total_volume": 5630500
     },
     {
       "symbol": "J",
@@ -4573,10 +4507,10 @@
       "sector": "Industrials",
       "current_price": 114.69,
       "market_cap": 13542696300.793396,
-      "price_change_1d": 0.57,
-      "price_change_5d": 3.78,
-      "price_change_1mo": -10.08,
-      "total_volume": 892764
+      "price_change_1d": 0.89,
+      "price_change_5d": 4.11,
+      "price_change_1mo": -9.8,
+      "total_volume": 892800
     },
     {
       "symbol": "SOLV",
@@ -4587,7 +4521,7 @@
       "price_change_1d": 0.1,
       "price_change_5d": 3.46,
       "price_change_1mo": 11.17,
-      "total_volume": 1080010
+      "total_volume": 1629300
     },
     {
       "symbol": "TRMB",
@@ -4598,7 +4532,7 @@
       "price_change_1d": 0.66,
       "price_change_5d": 2.19,
       "price_change_1mo": -18.45,
-      "total_volume": 2126017
+      "total_volume": 2181400
     },
     {
       "symbol": "BBY",
@@ -4609,7 +4543,7 @@
       "price_change_1d": 0.78,
       "price_change_5d": 9.51,
       "price_change_1mo": -2.99,
-      "total_volume": 4936350
+      "total_volume": 5502100
     },
     {
       "symbol": "TYL",
@@ -4620,7 +4554,7 @@
       "price_change_1d": 1.46,
       "price_change_5d": 0.44,
       "price_change_1mo": -9.56,
-      "total_volume": 271975
+      "total_volume": 357900
     },
     {
       "symbol": "MKC",
@@ -4631,7 +4565,7 @@
       "price_change_1d": 1.79,
       "price_change_5d": 3.13,
       "price_change_1mo": -7.13,
-      "total_volume": 2031673
+      "total_volume": 2680300
     },
     {
       "symbol": "DVA",
@@ -4642,7 +4576,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": -0.61,
       "price_change_1mo": 30.25,
-      "total_volume": 366273
+      "total_volume": 628700
     },
     {
       "symbol": "HII",
@@ -4653,7 +4587,7 @@
       "price_change_1d": 0.97,
       "price_change_5d": -1.7,
       "price_change_1mo": -12.61,
-      "total_volume": 208071
+      "total_volume": 286500
     },
     {
       "symbol": "AIZ",
@@ -4664,7 +4598,7 @@
       "price_change_1d": -0.34,
       "price_change_5d": 0.08,
       "price_change_1mo": 11.24,
-      "total_volume": 207938
+      "total_volume": 267600
     },
     {
       "symbol": "PNW",
@@ -4675,7 +4609,7 @@
       "price_change_1d": 1.08,
       "price_change_5d": 4.61,
       "price_change_1mo": 3.03,
-      "total_volume": 695242
+      "total_volume": 948100
     },
     {
       "symbol": "HAS",
@@ -4686,7 +4620,7 @@
       "price_change_1d": -2.2,
       "price_change_5d": -7.51,
       "price_change_1mo": -2.77,
-      "total_volume": 2162706
+      "total_volume": 2234900
     },
     {
       "symbol": "SWKS",
@@ -4697,7 +4631,7 @@
       "price_change_1d": 12.08,
       "price_change_5d": 20.27,
       "price_change_1mo": 33.43,
-      "total_volume": 5232163
+      "total_volume": 5335800
     },
     {
       "symbol": "UDR",
@@ -4708,7 +4642,7 @@
       "price_change_1d": 1.33,
       "price_change_5d": 2.95,
       "price_change_1mo": 10.14,
-      "total_volume": 3745298
+      "total_volume": 4736000
     },
     {
       "symbol": "AVY",
@@ -4719,7 +4653,7 @@
       "price_change_1d": 0.48,
       "price_change_5d": 2.21,
       "price_change_1mo": -4.42,
-      "total_volume": 341598
+      "total_volume": 468800
     },
     {
       "symbol": "COO",
@@ -4730,7 +4664,7 @@
       "price_change_1d": -0.48,
       "price_change_5d": 4.93,
       "price_change_1mo": -6.53,
-      "total_volume": 1511846
+      "total_volume": 1536700
     },
     {
       "symbol": "APTV",
@@ -4741,7 +4675,7 @@
       "price_change_1d": 2.7,
       "price_change_5d": 5.56,
       "price_change_1mo": -5.75,
-      "total_volume": 2833448
+      "total_volume": 2833500
     },
     {
       "symbol": "GL",
@@ -4752,7 +4686,7 @@
       "price_change_1d": -0.2,
       "price_change_5d": 0.8,
       "price_change_1mo": 3.33,
-      "total_volume": 269708
+      "total_volume": 398900
     },
     {
       "symbol": "PNR",
@@ -4763,7 +4697,7 @@
       "price_change_1d": 0.52,
       "price_change_5d": 2.94,
       "price_change_1mo": -16.5,
-      "total_volume": 754280
+      "total_volume": 987100
     },
     {
       "symbol": "BF-B",
@@ -4774,7 +4708,7 @@
       "price_change_1d": 0.61,
       "price_change_5d": -0.68,
       "price_change_1mo": -8.17,
-      "total_volume": 1395876
+      "total_volume": 1732800
     },
     {
       "symbol": "IVZ",
@@ -4785,7 +4719,7 @@
       "price_change_1d": 0.26,
       "price_change_5d": -0.26,
       "price_change_1mo": 6.66,
-      "total_volume": 2049152
+      "total_volume": 2603600
     },
     {
       "symbol": "GDDY",
@@ -4796,7 +4730,7 @@
       "price_change_1d": -1.2,
       "price_change_5d": 3.76,
       "price_change_1mo": 2.33,
-      "total_volume": 1062764
+      "total_volume": 1377900
     },
     {
       "symbol": "SWK",
@@ -4807,7 +4741,7 @@
       "price_change_1d": 1.22,
       "price_change_5d": 1.76,
       "price_change_1mo": 1.0,
-      "total_volume": 749362
+      "total_volume": 982900
     },
     {
       "symbol": "ERIE",
@@ -4818,7 +4752,7 @@
       "price_change_1d": -0.22,
       "price_change_5d": 5.25,
       "price_change_1mo": -10.31,
-      "total_volume": 181807
+      "total_volume": 188700
     },
     {
       "symbol": "ALGN",
@@ -4829,7 +4763,7 @@
       "price_change_1d": 0.35,
       "price_change_5d": 4.04,
       "price_change_1mo": -16.55,
-      "total_volume": 838947
+      "total_volume": 844500
     },
     {
       "symbol": "PSKY",
@@ -4840,7 +4774,7 @@
       "price_change_1d": 1.75,
       "price_change_5d": 5.76,
       "price_change_1mo": -11.36,
-      "total_volume": 5002220
+      "total_volume": 5042200
     },
     {
       "symbol": "HRL",
@@ -4851,7 +4785,7 @@
       "price_change_1d": 0.76,
       "price_change_5d": 7.6,
       "price_change_1mo": -0.89,
-      "total_volume": 3658162
+      "total_volume": 4567100
     },
     {
       "symbol": "CLX",
@@ -4862,7 +4796,7 @@
       "price_change_1d": -0.06,
       "price_change_5d": 5.15,
       "price_change_1mo": -1.8,
-      "total_volume": 1631150
+      "total_volume": 1631900
     },
     {
       "symbol": "ALLE",
@@ -4873,7 +4807,7 @@
       "price_change_1d": -0.21,
       "price_change_5d": 3.8,
       "price_change_1mo": -10.0,
-      "total_volume": 484281
+      "total_volume": 642800
     },
     {
       "symbol": "SJM",
@@ -4884,7 +4818,7 @@
       "price_change_1d": 1.42,
       "price_change_5d": 2.8,
       "price_change_1mo": 10.02,
-      "total_volume": 722838
+      "total_volume": 1117600
     },
     {
       "symbol": "PODD",
@@ -4895,7 +4829,7 @@
       "price_change_1d": -1.29,
       "price_change_5d": 5.03,
       "price_change_1mo": -20.01,
-      "total_volume": 942040
+      "total_volume": 949100
     },
     {
       "symbol": "IT",
@@ -4906,7 +4840,7 @@
       "price_change_1d": 1.77,
       "price_change_5d": 9.42,
       "price_change_1mo": 1.86,
-      "total_volume": 739487
+      "total_volume": 1042200
     },
     {
       "symbol": "CPT",
@@ -4917,7 +4851,7 @@
       "price_change_1d": 1.22,
       "price_change_5d": 4.76,
       "price_change_1mo": 5.9,
-      "total_volume": 956269
+      "total_volume": 1251800
     },
     {
       "symbol": "DPZ",
@@ -4928,7 +4862,7 @@
       "price_change_1d": 0.02,
       "price_change_5d": 4.71,
       "price_change_1mo": -13.5,
-      "total_volume": 483001
+      "total_volume": 506200
     },
     {
       "symbol": "TTD",
@@ -4939,7 +4873,7 @@
       "price_change_1d": 5.17,
       "price_change_5d": 5.82,
       "price_change_1mo": -5.01,
-      "total_volume": 16260058
+      "total_volume": 16278500
     },
     {
       "symbol": "AES",
@@ -4950,7 +4884,7 @@
       "price_change_1d": -0.07,
       "price_change_5d": 1.45,
       "price_change_1mo": 2.84,
-      "total_volume": 5772191
+      "total_volume": 8781100
     },
     {
       "symbol": "FRT",
@@ -4961,7 +4895,7 @@
       "price_change_1d": 0.96,
       "price_change_5d": 5.82,
       "price_change_1mo": 8.74,
-      "total_volume": 1122298
+      "total_volume": 1122500
     },
     {
       "symbol": "JKHY",
@@ -4972,7 +4906,7 @@
       "price_change_1d": 0.45,
       "price_change_5d": 2.43,
       "price_change_1mo": -10.07,
-      "total_volume": 1044017
+      "total_volume": 1082800
     },
     {
       "symbol": "BAX",
@@ -4983,7 +4917,7 @@
       "price_change_1d": 0.79,
       "price_change_5d": 10.87,
       "price_change_1mo": 4.75,
-      "total_volume": 6239892
+      "total_volume": 7219800
     },
     {
       "symbol": "MGM",
@@ -4994,7 +4928,7 @@
       "price_change_1d": 1.96,
       "price_change_5d": 3.87,
       "price_change_1mo": -2.14,
-      "total_volume": 4620096
+      "total_volume": 4837100
     },
     {
       "symbol": "BXP",
@@ -5005,7 +4939,7 @@
       "price_change_1d": 0.27,
       "price_change_5d": 3.06,
       "price_change_1mo": 3.43,
-      "total_volume": 721354
+      "total_volume": 1062500
     },
     {
       "symbol": "MOH",
@@ -5016,7 +4950,7 @@
       "price_change_1d": 1.59,
       "price_change_5d": -0.46,
       "price_change_1mo": 20.35,
-      "total_volume": 333703
+      "total_volume": 542300
     },
     {
       "symbol": "UHS",
@@ -5027,7 +4961,7 @@
       "price_change_1d": -2.86,
       "price_change_5d": -6.43,
       "price_change_1mo": -12.68,
-      "total_volume": 958137
+      "total_volume": 1235900
     },
     {
       "symbol": "HSIC",
@@ -5038,7 +4972,7 @@
       "price_change_1d": 0.97,
       "price_change_5d": 2.05,
       "price_change_1mo": -4.99,
-      "total_volume": 999841
+      "total_volume": 1023100
     },
     {
       "symbol": "FDS",
@@ -5049,7 +4983,7 @@
       "price_change_1d": 3.11,
       "price_change_5d": 9.14,
       "price_change_1mo": -4.42,
-      "total_volume": 380608
+      "total_volume": 498800
     },
     {
       "symbol": "ARE",
@@ -5060,7 +4994,7 @@
       "price_change_1d": 1.09,
       "price_change_5d": 7.56,
       "price_change_1mo": 3.69,
-      "total_volume": 1393892
+      "total_volume": 1394000
     },
     {
       "symbol": "TAP",
@@ -5071,7 +5005,7 @@
       "price_change_1d": 0.05,
       "price_change_5d": 4.19,
       "price_change_1mo": -0.35,
-      "total_volume": 1617319
+      "total_volume": 2106500
     },
     {
       "symbol": "BLDR",
@@ -5082,7 +5016,7 @@
       "price_change_1d": 0.39,
       "price_change_5d": 5.31,
       "price_change_1mo": -18.18,
-      "total_volume": 1903456
+      "total_volume": 1919600
     },
     {
       "symbol": "AOS",
@@ -5093,7 +5027,7 @@
       "price_change_1d": 0.19,
       "price_change_5d": 2.27,
       "price_change_1mo": -11.12,
-      "total_volume": 1374212
+      "total_volume": 1374200
     },
     {
       "symbol": "CRL",
@@ -5104,7 +5038,7 @@
       "price_change_1d": 0.91,
       "price_change_5d": 6.26,
       "price_change_1mo": -13.26,
-      "total_volume": 427461
+      "total_volume": 588600
     },
     {
       "symbol": "TECH",
@@ -5115,7 +5049,7 @@
       "price_change_1d": 1.77,
       "price_change_5d": 11.55,
       "price_change_1mo": -17.55,
-      "total_volume": 2489372
+      "total_volume": 2535200
     },
     {
       "symbol": "NCLH",
@@ -5126,7 +5060,7 @@
       "price_change_1d": -1.03,
       "price_change_5d": 5.03,
       "price_change_1mo": -14.35,
-      "total_volume": 18691813
+      "total_volume": 18911400
     },
     {
       "symbol": "MOS",
@@ -5137,7 +5071,7 @@
       "price_change_1d": 2.6,
       "price_change_5d": 4.5,
       "price_change_1mo": -7.26,
-      "total_volume": 7993046
+      "total_volume": 8057200
     },
     {
       "symbol": "POOL",
@@ -5148,7 +5082,7 @@
       "price_change_1d": 1.62,
       "price_change_5d": 5.3,
       "price_change_1mo": -20.58,
-      "total_volume": 552484
+      "total_volume": 552500
     },
     {
       "symbol": "CAG",
@@ -5159,7 +5093,7 @@
       "price_change_1d": 1.35,
       "price_change_5d": 0.97,
       "price_change_1mo": -4.32,
-      "total_volume": 10091498
+      "total_volume": 11621600
     },
     {
       "symbol": "PAYC",
@@ -5170,7 +5104,7 @@
       "price_change_1d": 2.57,
       "price_change_5d": 1.15,
       "price_change_1mo": 5.65,
-      "total_volume": 411618
+      "total_volume": 513800
     },
     {
       "symbol": "MHK",
@@ -5181,7 +5115,7 @@
       "price_change_1d": 0.07,
       "price_change_5d": 6.05,
       "price_change_1mo": -5.54,
-      "total_volume": 287785
+      "total_volume": 418300
     },
     {
       "symbol": "CPB",
@@ -5192,7 +5126,7 @@
       "price_change_1d": 2.64,
       "price_change_5d": 2.85,
       "price_change_1mo": -1.15,
-      "total_volume": 6862007
+      "total_volume": 6884100
     },
     {
       "symbol": "LW",
@@ -5203,7 +5137,7 @@
       "price_change_1d": 2.22,
       "price_change_5d": -0.68,
       "price_change_1mo": -1.91,
-      "total_volume": 1300011
+      "total_volume": 1300000
     },
     {
       "symbol": "TFX",
@@ -5211,10 +5145,10 @@
       "sector": "Health Care",
       "current_price": 132.75,
       "market_cap": 5876870510.25,
-      "price_change_1d": 0.64,
-      "price_change_5d": 2.34,
-      "price_change_1mo": -4.37,
-      "total_volume": 574170
+      "price_change_1d": 0.9,
+      "price_change_5d": 2.61,
+      "price_change_1mo": -4.12,
+      "total_volume": 648600
     },
     {
       "symbol": "EPAM",
@@ -5225,7 +5159,7 @@
       "price_change_1d": -0.48,
       "price_change_5d": 10.4,
       "price_change_1mo": -20.47,
-      "total_volume": 959349
+      "total_volume": 1130900
     },
     {
       "symbol": "RHI",
@@ -5233,10 +5167,10 @@
       "sector": "Industrials",
       "current_price": 27.31,
       "market_cap": 2793637860.9593296,
-      "price_change_1d": 0.48,
-      "price_change_5d": 8.72,
-      "price_change_1mo": -7.33,
-      "total_volume": 1300217
+      "price_change_1d": 2.71,
+      "price_change_5d": 11.13,
+      "price_change_1mo": -5.27,
+      "total_volume": 1784000
     },
     {
       "symbol": "XYZ",
@@ -5247,7 +5181,7 @@
       "price_change_1d": -0.83,
       "price_change_5d": -3.24,
       "price_change_1mo": -6.1,
-      "total_volume": 4907562
+      "total_volume": 5627500
     },
     {
       "symbol": "XOM",
@@ -5258,7 +5192,18 @@
       "price_change_1d": -0.24,
       "price_change_5d": -1.9,
       "price_change_1mo": 4.33,
-      "total_volume": 12918163
+      "total_volume": 12924600
+    },
+    {
+      "symbol": "VLO",
+      "name": "Valero Energy",
+      "sector": "Energy",
+      "current_price": 246.96,
+      "market_cap": 0,
+      "price_change_1d": 2.43,
+      "price_change_5d": -1.04,
+      "price_change_1mo": 5.88,
+      "total_volume": 2532800
     },
     {
       "symbol": "VTR",
@@ -5269,7 +5214,40 @@
       "price_change_1d": 0.2,
       "price_change_5d": 0.83,
       "price_change_1mo": 10.09,
-      "total_volume": 2808953
+      "total_volume": 2826800
+    },
+    {
+      "symbol": "VLTO",
+      "name": "Veralto",
+      "sector": "Industrials",
+      "current_price": 86.8,
+      "market_cap": 0,
+      "price_change_1d": 0.98,
+      "price_change_5d": 2.32,
+      "price_change_1mo": -2.47,
+      "total_volume": 1559100
+    },
+    {
+      "symbol": "VRSN",
+      "name": "Verisign",
+      "sector": "Information Technology",
+      "current_price": 310.0,
+      "market_cap": 0,
+      "price_change_1d": 1.33,
+      "price_change_5d": 4.45,
+      "price_change_1mo": 15.19,
+      "total_volume": 896500
+    },
+    {
+      "symbol": "VRSK",
+      "name": "Verisk Analytics",
+      "sector": "Industrials",
+      "current_price": 171.11,
+      "market_cap": 0,
+      "price_change_1d": -0.29,
+      "price_change_5d": 5.27,
+      "price_change_1mo": -4.35,
+      "total_volume": 1660100
     },
     {
       "symbol": "VZ",
@@ -5280,7 +5258,18 @@
       "price_change_1d": 0.17,
       "price_change_5d": 4.27,
       "price_change_1mo": 5.15,
-      "total_volume": 14614462
+      "total_volume": 14717700
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "sector": "Health Care",
+      "current_price": 434.52,
+      "market_cap": 0,
+      "price_change_1d": 0.23,
+      "price_change_5d": -0.56,
+      "price_change_1mo": -0.72,
+      "total_volume": 1746300
     },
     {
       "symbol": "VTRS",
@@ -5288,10 +5277,21 @@
       "sector": "Health Care",
       "current_price": 16.65,
       "market_cap": 0,
-      "price_change_1d": 1.15,
-      "price_change_5d": 1.03,
-      "price_change_1mo": 14.67,
-      "total_volume": 5178889
+      "price_change_1d": 1.9,
+      "price_change_5d": 1.77,
+      "price_change_1mo": 15.51,
+      "total_volume": 7362100
+    },
+    {
+      "symbol": "V",
+      "name": "Visa Inc.",
+      "sector": "Financials",
+      "current_price": 328.88,
+      "market_cap": 0,
+      "price_change_1d": -0.68,
+      "price_change_5d": 0.96,
+      "price_change_1mo": 5.87,
+      "total_volume": 7462100
     },
     {
       "symbol": "VST",
@@ -5302,7 +5302,7 @@
       "price_change_1d": 4.82,
       "price_change_5d": 11.88,
       "price_change_1mo": 0.31,
-      "total_volume": 5828563
+      "total_volume": 8048100
     },
     {
       "symbol": "VMC",
@@ -5310,10 +5310,10 @@
       "sector": "Materials",
       "current_price": 260.65,
       "market_cap": 0,
-      "price_change_1d": -0.55,
-      "price_change_5d": -2.68,
-      "price_change_1mo": -10.15,
-      "total_volume": 800268
+      "price_change_1d": -0.35,
+      "price_change_5d": -2.49,
+      "price_change_1mo": -9.98,
+      "total_volume": 803700
     },
     {
       "symbol": "WRB",
@@ -5324,7 +5324,7 @@
       "price_change_1d": 0.1,
       "price_change_5d": 1.64,
       "price_change_1mo": 0.06,
-      "total_volume": 1224500
+      "total_volume": 1636100
     },
     {
       "symbol": "WAB",
@@ -5332,10 +5332,10 @@
       "sector": "Industrials",
       "current_price": 256.41,
       "market_cap": 0,
-      "price_change_1d": 0.49,
-      "price_change_5d": -2.84,
-      "price_change_1mo": -1.95,
-      "total_volume": 421007
+      "price_change_1d": 0.61,
+      "price_change_5d": -2.72,
+      "price_change_1mo": -1.83,
+      "total_volume": 782900
     },
     {
       "symbol": "WMT",
@@ -5346,7 +5346,7 @@
       "price_change_1d": -0.88,
       "price_change_5d": -8.51,
       "price_change_1mo": -7.29,
-      "total_volume": 30276543
+      "total_volume": 30295700
     },
     {
       "symbol": "WBD",
@@ -5357,7 +5357,7 @@
       "price_change_1d": -0.26,
       "price_change_5d": 0.19,
       "price_change_1mo": -1.1,
-      "total_volume": 19221242
+      "total_volume": 19346800
     },
     {
       "symbol": "WM",
@@ -5368,7 +5368,7 @@
       "price_change_1d": 0.07,
       "price_change_5d": -0.87,
       "price_change_1mo": -2.69,
-      "total_volume": 1897891
+      "total_volume": 1908900
     },
     {
       "symbol": "WAT",
@@ -5379,7 +5379,7 @@
       "price_change_1d": 0.4,
       "price_change_5d": 3.99,
       "price_change_1mo": 2.39,
-      "total_volume": 377796
+      "total_volume": 478000
     },
     {
       "symbol": "WEC",
@@ -5390,7 +5390,7 @@
       "price_change_1d": 1.16,
       "price_change_5d": 3.89,
       "price_change_1mo": 0.88,
-      "total_volume": 2100925
+      "total_volume": 2125400
     },
     {
       "symbol": "WFC",
@@ -5401,7 +5401,7 @@
       "price_change_1d": 0.63,
       "price_change_5d": 4.06,
       "price_change_1mo": -4.65,
-      "total_volume": 8727690
+      "total_volume": 8728900
     },
     {
       "symbol": "WELL",
@@ -5412,7 +5412,7 @@
       "price_change_1d": 0.07,
       "price_change_5d": 1.14,
       "price_change_1mo": 8.62,
-      "total_volume": 1552558
+      "total_volume": 2291900
     },
     {
       "symbol": "WST",
@@ -5423,7 +5423,7 @@
       "price_change_1d": 0.09,
       "price_change_5d": 4.47,
       "price_change_1mo": 15.4,
-      "total_volume": 401909
+      "total_volume": 533800
     },
     {
       "symbol": "WDC",
@@ -5434,7 +5434,7 @@
       "price_change_1d": -0.45,
       "price_change_5d": 0.47,
       "price_change_1mo": 24.46,
-      "total_volume": 3816774
+      "total_volume": 4481900
     },
     {
       "symbol": "WY",
@@ -5445,7 +5445,7 @@
       "price_change_1d": 0.6,
       "price_change_5d": 4.32,
       "price_change_1mo": -4.48,
-      "total_volume": 2721468
+      "total_volume": 4040100
     },
     {
       "symbol": "WSM",
@@ -5456,7 +5456,7 @@
       "price_change_1d": 0.29,
       "price_change_5d": 14.15,
       "price_change_1mo": -2.43,
-      "total_volume": 1001531
+      "total_volume": 1001500
     },
     {
       "symbol": "WMB",
@@ -5467,7 +5467,7 @@
       "price_change_1d": 1.23,
       "price_change_5d": 0.97,
       "price_change_1mo": 10.37,
-      "total_volume": 6201177
+      "total_volume": 6201200
     },
     {
       "symbol": "WTW",
@@ -5478,7 +5478,7 @@
       "price_change_1d": -0.32,
       "price_change_5d": 3.63,
       "price_change_1mo": -11.67,
-      "total_volume": 468154
+      "total_volume": 489600
     },
     {
       "symbol": "WDAY",
@@ -5489,7 +5489,7 @@
       "price_change_1d": 5.16,
       "price_change_5d": 2.5,
       "price_change_1mo": 1.22,
-      "total_volume": 10772912
+      "total_volume": 10781700
     },
     {
       "symbol": "WYNN",
@@ -5500,7 +5500,7 @@
       "price_change_1d": -1.32,
       "price_change_5d": 2.18,
       "price_change_1mo": -8.58,
-      "total_volume": 1182077
+      "total_volume": 1208900
     },
     {
       "symbol": "XEL",
@@ -5511,7 +5511,7 @@
       "price_change_1d": 1.1,
       "price_change_5d": 4.06,
       "price_change_1mo": 3.8,
-      "total_volume": 3591958
+      "total_volume": 3738000
     },
     {
       "symbol": "XYL",
@@ -5522,7 +5522,7 @@
       "price_change_1d": 1.45,
       "price_change_5d": 2.0,
       "price_change_1mo": -9.2,
-      "total_volume": 1030090
+      "total_volume": 1540200
     },
     {
       "symbol": "YUM",
@@ -5533,7 +5533,7 @@
       "price_change_1d": 0.54,
       "price_change_5d": 3.45,
       "price_change_1mo": -2.46,
-      "total_volume": 1288195
+      "total_volume": 1640600
     },
     {
       "symbol": "ZBRA",
@@ -5544,7 +5544,7 @@
       "price_change_1d": 5.49,
       "price_change_5d": -1.47,
       "price_change_1mo": 10.58,
-      "total_volume": 1383283
+      "total_volume": 1383400
     },
     {
       "symbol": "ZBH",
@@ -5555,7 +5555,7 @@
       "price_change_1d": 0.22,
       "price_change_5d": 2.15,
       "price_change_1mo": -8.1,
-      "total_volume": 1434304
+      "total_volume": 1809800
     },
     {
       "symbol": "ZTS",
@@ -5566,7 +5566,7 @@
       "price_change_1d": 1.56,
       "price_change_5d": 9.57,
       "price_change_1mo": -30.8,
-      "total_volume": 6326827
+      "total_volume": 6327100
     }
   ]
 }
