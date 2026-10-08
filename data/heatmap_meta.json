@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-07T01:11:35.204652+00:00",
+  "updated_at": "2026-10-08T01:31:55.853587+00:00",
   "indexes": {
     "sp500": {
-      "total_stocks": 501,
+      "total_stocks": 500,
       "top5": [
         "NVDA",
         "AAPL",
@@ -12,7 +12,7 @@
       ]
     },
     "qqq": {
-      "total_stocks": 100,
+      "total_stocks": 99,
       "top5": [
         "NVDA",
         "AAPL",
