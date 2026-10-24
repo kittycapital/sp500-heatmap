@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T00:21:45.598635+00:00",
+  "updated_at": "2026-10-24T00:12:00.388752+00:00",
   "indexes": {
     "sp500": {
       "total_stocks": 500,
@@ -7,8 +7,8 @@
         "NVDA",
         "AAPL",
         "GOOGL",
-        "GOOG",
-        "MSFT"
+        "MSFT",
+        "GOOG"
       ]
     },
     "qqq": {
@@ -17,8 +17,8 @@
         "NVDA",
         "AAPL",
         "GOOGL",
-        "GOOG",
-        "MSFT"
+        "MSFT",
+        "GOOG"
       ]
     },
     "dia": {
@@ -28,7 +28,7 @@
         "AAPL",
         "MSFT",
         "AMZN",
-        "JPM"
+        "WMT"
       ]
     }
   }
