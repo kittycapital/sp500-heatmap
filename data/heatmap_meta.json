@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-04T01:50:40.014570+00:00",
+  "updated_at": "2026-11-05T01:58:01.027122+00:00",
   "indexes": {
     "sp500": {
       "total_stocks": 499,
       "top5": [
-        "NVDA",
         "AAPL",
+        "NVDA",
         "MSFT",
         "GOOGL",
         "GOOG"
@@ -14,8 +14,8 @@
     "qqq": {
       "total_stocks": 99,
       "top5": [
-        "NVDA",
         "AAPL",
+        "NVDA",
         "MSFT",
         "GOOGL",
         "GOOG"
@@ -24,8 +24,8 @@
     "dia": {
       "total_stocks": 30,
       "top5": [
-        "NVDA",
         "AAPL",
+        "NVDA",
         "MSFT",
         "AMZN",
         "JPM"
