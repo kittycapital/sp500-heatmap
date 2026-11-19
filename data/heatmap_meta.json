@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-18T03:17:09.909709+00:00",
+  "updated_at": "2026-11-19T02:55:17.328090+00:00",
   "indexes": {
     "sp500": {
-      "total_stocks": 495,
+      "total_stocks": 498,
       "top5": [
         "AAPL",
         "MSFT",
@@ -22,13 +22,13 @@
       ]
     },
     "dia": {
-      "total_stocks": 29,
+      "total_stocks": 30,
       "top5": [
         "AAPL",
         "MSFT",
         "NVDA",
         "AMZN",
-        "WMT"
+        "JPM"
       ]
     }
   }
